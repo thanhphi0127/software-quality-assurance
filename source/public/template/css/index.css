@@ -91,14 +91,6 @@ margin: 0px 10%;
 	position:relative;
 }
 
-
-
-#flash div.top_img ul li img{
-	max-width: 100%;
-max-height: 80%;
-margin: 4px 0px 4px 72px;
-}
-
 #flash div.top_img ul {
 	list-style:none;
 	margin:0px;
@@ -109,6 +101,11 @@ margin: 4px 0px 4px 72px;
 	float:left;
 	display:none;
 }
+#flash div.top_img ul li img {
+	width:550px;
+	height:291px;
+
+}
 
 #flash div.top_img  ul li:nth-child(1){
 
@@ -117,16 +114,25 @@ margin: 4px 0px 4px 72px;
 
 #flash div.top_img div.houseinfo {
 	width:100%;
-	height:40%;
+	height:39%;
 	position:absolute;
-	bottom:0;
-	left:0;
+	color:white;
+	left:3;
 	background:rgba(0,0,0,0.7);
 }
+#flash div.top_img div.houseinfo p:nth-child(1){
+	font-size:18px;
+	font-weight:bold;
+	
+}
+
+#flash div.top_img div.houseinfo p {
+	padding:0px 10px;
+}
 #flash div.top_name {
-	width:45%;
-	height: 250px;
-margin:21px 10px;
+	width: 28%;
+height: 250px;
+margin: 10px 103px;
 	padding:5px;
 	float:right;
 	-webkit-border-radius: 10px;

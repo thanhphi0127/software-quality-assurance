@@ -1,5 +1,7 @@
 ﻿<header id='top'>
-	<div class='logo'><img src='public/img/icon/icon-logo.png'</div>
+	<div class='logo'><img src='public/img/icon/icon-logo.png'>
+		
+	</div>
 	<div class='login standardform'>
 		<form >
 			<ul class='main'>
