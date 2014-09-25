@@ -1,0 +1,195 @@
+﻿
+#search, #area  {
+    width:64%;
+	margin:10px 0px;
+	float:left;
+}
+
+#area div.panel {
+
+background-image:url(../../../img/footer-background.png);
+border-top:1px solid #ccc;
+border-left:1px solid #ccc;
+border-right:1px solid #ccc;
+border-bottom:none;
+color: black;
+padding: 10px;
+height: 37px;
+width: auto;
+line-height: 32px;
+font-size: 21px;
+font-weight: bold;
+text-align: left;
+
+}
+
+
+#search div.panel {
+ background-color: rgb(21, 151, 253);
+color: white;
+padding: 10px;
+height: 37px;
+width: auto;
+line-height: 32px;
+font-size: 21px;
+font-weight: bold;
+text-align: left;
+}
+
+table {
+width:100%;
+border:1px solid #ccc;
+border-spacing: 10px;
+}
+
+table.detailedsearch > tbody > tr >  td, table.detailedsearch > tr  td{
+	width:50%;
+	padding:3px;
+}
+
+
+table.detailedsearch tr td select, input[type='text'], div.area table tr  td select {
+      width:100%;
+	  padding:3px;
+}
+
+table.detailedsearch tr td select {
+	text-align:right;
+	padding:3px;
+}
+
+fieldset {
+	position:relative;
+}
+
+input.btnSelectall {
+	position:absolute;
+	right:0;
+	top:10;
+}
+#search div.district, #search div.ward, #search div.street {
+	border-bottom: 1px solid gray;
+
+}
+
+div.district, div.ward, div.street {
+		padding:5px;
+}
+#search div.ward, #search div.street {
+	display:none;
+}
+
+.active{
+	color:red;
+}
+
+div.district span, div.ward span, div.street span{
+	text-transform:uppercase;
+	color:blue;
+}
+a.manipulation {
+ color:blue;
+ text-decoration:underline;
+ cursor:default;
+}
+
+a.manipulation:hover {
+ color:#327A72;
+
+}
+div.btnDetail p {
+	padding:0px 0px 0px 10%;
+}
+div.btnDetail p label input[type=checkbox]{
+	margin: 0% 55% 0% 0%;
+	float:right;
+}
+
+div.btnDetail p label span:after{
+  content:":";
+
+}
+
+
+div.district ul li {
+display:inline;
+
+padding:0px 10px;
+}
+
+
+
+table.detailedsearch table tbody tr td , table.detailedsearch table tr td {
+	width:25%;
+}
+
+div.ward  table tr td:before {
+content: "";
+width: 0px;
+height: 0px;
+margin: 4px 8px 0px 0px;
+float: left;
+border-style: solid;
+border-width: 4px 0 4px 7px;
+border-color: transparent transparent transparent #0F8BC5;
+
+}
+
+div.street table tr td:before, table tr td.street table tr td:before {
+
+content:"";
+width: 0px;
+height: 0px;
+margin: 4px 8px 0px 0px;
+float: left;
+border: 2px solid;
+border-radius: 25px;
+
+}
+#target {
+	float:right;
+	width:32%;
+	height:auto;
+	min-height:346px;
+}
+
+fieldset.target {
+	border:1px solid red;
+}
+
+fieldset.target legend{
+	margin:0px 10px;
+	color:red;
+}
+
+
+
+div.target ul li {	
+	display:block;
+}
+div.target ul li:before{	
+	content:"";
+width: 0px;
+height: 0px;
+margin: 7px 8px 0px 0px;
+float: left;
+border: 2px solid;
+border-radius: 25px;
+
+}
+
+div.searchstyle ul li{
+	margin:10px 0px;
+}
+div.searchstyle ul li{
+	display:inline-block;
+	
+}
+
+footer {
+	margin:11% auto;
+}
+
+.fright {
+	float:right;
+}

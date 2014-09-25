@@ -1,0 +1,52 @@
+body {
+	margin:0px;
+}
+#top {
+	width:100%;	
+	height:auto;
+	background-color:red;
+}
+
+#top div.logo{
+	float:left;
+	width:24%;
+	height:82px;
+	z-index:2;
+	margin: 0px 0px 0px 10%;
+	
+}
+
+#top div.login{
+	float:right;
+	width:63%;
+	margin:0px 20px;
+	height:82px;
+	
+}
+
+#top div.login ul{
+	float:right;
+	list-style:none;
+	margin:0px;
+}
+
+#top div.login ul li{
+	float:right;
+	padding:0px 10px 0px 0px
+}
+
+#cit_wrapper {
+	min-height:630px;
+	width:80%;
+	margin:-23px auto 0px;
+	height:auto;
+}
+footer {
+	border-top:1px solid #gray;
+	text-align:right;
+	background:#ccc;
+	width:80%;
+	margin:0% 9.5%;
+	z-index:1;	
+	
+}
