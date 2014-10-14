@@ -5,9 +5,14 @@
 					 <li><a href="#">Trang Chủ</a>     	
 					 </li>
 					 <li><a href="#">Diễn Đàn</a>
-						
+						<ul>
+							<li><a href="#">Web Programming</a></li>
+							<li><a href="#">Operating System</a></li>
+							<li><a href="#">Object Oriented Programming</a></li>
+						</ul>
 					 </li>
-					 
+					 <li><a href="#">Quản Lý</a></li>
+					 <li><a href="#">bla bla</a></li>
 
 			   </ul>
 		</div>
@@ -30,8 +35,6 @@
 					<li class='img4'><a><img></img></a></li>
 				</ul>
 				<div class='houseinfo'>
-					<p>NHÀ TRỌ ÔNG TƯ     (1000 lượt)</p>
-					<p>Địa chỉ: 23 Trần Ngọc Quế, phường Xuân Khánh, quận Ninh Kiều, tp Cần Thơ</p>
 				</div>
 			</div>
 		</div>
@@ -48,6 +51,7 @@
 	</div>
 	<div id='tool'>
 		<ul>
+			<li class='intro'><img src='public/img/icon/icon-gioithieu.jpg'></img></li>
 			<li class='intro'><img src='public/img/icon/icon-gioithieu.jpg'></img></li>
 			<li class='quicksearch'><img src='public/img/icon/icon-search.jpg'></img></li>
 			<li class='advancedsearch'><img src='public/img/icon/icon-searchplus.png'></img></li>

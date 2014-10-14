@@ -11,5 +11,8 @@ class Search extends MY_Controller {
 		$this->load->view('layout/search', isset($data)? $data : NULL);
 	}
 	
-	
+	public function quicksearch(){
+		$data['template'] = 'search/quichsearch';
+		$this->load->view('layout/search', isset($data)? $data : NULL);
+	}
 }

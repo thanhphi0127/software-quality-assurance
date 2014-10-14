@@ -11,5 +11,10 @@ class Home extends MY_Controller {
 		$this->load->view('layout/home', isset($data)? $data : NULL);
 	}
 	
+	public function quanlythongtincanhan(){
+		$data['template'] = 'home/quanlythongtincanhan';
+		$this->load->view('layout/home', isset($data)? $data : NULL);
+	}
+	
 	
 }

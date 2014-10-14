@@ -1,7 +1,24 @@
-﻿<header id='top'>
-	<div class='logo'><img src='public/img/icon/icon-logo.png'>
-		
-	</div>
+﻿<!--TIEU DE -->
+<div class="container" style="padding:0px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel with-nav-tabs panel-default">
+                <div class="panel-heading" style="padding:0px; border-radius:0px;">
+                        <ul class="nav nav-tabs" style="padding:0px; border-radius:0px;">
+                            <li><a href="#tab1default" data-toggle="tab">Trang chủ</a></li>
+                            <li class="active"><a href="<?php echo CIT_BASE_URL; ?>index.php/home" data-toggle="tab">Quản lý thành viên<span class="caret"></span></a></li>
+                            <li><a href="index.php/home" data-toggle="tab">Quản lý chủ nhà trọ & nhà trọ<span class="caret"></span></a></li>
+                            <li><a href="index.php/home" data-toggle="tab">Quản lý đăng tin</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>   
+</div>
+
+
+<header id='top' style="display:none">
+	<div class='logo'>Logo TÌm kiếm nhà trọ</div>
 	<div class='login standardform'>
 		<form >
 			<ul class='main'>
