@@ -16,7 +16,13 @@
 <script src='public/template/js/jquery-2.1.1.min.js'></script>
 <script language='javascript' src="public/template/js/home.js" ></script>	
 
-
+<?php 
+	if ('dangky' == $template) {
+		echo "<link rel='stylesheet' type='text/css' href='public/template/css/bootstrap.css'>";
+		echo "<link rel='stylesheet' type='text/css' href='public/template/css/bootstrap.min.css'>";
+		echo "<link rel='stylesheet' type='text/css' href='public/template/css/dangky.css'>";
+	}
+?>
 </head>
 
 <body>
