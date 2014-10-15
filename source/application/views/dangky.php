@@ -8,6 +8,9 @@ $(function() {
 		} else {
 		}
 	});*/
+	$('#cancel').click(function() {
+		$('.container').hide(1000);
+	});
 });
 </script>
 
@@ -44,19 +47,19 @@ $(function() {
                                 </div>
                                 
                                 <div class="col-md-12">
-                                    <input id="pass" type="text"  value="<?php echo set_value('pass');?>" name="member[pass]" placeholder="Mật khẩu" class="form-control"/>
+                                    <input id="pass" type="password"  value="<?php echo set_value('pass');?>" name="member[pass]" placeholder="Mật khẩu" class="form-control"/>
                                     <?php echo form_error('pass');?>
                                 </div>
                                 
                                 <div class="col-md-12">
-                                    <input id="re_pass" value="<?php echo set_value('re_pass');?>" name="member[re_pass]" type="text" placeholder="Xác nhận mật khẩu" class="form-control"/>
+                                    <input id="re_pass" value="<?php echo set_value('re_pass');?>" name="member[re_pass]" type="password" placeholder="Xác nhận mật khẩu" class="form-control"/>
                                     <?php echo form_error('re_pass');?>
                                 </div>
                                 
                                 <!--Ngay sinh input-->
                                 <div class="col-md-4">
                                     <label style="padding-left: 0px;" class="col-md-12 control-label">Ngày sinh</label>
-                                    <select name="member[day]" class="form-control">
+                                    <select name="member[day]" style="width: 68px; margin-left: 40px;" class="form-control">
                                         <?php 
 											for($i=1; $i<=31; $i++) {
 												echo "<option value='$i'>$i</option>";
@@ -66,7 +69,7 @@ $(function() {
                                 </div>
                                 
                                 <div class="col-md-4">
-                                    <select name="member[month]" style="margin-top: 25px;" class="form-control">
+                                    <select name="member[month]" style="margin-left: 20px; margin-top: 25px; width: 68px;" class="form-control">
                                     	<?php 
 											for($i=1; $i<=12; $i++) {
 												echo "<option value='$i'>$i</option>";
@@ -76,9 +79,10 @@ $(function() {
                                 </div>
                                 
                                 <div class="col-md-4">
-                                    <select name="member[year]" style="margin-top: 25px;" class="form-control">
+                                    <select name="member[year]" style="margin-top: 25px; width: 80px;" class="form-control">
                                     	<?php 
-											for($i=1900; $i<=2000; $i++) {
+											$t = date('Y');
+											for($i=$t; $i>=1900; $i--) {
 												echo "<option value='$i'>$i</option>";
 											}
 										?>
@@ -87,9 +91,9 @@ $(function() {
                                 
                                 <!-- Gioi tinh input-->
                                 <div class="form-group">
-                                    <label style="margin-top: 15px" class="col-md-3 control-label">Giới tính</label>
+                                    <label style="margin-top: 30px" class="col-md-3 control-label">Giới tính</label>
                                     <div style="margin-top: 9px" class="col-md-9">
-                                    	<select name="member[sex]" class="form-control">
+                                    	<select name="member[sex]" style="margin-top: 15px; width: 90px;" class="form-control">
                                             <option value="Nam">Nam</option>
                                            	<option value="Nữ">Nữ</option>
                                         </select>
@@ -99,7 +103,7 @@ $(function() {
                                 <!--btn dang ky -->
                                 <div style="margin-top: 30px" class="pull-right">
                                     <input type="submit" name="btn_register" class="btn btn-primary" value="Đăng ký"/>
-                                    <button class="btn btn-danger">Hủy đăng ký</button>
+                                    <input id="cancel" type="reset" class="btn btn-danger" value="Hủy đăng ký"/>
                                 </div>
                             </form>
                         </div>
