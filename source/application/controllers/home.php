@@ -36,9 +36,8 @@ class Home extends MY_Controller {
 			
 			
             if ($this->form_validation->run() == FALSE) {
-				echo "false";
+				
             } else {
-				echo "true";
 				$user = array(
 						  'username' => $_POST['username'],
 						  'password' => $_POST['pass'],
