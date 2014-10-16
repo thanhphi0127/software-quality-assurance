@@ -106,10 +106,10 @@ $(function() {
                                     <input id="cancel" type="reset" class="btn btn-danger" value="Hủy đăng ký"/>
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        </div><!--end div css style-->
+                    </div><!--end div panel-body-->
+                </div><!--end div panel-->
+            </div><!--end div col-md-6-->
+        </div><!--end di row-->
    
     </div><!--end div container-->
