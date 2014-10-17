@@ -177,6 +177,21 @@ class Madmin extends CI_Model{
 		$result = $this->db->delete('nguoidung');
 		return $result;		
 	}
+	
+	
+	/****************************************************
+	+ Tên hàm: Danh sách các nhà trọ
+	+ Tham số: Biến $machu
+	+ Mục đích: Hiển thị danh sách các nhà trọ theo chủ nhà trọ
+	+ Kết quả:
+	*****************************************************/
+	public function ds_cacnhatro($machu) {
+		$this->db->select('*')
+				 -> from('nhatro')
+				 ->where('mschu', $machu);
+		$query = $this->db->get();
+		return $query->result();
+	}
 
 	
 }

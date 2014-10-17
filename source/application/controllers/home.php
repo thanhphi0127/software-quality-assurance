@@ -26,6 +26,7 @@ class Home extends MY_Controller {
 				
 		if (isset($_POST['btn_register'])) {
 			$_POST = $this->input->post('member');
+				
             $this->form_validation->set_error_delimiters('<div class="error">','</div>'); 
             $this->form_validation->set_rules('ho','Họ','trim|required');
             $this->form_validation->set_rules('ten','Tên','trim|required');

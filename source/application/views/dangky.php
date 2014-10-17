@@ -11,6 +11,7 @@ $(function() {
 	$('#cancel').click(function() {
 		$('.container').hide(1000);
 	});
+	
 });
 </script>
 

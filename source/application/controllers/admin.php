@@ -123,6 +123,17 @@ class Admin extends MY_Controller {
 		$this->load->view('layout/admin', isset($data)? $data : NULL);
 	}
 	
-
+	/********************************************************
+	+ Tên hàm: Quản lý nhà trọ
+	+ Tham số: Không
+	+ Mục đích: Thực hiện các thao tác quản lý nhà trọ 
+		(thêm, sửa, xóa và hiển thị danh sách các nhà trọ)
+	+ Kết quả:
+	********************************************************/
+	public function quanlynhatro() {
+		$data['title'] = 'Quản lý các nhà trọ';
+		$data['template'] = 'admin/quanlynhatro';
+		$this->load->view('layout/admin', isset($data) ? $data : NULL);
+	}
 	
 }
