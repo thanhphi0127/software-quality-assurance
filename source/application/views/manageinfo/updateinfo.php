@@ -1,51 +1,40 @@
-﻿
-	<!--
-	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	-->
-		<center>
-			<div>
-				<div>	<!------------banner------------>
-				</div>
-				<div  class="wrapage">	<!------------body------------>
-					<div>	<!------------left body------------>
-					</div>
-					<div class="content">	<!------------center body------------>
-						<div class="sub_content">Thông tin của bạn</div>
-						<div class="box_form>	<!------------infomation box form------------>
-							<form action method="post" enctype="multipart/form-data">
-								<div class="lev">
-									<span>Họ tên: </span>
-									<input type="text" name="txt_name" class="text" id="" style="width:320px" value size="150" maxlength="150">
-								</div>
-								<div class="lev">
-									<span>Địa bàn: </span>
-									<input type="text" name="txt_diaban" class="text" id="" style="width:320px" value size="255" maxlength="255">
-								</div>
-								<div class="lev">
-									<span>Giới tính: </span>
-									<input type="text" name="txt_goitinh" class="text" id="" style="width:100px" value size="5" maxlength="5">
-								</div>
-								<div class="lev">
-									<span>Email: </span>
-									<input type="text" name="txt_email" class="text" id="" style="width:320px" value size="150" maxlength="150">
-								</div>
-								<div class="lev">
-									<span>Số điện thoại: </span>
-									<input type="text" name="txt_sdt" class="text" id="" style="width:150px" value size="12" maxlength="12">
-								</div>
-								<div class="lev">
-									<input type="submit" name="Button" value="Hoàn thành" class="">
-								</div>
-							</form>
-						</div>
-						<!------------END update information box------------>
-					</div>
-					<div>	<!------------right body------------>
-					</div>
-				</div>
-				<div>	<!------------foot page------------>
-				</div>
-			</div>
-		</center>
-	
+﻿<div>
+		<table width="48%" class="TableContainer standardform">
+    	<tr>
+        	<td class="Header">Cập nhật thông tin</td>
+        </tr>
+        <tr>
+        	<td>
+            	<table width="100%" class="TableForm">
+                	<tr>
+                    	<td class="Left">Họ tên:</td>
+                        <td><input name="data[NguoiDung]" type="text" class="shortInput" readonly="readonly"  value="Nguyễn Minh Trí"/></td>
+                    </tr>
+                    <tr>
+                        <td class="Left">Địa chỉ:</td>
+                        <td><textarea rows="3" col="20" name="data[TieuDe]"  class="expandInput">93/2 Trần Hưng Đạo, Ninh Kiều</textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="Left">Email: </td>
+                        <td><input type="text" name="data[Email]" class="shortInput" value="HoaVoKhuyet@gmail.com"/></td>
+                    </tr>
+                     <tr>
+                        <td class="Left">Giới tính:</td>
+                        <td><select style="width:80px" name="data[GioiTinh]">
+								<option>Nam</option>
+								<option>Nữ</option>
+								<option>Khác</option>
+							</select></td>
+						
+                    </tr>
+                     <tr>
+                        <td class="Left">Số điện thoại::</td>
+                        <td><input type="text" name="data[SDT]" class="shortInput" value="092 9775 679"/></td>
+						
+                    </tr>
+                 </table>
+            </td>
+        </tr>
+        <tr><td align="left"><input type="submit" name="btnDangTin" value="Đồng ý" class="nutnhan2" /> </td></tr>
+    </table>
+</div>
