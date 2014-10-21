@@ -1,4 +1,21 @@
-﻿<header class='index_header'>
+﻿
+<script type="text/javascript" charset="utf-8">
+	$(function(){
+		if(!flux.browser.supportsTransitions)
+			alert("No Support");
+			
+		window.f = new flux.slider('#bars', {
+			pagination: true,
+			autoplay: true,
+		});
+	});
+</script>
+
+
+<header class='index_header'>
+
+
+
 <div id='menu'>
 		<div id="bar" class='menu'>
 			   <ul>
@@ -19,6 +36,8 @@
 	</div>
 </header>
 
+
+        
 <section id='cit_wrapper'>
 	
 	<div id='flash'>
@@ -26,14 +45,15 @@
 			<marquee direction="right">Top 10 nhà trọ được bình chọn nhiều nhất</marquee>
 		</div>
 		<div class='top_img'>
-			
 			<div class='houselist'>
-				<ul>
-					<li class='img1'><a><img src='public/img/nhatro/hongvan.jpg'></img></a></li>
-					<li class='img2'><a><img></img></a></li>
-					<li class='img3'><a><img></img></a></li>
-					<li class='img4'><a><img></img></a></li>
-				</ul>
+                    <div id="bars">
+                        <img src="public/img/nhatro/hongvan.jpg" alt="" style="width: 550px;
+height: 281px;" />
+                        <img src="public/img/nhatro/large-FC4-0D7EB0.jpg" alt="" style="width: 550px;
+height: 281px;" />
+                        <img src="public/img/nhatro/nhatro1.jpg" alt="" style="width: 550px;
+height: 281px;" />
+                    </div>
 				<div class='houseinfo'>
 				</div>
 			</div>
@@ -59,7 +79,7 @@
 		</ul>
 		
 		<div class='tool intro'>
-			<div class='panel'><h3>Giới thiệu</h1></div>
+			<div class='panel'><h1>Giới thiệu</h1></div>
 			<p>Website tìm kiếm nhà trọ ra đời nhằm...</p>
 		</div>
 		<div class='tool quicksearch standardform'>
