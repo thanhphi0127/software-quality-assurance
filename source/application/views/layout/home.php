@@ -11,22 +11,12 @@
 <link rel="stylesheet" type="text/css" href="public/template/css/standardform.css">
 <link rel='stylesheet' href='public/template/css/home.css' />
 <link rel='stylesheet' href='public/template/css/index.css' />
+
+
 <script src='public/template/js/jquery-2.1.1.min.js'></script>
 <script language='javascript' src="public/template/js/home.js" ></script>	
 
-<?php 
-	if ('dangky' == $template) {
-		echo "<link rel='stylesheet' type='text/css' href='public/template/css/bootstrap.css'>";
-		echo "<link rel='stylesheet' type='text/css' href='public/template/css/bootstrap.min.css'>";
-		echo "<link rel='stylesheet' type='text/css' href='public/template/css/dangky.css'>";
-	} else if ('home/index' == $template) {
-		//echo "<link rel='stylesheet' href='public/template/js/home/responsiveslides.css'>";
-		//echo "<link rel='stylesheet' href='public/template/css/home/demo.css'>";
-		echo "<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>";
-		echo "<script src='public/template/js/home/flux.min.js'></script>";
-		echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js' type='text/javascript' charset='utf-8'></script>";
-	}
-?>
+
 </head>
 
 <body>

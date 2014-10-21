@@ -1,10 +1,25 @@
 ﻿
+
+#duong {
+	margin:0px;
+	display:inline;
+	width:100%;
+}
+
+
+#duong  li{
+	display:inline;
+	width:25%;
+}
 #search, #area  {
     width:64%;
 	margin:10px 0px;
 	float:left;
 }
 
+td.district , td.ward{
+	width:50%;
+}
 #area div.panel {
 
 background-image:url(../../../img/footer-background.png);
@@ -14,7 +29,7 @@ border-right:1px solid #ccc;
 border-bottom:none;
 color: black;
 padding: 10px;
-height: 37px;
+
 width: auto;
 line-height: 32px;
 font-size: 21px;
@@ -23,6 +38,10 @@ text-align: left;
 
 }
 
+#area div.panel p {
+	color:#5E5E5E;
+	font-size:15px;
+}
 
 #search div.panel {
  background-color: rgb(21, 151, 253);
@@ -41,6 +60,9 @@ width:100%;
 border:1px solid #ccc;
 border-spacing: 10px;
 }
+
+
+
 
 table.detailedsearch > tbody > tr >  td, table.detailedsearch > tr  td{
 	width:50%;
@@ -75,11 +97,15 @@ input.btnSelectall {
 div.district, div.ward, div.street {
 		padding:5px;
 }
-#search div.ward, #search div.street {
+#search section.ward.limit{
 	display:none;
 }
 
-.active{
+.activequan{
+	color:red;
+}
+
+.activephuong{
 	color:red;
 }
 
@@ -98,11 +124,14 @@ a.manipulation:hover {
 
 }
 div.btnDetail p {
-	padding:0px 0px 0px 10%;
+	padding:0px;
+	width:30%;
+	float:left;
+	margin:5px 47px;
 }
 div.btnDetail p label input[type=checkbox]{
-	margin: 0% 55% 0% 0%;
-	float:right;
+	
+	
 }
 
 div.btnDetail p label span:after{
@@ -192,4 +221,31 @@ footer {
 
 .fright {
 	float:right;
+}
+
+.hide {
+	display:none;
+}
+
+section.ward.limit ul li {
+	margin:0px;
+	display:inline-block;
+	width:25%;
+}
+
+table.result tr td:first-child{
+	width:200px;	
+}
+
+table.result tr td:nth-child(2), table.result tr td:nth-child(3){
+	width:50px;	
+}
+
+table.result tr td:last-child{
+	width:200px;	
+}
+
+
+.count_result {
+	color:blue;
 }

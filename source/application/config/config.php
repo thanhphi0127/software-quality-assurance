@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/timkiemnhatro';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ $config['base_url']	= 'http://localhost/timkiemnhatro';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'home.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

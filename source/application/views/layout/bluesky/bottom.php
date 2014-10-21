@@ -1,3 +1,3 @@
 ﻿<footer >
-	<p>Copy right &copy;</p>
+	<!--<p>Copy right &copy;</p>-->
 </footer>
