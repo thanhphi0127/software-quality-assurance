@@ -6,17 +6,15 @@ class Mchunhatro extends CI_Model{
 		$this->load->database();
 	}
 	
-	public function load_chunhatro ()
+	
+	public function load_thanhvien ()
 	{
-		$username = "1";
-		$query = $this->db->query("select HOTEN, GIOITINH, NGAYSINH, SDT, MAIL, TEN_DUONG, TEN_PHUONGXA, TENHUYEN
-									FROM chunhatro as a, DUONG as b, PHUONGXA as c, QUANHUYEN as d
+		$query = $this->db->query("select HOTEN, GIOITINH, NGAYSINH, STD, MAIL, TEN_DUONG, TEN_PHUONGXA, TENHUYEN
+									FROM thanhvien as a, DUONG as b, PHUONGXA as c, QUANHUYEN as d
 									where USERNAME like ".$username." AND
 										a.MA_DUONG = b.MA_DUONG AND
 										b.MA_PHUONGXA = c.MA_PHUONGXA AND
 										c.MA_HUYEN = d.MA_HUYEN");
 		return $query->result_array();
 	}
-	
-	
 }

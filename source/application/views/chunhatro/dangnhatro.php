@@ -1,3 +1,8 @@
 ﻿<section class='cit_timkiemnhatro'>
-	<!-- Nội dung bên trong -->
+	<?php
+		foreach ($datainfo as $v)
+		{
+			echo $v['HOTEN'];
+		}
+	?>
 </section>
