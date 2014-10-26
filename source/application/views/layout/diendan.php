@@ -23,7 +23,7 @@
 <body>
 
 <?php 
-	$this->load->view("layout/bluesky/top");
+	$this->load->view("layout/bluesky/header_top");
 	$this->load->view ($template, isset($data)?$data:NULL);
 	$this->load->view("layout/bluesky/bottom");
 ?>

@@ -8,6 +8,12 @@
 <meta name="viewport" content="width=device-width" />
 <base href="<?php echo CIT_BASE_URL;?>" />
 <script src='public/template/js/jquery-2.1.1.min.js'></script>
+<link rel='stylesheet' href='public/template/css/index.css' />
+<link rel="stylesheet" type="text/css" href="public/template/css/home/home.css">
+<link rel="stylesheet" type="text/css" href="public/template/css/home/style.css">
+
+
+
 <?php
 	if($template == 'admin/duyetnhatro')
 	{
@@ -18,13 +24,10 @@
 		echo "<link rel='stylesheet' type='text/css' href='public/template/assets/bootstrap.css'/> ";
 	}
 	else if ('admin/quanlynguoidung' == $template){
-			echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/style.css'>";
 			echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/quanlynguoidung.css'>";
 			echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/custom.css'>";
-			
 			echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/bootstrap.css'>";
 			echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/bootstrap-theme.min.css'>";
-  
 			echo "<script src='public/template/js/admin/jquery-ui-1.10.2.min.js'></script>";
 			echo "<script src='public/template/js/admin/bootstrap.js'></script>";
 			echo "<script src='public/template/js/admin/bootstrap.min.js'></script>";
@@ -56,7 +59,7 @@
 <body>
 
 <?php 
-	$this->load->view("layout/bluesky/top");
+	$this->load->view("layout/bluesky/admin_top");
 	$this->load->view ($template, isset($data)?$data:NULL);
 	$this->load->view("layout/bluesky/bottom");
 ?>

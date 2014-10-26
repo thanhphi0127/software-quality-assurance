@@ -1,4 +1,4 @@
-﻿<div class='header khung'>
+<div class='header khung'>
     <div class="login-header">
         <div class="thongtin">
                 <img style="margin: 0 0 0 0; padding-top: 3px;" src="public/img/nhatro/home.png"/>
@@ -23,6 +23,7 @@
             
     	</div>
    </div>
+</div>v>
 </div>
 
 
@@ -30,7 +31,7 @@
       <div class="panel with-nav-tabs panel-default">
           <div class="panel-heading">
                   <ul class="nav nav-tabs">
-                      <li class="active"><a href="home" data-toggle="tab">Trang chủ</a></li>
+                      <li class="active"><a href="home" data-toggle="tab">Trang chủ admin</a></li>
                       <li class="dropdown">
                           <a href="#" data-toggle="dropdown">Quản lý thành viên<span class="caret"></span></a>
                           <ul class="dropdown-menu" role="menu">

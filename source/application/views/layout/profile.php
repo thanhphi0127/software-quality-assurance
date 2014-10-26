@@ -9,11 +9,13 @@
 		<link rel="stylesheet"	type="text/css" href="public/template/css/manageinfo/style.css" />
 
 		<script language='javascript' src="public/template/js/search/advancedsearch.js" ></script>	
-
+<link rel='stylesheet' href='public/template/css/index.css' />
+<link rel="stylesheet" type="text/css" href="public/template/css/home/home.css">
+<link rel="stylesheet" type="text/css" href="public/template/css/home/style.css">
 	</head>
 	<body>
 		<?php 
-			
+			$this->load->view("layout/bluesky/top");
 			$this->load->view($template,isset($data) ? $data : NULL);
 			$this->load->view("layout/bluesky/bottom");
 			?>

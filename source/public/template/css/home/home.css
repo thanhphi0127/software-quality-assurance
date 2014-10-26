@@ -1,0 +1,79 @@
+/* CSS Document */
+.header {
+	margin-top: 1px;
+	border-radius: 0px 0px 5px 5px;
+	min-height: 80px;
+}
+
+.barner {
+	border: 1px solid blue;
+}
+
+.login-header{
+	min-height: 80px;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+.context {
+	margin-top: -15px;
+}
+
+form > .form-control input{
+	display:inline;
+}
+
+.login {
+	margin-top: 15px;
+	font-size: 9pt;
+	color:#000;
+	float: right;
+}
+
+.dangki a{
+	float:right;
+	color:#1543BD;
+	font-weight:bold;
+	margin: 10px;
+}
+
+.login-header {
+	background-color:#CADD8E;
+	//background-color:#9DC9D7;
+	height: 70px;
+	margin: 0px;
+	padding: 4px;
+	border: 1px solid #e5e5e5;
+}
+
+.khung{
+	border-radius: 5px;
+	padding: 5px; 
+	margin: auto;
+	width: 87%;
+	min-width: 800px !important;
+	max-width: 87%;
+	border: 1px solid #E6EBE6;
+	background-color: #FFF;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+	z-index: 0;
+}
+.login-header img{
+	width: 70px;
+	height: 70px;
+}
+
+div.menu-header{
+	border-radius: 0px;
+	margin-top: 5px;
+	padding: 0px; 
+	margin: auto;
+	width: 87%;
+	
+}
+.thongtin{
+	float:left;
+}

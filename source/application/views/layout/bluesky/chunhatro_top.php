@@ -1,4 +1,4 @@
-﻿<div class='header khung'>
+<div class='header khung'>
     <div class="login-header">
         <div class="thongtin">
                 <img style="margin: 0 0 0 0; padding-top: 3px;" src="public/img/nhatro/home.png"/>
