@@ -8,6 +8,8 @@
 <meta name="viewport" content="width=device-width" />
 <base href="<?php echo CIT_BASE_URL;?>" />
 <script src='public/template/js/jquery-2.1.1.min.js'></script>
+<link rel="stylesheet" type="text/css" href="public/template/css/home/bootstrap.css">
+
 	<?php
 		if($template == 'diendan/demo')
 		{

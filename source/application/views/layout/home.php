@@ -12,6 +12,7 @@
 <link rel='stylesheet' href='public/template/css/index.css' />
 <script src='public/template/js/jquery-2.1.1.min.js'></script>
 <script language='javascript' src="public/template/js/home.js" ></script>
+<link rel="stylesheet" type="text/css" href="public/template/css/home/bootstrap.css">
 
 
 <?php
