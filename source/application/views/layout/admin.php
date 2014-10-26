@@ -17,6 +17,38 @@
 	{
 		echo "<link rel='stylesheet' type='text/css' href='public/template/assets/bootstrap.css'/> ";
 	}
+	else if ('admin/quanlynguoidung' == $template){
+			echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/style.css'>";
+			echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/quanlynguoidung.css'>";
+			echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/custom.css'>";
+			
+			echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/bootstrap.css'>";
+			echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/bootstrap-theme.min.css'>";
+  
+			echo "<script src='public/template/js/admin/jquery-ui-1.10.2.min.js'></script>";
+			echo "<script src='public/template/js/admin/bootstrap.js'></script>";
+			echo "<script src='public/template/js/admin/bootstrap.min.js'></script>";
+			echo "<script src='public/template/js/admin/quanlysinhvien1.js'></script>";
+			echo "<script src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js'></script>";
+			echo "<script src='public/template/js/admin/jquery.min.js'></script>";
+			echo "<script src='public/template/js/admin/datatables/jquery.dataTables.js' type='text/javascript'></script>";
+			echo "<script src='public/template/js/admin/datatables/dataTables.bootstrap.js' type='text/javascript'></script>";
+			echo "<script type='text/javascript'>";
+			echo "$(function() {";
+			echo "$('#example1').dataTable({";
+			echo "    'bPaginate': true,";
+			echo "    'bLengthChange': true,";
+			echo "    'bFilter': true,";
+			echo "    'bSort': true,";
+			echo "	  'oPaginate': true,";
+			echo "    'bInfo': true,";
+			echo "    'bAutoWidth': false,";
+			echo " 	 'bStateSave': true,";
+			echo "});";
+			echo "});";
+			echo "</script>";
+		
+		}
 	
 ?>
 

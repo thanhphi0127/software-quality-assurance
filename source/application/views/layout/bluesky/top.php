@@ -1,25 +1,13 @@
-﻿<header id='top'>
-	<div class='logo'>LogoTÌm kiếm nhà trọ</div>
-	<div class='login standardform'>
-		<form >
-			<ul class='main'>
-				<li class='main'>
-					<span class=''><input type='submit' value='Đăng nhập'/></span>
-				</li>
-				<li class='main'>
-					<span class=''><input type='text' placeholder='password'/></span>
-				</li>
-				<li class='main'>
-					<span class=''><input type='text' placeholder='username'/></span>
-				</li>
-			</ul>
-			
-		</form>
-		<ul >
-				<li><a href=''>Quên mật khẩu</a></li>
-				<li>/</li>
-				<li><a href=''>Đăng kí</a></li>
-		</ul>
-			
-	</div>
-</header>
+﻿<div class='header'>
+	<div class="barner">
+    	BARNER
+    </div>
+    <div class="login_header">
+    	<form action="" method="post">
+        <label>Tên đăng nhập</label>
+        	<input type="text" class="form-control" placeholder="Nhập tên đăng nhập" name="data[username]" />
+            <label>Mật khẩu</label>
+            <input type="text" class="form-control" placeholder="Nhập tên đăng nhập" name="data[username]" />
+        </form>
+    </div>
+</div>
