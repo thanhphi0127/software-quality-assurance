@@ -8,6 +8,18 @@
 <meta name="viewport" content="width=device-width" />
 <base href="<?php echo CIT_BASE_URL;?>" />
 <script src='public/template/js/jquery-2.1.1.min.js'></script>
+<?php
+	if($template == 'admin/duyetnhatro')
+	{
+		echo "<link rel='stylesheet' type='text/css' href='public/template/assets/bootstrap.css' />";
+	}
+	if($template == 'admin/duyettintuc')
+	{
+		echo "<link rel='stylesheet' type='text/css' href='public/template/assets/bootstrap.css'/> ";
+	}
+	
+?>
+
 
 <body>
 

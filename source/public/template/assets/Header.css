@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+#header_ql{
+	background-color: Lightblue;
+	height:100px;
+	text-align:center;
+	font-size:36px;
+	font-family: "Georgia", "Times New Roman", "Times", "serif";
+	color:red;
+}
