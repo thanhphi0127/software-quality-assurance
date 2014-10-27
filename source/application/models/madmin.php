@@ -150,8 +150,9 @@ class Madmin extends CI_Model{
 	//chon ma_dangtin de update
 	public function arSelectUpdateTin($bien)
 	{
-		$this->db->where('MA_DANGTIN', $bien);
-		$query = $this->db->get('dangtindiendan');
+		$query = $this->db->query('select a.*, b.* from dangtindiendan as a, thanhvien b
+						where a.NGUOIDANG = b.MSTHANHVIEN
+						and a.MA_DANGTIN ='.$bien);
 		$data = $query->result_array();
 		return $data; 
 	}

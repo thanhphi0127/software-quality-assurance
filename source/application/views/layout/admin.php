@@ -19,7 +19,11 @@
 	{
 		echo "<link rel='stylesheet' type='text/css' href='public/template/assets/bootstrap.css' />";
 	}
-	if($template == 'admin/duyettintuc')
+	else if($template == 'admin/duyettintuc')
+	{
+		echo "<link rel='stylesheet' type='text/css' href='public/template/assets/bootstrap.css'/> ";
+	}
+	else if($template == 'admin/duyettungtin')
 	{
 		echo "<link rel='stylesheet' type='text/css' href='public/template/assets/bootstrap.css'/> ";
 	}

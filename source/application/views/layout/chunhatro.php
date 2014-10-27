@@ -20,8 +20,8 @@
 	}
 	else if ('chunhatro/dangnhatro' == $template) 
 	{
-		echo "<link rel='stylesheet' type='text/css' href='public/template/css/style.css'/>";
-		echo "<link rel='stylesheet' type='text/css' href='public/template/css/standardform.css'/>";
+		echo "<link rel='stylesheet' type='text/css' href='public/template/css/chunhatro/style.css'/>";
+		echo "<link rel='stylesheet' type='text/css' href='public/template/css/chunhatro/standardform.css'/>";
 		
 	} 
 	else if ('chunhatro/vidu' == $template) 
