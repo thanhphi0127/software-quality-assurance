@@ -55,11 +55,18 @@ class Madmin extends CI_Model{
 		$this->db->update('nhatro', $bien);
 	}
 	
+	// xoa NHA TRO
 	public function arDelete($id)
 	{
 		$this->db->where('MA_NHATRO', $id);
 		$this->db->delete('nhatro');
 	}
+	// xoa PHONG TRO
+	public function arXoaPhong($bien)
+	{
+		$this->db->query('delete from phong where MA_NHATRO ='.$bien);
+	}
+
 	
 	public function arSelectUpdate($bien)
 	{

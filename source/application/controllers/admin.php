@@ -138,26 +138,33 @@ class Admin extends MY_Controller {
 				if(isset($_POST['member'][$i]))
 				{
 					$arr = $this->madmin->arConditionSelect($_POST['member'][$i]);
-				foreach($arr as $v)
-				{
-					$mang = array(
-						"STATUS" => "1"
-					);	
-				$this->madmin->arMultiple_Update($mang, $_POST['member'][$i]);	
-				//$result = $this->Mhone->arMultiple_Select();
-				header('Location:http://localhost/timkiemnhatro/admin/duyetnhatro');
-				}
-				}
-			}
-		}
+					foreach($arr as $v)
+					{
+						$mang = array(
+							"STATUS" => "1"
+						);	
+					$this->madmin->arMultiple_Update($mang, $_POST['member'][$i]);	
+					//$result = $this->Mhone->arMultiple_Select();
+					header('Location:http://localhost/timkiemnhatro/admin/duyetnhatro');
+					}// end foreach $arr
+				}// end if
+		}// for loop
+		}// end if(isset($_POST['btnDuyetNhaTro']))
+		
 		// xoa tung nha tro chua duyet
 		if(isset($_POST['btn_delete']))
 		{
 			$_POST = $this->input->post('delete');
 			
+			//xoa phong tro truoc
+			$this->madmin->arXoaPhong($_POST['ma_nhatro']);
+			echo "xoa phong thanh cong";
+			//sau do den xoa nha tro
 			$this->madmin->arDelete($_POST['ma_nhatro']);
-			//echo "Xoa xong roi :(!";
+			echo "xoa nha tro  thanh cong";
 		}
+		
+		
 		//****************************
 		// xu ly nha tro  duyet
 		//****************************
@@ -171,13 +178,13 @@ class Admin extends MY_Controller {
 					$arr = $this->madmin->arConditionSelect($_POST['daduyet'][$i]);
 					$this->madmin->arMultiple_Delete($_POST['daduyet'][$i]);
 					header('Location:http://localhost/timkiemnhatro/admin/duyetnhatro');
-				}
-			}
+				}// end if(isset($_POST['daduyet'][$i]))
+			}// end for loop
 			echo "xoa roi sao :'( huc huc";
-		}
+		}//end if(isset($_POST['btnXoaNhaTro']))
 		$data['template'] = 'admin/duyetnhatro';
 		$this->load->view('layout/admin', isset($data)? $data : NULL);
-	}	
+	}// end function duyetnhatro	
 	
 	
 	public function xoaTinNhaTro($id)
