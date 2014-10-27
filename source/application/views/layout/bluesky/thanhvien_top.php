@@ -25,12 +25,39 @@
    </div>
 </div>
 
+<script>
+$(document).ready(function(){
+	$('ul.nav.nav-tabs > li').hover(function(){
+		$(this).addClass('show');
+		$('ul.nav.nav-tabs > li.show > ul').show();
+	});
+	
+
+	$('ul.nav.nav-tabs > li').mouseout(function(e) {
+		$(this).removeClass('show');
+		$('ul.nav.nav-tabs > li > ul').hide();
+	});
+		
+	
+	/*	
+	$('ul.nav.nav-tabs > li').mouseout(function(e) {
+		
+		$('ul.nav.nav-tabs > li.show > ul').show();
+		
+		$('ul.nav.nav-tabs > li > ul').hide();
+		$(this).removeClass('show');
+    });
+	*/
+	
+});
+</script>
+
 
 <div class="menu-header" style="margin-top: 10px;">
       <div class="panel with-nav-tabs panel-default">
           <div class="panel-heading">
                   <ul class="nav nav-tabs">
-                      <li class="active"><a href="home" data-toggle="tab">Trang chủ thành viên</a></li>
+                      <li><a href="home" data-toggle="tab">Trang chủ thành viên</a></li>
                       <li class="dropdown">
                           <a href="#" data-toggle="dropdown">Quản lý thành viên<span class="caret"></span></a>
                           <ul class="dropdown-menu" role="menu">
@@ -58,3 +85,5 @@
           </div>
       </div> <!-- end panel -->
 </div>
+
+
