@@ -24,12 +24,12 @@
 		echo "<link rel='stylesheet' type='text/css' href='public/template/css/chunhatro/standardform.css'/>";
 		
 	} 
-	else if ('chunhatro/vidu' == $template) 
+	/*else if ('chunhatro/vidu' == $template) 
 	{
 		echo "<link rel='stylesheet' type='text/css' href='public/template/css/style.css'/>";
 		echo "<link rel='stylesheet' type='text/css' href='public/template/css/standardform.css'/>";
 		
-	} 
+	} */
 	else if ('chunhatro/gopy' == $template) 
 	{
 		echo "<link rel='stylesheet' type='text/css' href='public/template/assets/bootstrap.css' ";

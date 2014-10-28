@@ -10,6 +10,9 @@
 <script src='public/template/js/jquery-2.1.1.min.js'></script>
 <link rel="stylesheet" type="text/css" href="public/template/css/home/bootstrap.css">
 
+<link rel="stylesheet" type="text/css" href="public/template/css/home/home.css">
+<!--<link rel="stylesheet" type="text/css" href="public/template/css/home/style.css">-->
+
 	<?php
 		if($template == 'diendan/demo')
 		{
@@ -25,7 +28,7 @@
 <body>
 
 <?php 
-	$this->load->view("layout/bluesky/header_top");
+	$this->load->view("layout/bluesky/diendan_top");
 	$this->load->view ($template, isset($data)?$data:NULL);
 	$this->load->view("layout/bluesky/bottom");
 ?>

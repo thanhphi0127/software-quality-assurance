@@ -65,6 +65,18 @@
                         <td class="Left">Mô tả ngắn</td>
                         <td><textarea rows="5" cols="20" name="member[MoTa]" class="expandInput" ></textarea></td>
                     </tr>
+                    <tr>
+                    	<td class="Left" >Tiện nghi</td>
+                        <td>
+                        	<input type="checkbox" name="member[CoGac]" /> Có Gác <br />
+                            <input type="checkbox" name="member[BaiDauXe]" /> Bãi đậu xe<br />
+                          	<input type="checkbox" name="member[Internet]" /> Internet<br />
+                            <input type="checkbox" name="member[NhaVeSinh]" /> Nhà vệ sinh trong<br />
+                            <input type="checkbox" name="member[NauAn]" /> Cho nấu ăn<br />
+                          	<input type="checkbox" name="member[Giuong]" /> Có giường<br />
+                            <input type="checkbox" name="member[Quat]" /> Có quạt<br />
+                            </td> 
+                    </tr>
                      <tr>
          				<td class="Left" >Giờ Đóng cửa</td>
                         <td>
@@ -76,6 +88,10 @@
                             </select>
                         </td>
                      </tr>
+                     <tr>
+                        <td class="Left">Hình ảnh</td>
+                        <td><input type="file" name="fHinhAnh" class="shortInput"/></td>
+                    </tr>
                      <tr>
                         <td class="Left">Số loại phòng</td>
                         <td>
@@ -112,22 +128,7 @@
                     	<td class="Left">Giá</td>
                          <td><input type="text" name="member[Gia1]" class="shortInputLoaiPhong"/>&nbsp;000</td>
                     </tr>
-                    <tr>
-                    	<td class="Left" >Tiện nghi</td>
-                        <td>
-                        	<input type="checkbox" name="member[CoGac]" /> Có Gác <br />
-                            <input type="checkbox" name="member[BaiDauXe]" /> Bãi đậu xe<br />
-                          	<input type="checkbox" name="member[Internet]" /> Internet<br />
-                            <input type="checkbox" name="member[NhaVeSinh]" /> Nhà vệ sinh trong<br />
-                            <input type="checkbox" name="member[NauAn]" /> Cho nấu ăn<br />
-                          	<input type="checkbox" name="member[Giuong]" /> Có giường<br />
-                            <input type="checkbox" name="member[Quat]" /> Có quạt<br />
-                            </td> 
-                    </tr>
-                     <tr>
-                        <td class="Left">Hình ảnh</td>
-                        <td><input type="file" name="fHinhAnh" class="shortInput"/></td>
-                    </tr>
+                    
 					
                 </table>
             </td>
@@ -154,23 +155,6 @@
                     	<td class="Left">Giá</td>
                          <td><input type="text" name="member[Gia2]" class="shortInputLoaiPhong"/>&nbsp;000</td>
                     </tr>
-                    <tr>
-                    	<td class="Left" >Tiện nghi</td>
-                        <td>
-                        	<input type="checkbox" name="member[CoGac2]" /> Có Gác <br />
-                            <input type="checkbox" name="member[BaiDauXe2]" /> Bãi đậu xe<br />
-                          	<input type="checkbox" name="member[Internet2]" /> Internet<br />
-                            <input type="checkbox" name="member[NhaVeSinh2]" /> Nhà vệ sinh trong<br />
-                            <input type="checkbox" name="member[NauAn2]" /> Cho nấu ăn<br />
-                          	<input type="checkbox" name="member[Giuong2]" /> Có giường<br />
-                            <input type="checkbox" name="member[Quat2]" /> Có quạt<br />
-                            </td> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="Left">Hình ảnh</td>
-                        <td><input type="file" name="fHinhAnh" class="shortInput"/></td>
-                    </tr>
                 </table>
             </td>
         </tr>
@@ -182,7 +166,7 @@
                     </tr>
                      <tr>
                     	 <td class="Left">Tổng số phòng</td>
-                         <td><input type="text" name="txtTongSoPhong1" class="shortInputLoaiPhong" /></td>
+                         <td><input type="text" name="txtTongSoPhong1" class="shortInputLoaiPhong"/></td>
                     </tr>
                     <tr>
                          <td class="Left">Số phòng còn trống</td>
@@ -195,23 +179,6 @@
                      <tr>
                     	<td class="Left">Giá</td>
                          <td><input type="text" name="member[Gia3]" class="shortInputLoaiPhong"/>&nbsp;000</td>
-                    </tr>
-                    <tr>
-                    	<td class="Left" >Tiện nghi</td>
-                        <td>
-                        	<input type="checkbox" name="member[CoGac3]" /> Có Gác <br />
-                            <input type="checkbox" name="member[BaiDauXe3]" /> Bãi đậu xe<br />
-                          	<input type="checkbox" name="ember[Internet3]" /> Internet<br />
-                            <input type="checkbox" name="member[NhaVeSinh3]" /> Nhà vệ sinh trong<br />
-                            <input type="checkbox" name="member[NauAn3]" /> Cho nấu ăn<br />
-                          	<input type="checkbox" name="ember[Giuong3]" /> Có giường<br />
-                            <input type="checkbox" name="member[Quat3]" /> Có quạt<br />
-                            </td> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="Left">Hình ảnh</td>
-                        <td><input type="file" name="fHinhAnh" class="shortInput"/></td>
                     </tr>
                 </table>
             </td>
