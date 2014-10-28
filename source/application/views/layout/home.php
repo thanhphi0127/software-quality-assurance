@@ -26,10 +26,7 @@
 <script src="public/template/js/script.js"></script>
 <script src="public/template/js/script.responsive.js"></script>
 	
-	
-<script>
 
-</script>
 	
 	
 
