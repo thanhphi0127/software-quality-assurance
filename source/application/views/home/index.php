@@ -1,157 +1,78 @@
-﻿
-<div class="khung context" style="margin-top: -40px; border-radius: 0px 0px 5px 5px;">        
-
-        <div class="panel panel-primary" style="width: 700px; float:left">
-            <div class="panel-heading" style="font-size: 17px">Top 10 nhà trọ tìm kiếm nhiều nhất</div>
-            <div class="panel-body">
-				Nhà trọ 1...<br />
-                ....<br />
-                ....<br />
-                ....<br />
-
-            </div>
-        </div>
-        
-        
-        <div class="panel panel-primary" style="font-size: 17px; margin-left: 710px;">
-            <div class="panel-heading">Thông tin các nhà trọ tìm kiếm</div>
-            <div class="panel-body">
-            	Tâm trình bày phần tìm kiếm ở đây!
-                Nếu thiếu thì bổ sung thêm..................
-                
-            </div>
-       </div>
-             
-        
-        
-        <div class="panel panel-primary" style="font-size: 17px;">
-            <div class="panel-heading">Thông tin các nhà trọ tìm kiếm</div>
-            <div class="panel-body">
-				Kết quả tìm kiếm sẽ hiển thị ở đây
-                ...................................
-            </div>
-            <!--So trang -->
-            <div style="padding-bottom: 45px" class="panel-footer">
-                <ul style="margin-top: 0px" class="pagination pull-right">
-                  <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left" style="color: #428bca"> Trang 1/30</span></a></li>
-                  <li class="active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li><a href="#">....</a></li>
-                  <li><a href="#">30</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-                </ul>
-            </div>
-        </div>
-    
-        <div class="panel panel-primary" style="font-size: 17px;">
-            <div class="panel-heading">Thông tin các nhà trọ tìm kiếm</div>
-            <div class="panel-body">
-				Kết quả tìm kiếm sẽ hiển thị ở đây
-                ...................................
-            </div>
-            <!--So trang -->
-            <div style="padding-bottom: 45px" class="panel-footer">
-                <ul style="margin-top: 0px" class="pagination pull-right">
-                  <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left" style="color: #428bca"> Trang 1/30</span></a></li>
-                  <li class="active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li><a href="#">....</a></li>
-                  <li><a href="#">30</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-                </ul>
-            </div>
-        </div>
- 
- 
- 
- 
-</div><!--end div container-->
 
 
-<!--
-<header class='index_header'>
-<div id='menu'>
-		<div id="bar" class='menu'>
-			   <ul>
-					 <li><a href="#">Trang Chủ</a>     	
-					 </li>
-					 <li><a href="#">Diễn Đàn</a>
-						<ul>
-							<li><a href="#">Web Programming</a></li>
-							<li><a href="#">Operating System</a></li>
-							<li><a href="#">Object Oriented Programming</a></li>
-						</ul>
-					 </li>
-					 <li><a href="#">Quản Lý</a></li>
-					 <li><a href="#">bla bla</a></li>
-
-			   </ul>
-		</div>
-	</div>
-</header>
-
-<section id='cit_wrapper'>
-	
-	<div id='flash'>
-		<div class='title'>
-			<marquee direction="right">Top 10 nhà trọ được bình chọn nhiều nhất</marquee>
-		</div>
-		<div class='top_img'>
+<div id="art-main">
+  <header class="art-header">
+    <div class="art-shapes">
+      <div class="art-object152805234"></div>
+      <div class="art-object1125249387"></div>
+    </div>
+    <h1 class="art-headline"> <a href="/">TÌM KIẾM NHÀ TRỌ THÀNH PHỐ CẦN THƠ</a> </h1>
+  </header>
+  <nav class="art-nav">
+    <div class="art-nav-inner">
+      <ul class="art-hmenu">
+        <li><a href="trang-chu.html" class="active">trang chủ</a></li>
+        <li><a href="tim-kiem.html">Tìm kiếm</a>
+          <ul>
+            <li><a href="tim-kiem/tim-kiem-nhanh.html">tìm kiếm nhanh</a>
+              <ul>
+                <li><a href="tim-kiem/tim-kiem-nhanh/ninh-kieu.html">Ninh kiều</a></li>
+                <li><a href="tim-kiem/tim-kiem-nhanh/cai-rang.html">Cái Răng</a></li>
+                <li><a href="tim-kiem/tim-kiem-nhanh/binh-thuy.html">Bình Thủy</a></li>
+                <li><a href="tim-kiem/tim-kiem-nhanh/o-mon.html">Ô môn</a></li>
+                <li><a href="tim-kiem/tim-kiem-nhanh/thot-not.html">Thốt Nốt</a></li>
+              </ul>
+            </li>
+            <li><a href="tim-kiem/tim-kiem-nang-cao.html">Tìm kiếm nâng  cao</a></li>
+          </ul>
+        </li>
+        <li><a href="qui-đinh.html">qui định</a>
+          <ul>
+            <li><a href="qui-đinh/qui-đinh-đang-tin.html">qui định đăng tin</a></li>
+            <li><a href="qui-đinh/qui-đinh-đang-ky.html">qui định đăng ký</a></li>
+          </ul>
+        </li>
+        <li><a href="đang-tin.html">đăng tin</a></li>
+        <li><a href="thong-bao.html">Thông báo</a></li>
+        <li><a href="ho-tro.html">Hỗ trợ</a>
+          <ul>
+            <li><a href="ho-tro/huong-dan.html">Hướng dẫn</a></li>
+            <li><a href="ho-tro/lien-he.html">Liên hệ</a></li>
+            <li><a href="ho-tro/gop-y.html">Góp ý</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="art-sheet clearfix">
+    <div class="art-layout-wrapper">
+      <div class="art-content-layout">
+        <div class="art-content-layout-row">
 			
-			<div class='houselist'>
-				<ul>
-					<li class='img1'><a><img src='public/img/nhatro/hongvan.jpg'></img></a></li>
-					<li class='img2'><a><img></img></a></li>
-					<li class='img3'><a><img></img></a></li>
-					<li class='img4'><a><img></img></a></li>
-				</ul>
-				<div class='houseinfo'>
-				</div>
-			</div>
-		</div>
-		
-		<div class='top_name'>
-			<ul>
-				<li class='img1'>Nhà trọ Hồng Vân</li>
 				
-				<li class='img2'>Nhà trọ 91</li>
-				<li class='img3'>Nhà trọ Ông Sáu</li>
-				<li class='img4'>Nhà trọ Bà Tư</li>
-			</ul>
-		</div>
-	</div>
-	<div id='tool'>
-		<ul>
-			<li class='intro'><img src='public/img/icon/icon-gioithieu.jpg'></img></li>
-			<li class='intro'><img src='public/img/icon/icon-gioithieu.jpg'></img></li>
-			<li class='quicksearch'><img src='public/img/icon/icon-search.jpg'></img></li>
-			<li class='advancedsearch'><img src='public/img/icon/icon-searchplus.png'></img></li>
-			
-		</ul>
-		
-		<div class='tool intro'>
-			<div class='panel'><h3>Giới thiệu</h1></div>
-			<p>Website tìm kiếm nhà trọ ra đời nhằm...</p>
-		</div>
-		<div class='tool quicksearch standardform'>
-			<div class='panel'><h3> Tìm kiếm nhanh với</h3></div>
-			<input type='text' placeholder='Nhập thông tin nhà trọ cần tìm'/> 
-			<input type='submit' value='Tìm'/>
-		</div>
-		<div class='tool advancedsearch'>
-			<div class='panel'><h3>TÌm kiếm nâng cao</h3></div>
-			<p> Bạn có thể tìm kiếm nhà trọ với nhiều thông tin như: giá cả, khu vực, và những thông tin cần thiết. 
-				<a href='<?php echo CIT_BASE_URL;?>search/advancedsearch'>Bắt đầu ngay</a>
-			 </p>
-		</div>
-
-	</div>
-</section>
-
--->
+				 
+          <div class="art-layout-cell art-sidebar1">
+            <?php $this->load->view('home/sidebar1');?>
+          </div>
+          <div class="art-layout-cell art-content">
+            <article class="art-post art-article">
+                <?php $this->load->view('home/sidebarcontent');?>
+            </article>
+          </div>
+          <div class="art-layout-cell art-sidebar2">
+            <div class="art-block clearfix">
+               <?php $this->load->view('home/sidebar2');?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="art-footer"> <a title="RSS" class="art-rss-tag-icon" style="position: absolute; bottom: 8px; left: 6px; line-height: 32px;" href="#"></a>
+      <div style="position:relative;padding-left:10px;padding-right:10px">
+        <p><a href="http://www.freedigitalphotos.net/images/view_photog.php?photogid=404">Image: Google Serach / Q</a>uản lí nhà trọ thành phố Cần Thơ</p>
+        <p>Copyright © 2011. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+  <p class="art-page-footer"> <span id="art-footnote-links"><a href="http://www.artisteer.com/" target="_blank">Web Template</a> created with Artisteer.</span> </p>
+</div>

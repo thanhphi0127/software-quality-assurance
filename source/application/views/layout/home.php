@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html dir="ltr" lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name='keyword' content="<?php echo isset($seo['keyword']) ? htmlspecialchars($seo['keyword']) : '';?>" />
@@ -12,26 +12,48 @@
 <link rel='stylesheet' href='public/template/css/index.css' />
 <script src='public/template/js/jquery-2.1.1.min.js'></script>
 <script language='javascript' src="public/template/js/home.js" ></script>
-<link rel="stylesheet" type="text/css" href="public/template/css/home/bootstrap.css">
+<!-- <link rel="stylesheet" type="text/css" href="public/template/css/home/bootstrap.css">-->
+<link rel="stylesheet" type="text/css" href="public/template/css/home/css-dangky.css">
+<link rel="stylesheet" type="text/css" href="public/template/css/index-include.css">
+<script src="public/template/js/index-include.js"></script>
 
+
+<!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="public/template/css/style.css" media="screen">
+<!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
+<link rel="stylesheet" href="public/template/css/style.responsive.css" media="all">
+<script src="public/template/js/jquery.js"></script>
+<script src="public/template/js/script.js"></script>
+<script src="public/template/js/script.responsive.js"></script>
+	
+	
+<script>
+
+</script>
+	
+	
 
 <?php
 	if ('home/index' == $template || 'home/' == $template) {
-	echo  '<link rel="stylesheet" type="text/css" href="public/template/css/home/bootstrap-theme.min.css">
+	/*echo  '<link rel="stylesheet" type="text/css" href="public/template/css/home/bootstrap-theme.min.css">
 			<link rel="stylesheet" type="text/css" href="public/template/css/home/custom.css">
 			<link rel="stylesheet" type="text/css" href="public/template/css/home/font-awesome.css">
 			<link rel="stylesheet" type="text/css" href="public/template/css/home/style.css">
 			<link rel="stylesheet" type="text/css" href="public/template/css/home/ionicons.css">
 			<link rel="stylesheet" type="text/css" href="public/template/css/home/home.css">
-			<link rel="stylesheet" type="text/css" href="public/template/css/home/ionicons.min.css">';
+			<link rel="stylesheet" type="text/css" href="public/template/css/home/ionicons.min.css">';*/
 	}
 	
 	
 ?>
+
+
+
+
 </head>
 <body>
 <?php 
-	$this->load->view("layout/bluesky/thanhvien_top");
+	/*$this->load->view("layout/bluesky/thanhvien_top");*/
 	$this->load->view ($template, isset($data)?$data:NULL);
 	$this->load->view("layout/bluesky/bottom");
 ?>
