@@ -32,8 +32,13 @@ class Mdiendan extends CI_Model{
 		 return $query->result_array();
 	}
 	
-	// insert gop y kien cho nha tro
+	// insert danh gia ve nha tro
 	public function arGopY($data)
+	{
+		$this->db->insert('gopy',$data);
+	}
+	//insert gop y ve nha tro
+	public function arDanhGia($data)
 	{
 		$this->db->insert('danhgia',$data);
 	}

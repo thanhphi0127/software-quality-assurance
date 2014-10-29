@@ -22,18 +22,25 @@ class Chunhatro extends MY_Controller {
 	
 	public function dangnhatro(){
 		$data['title'] = 'Dang Tin Nha Tro';
-		/*$this->load->model('mchunhatro');
-		//$data['data_info'] = $this->mchunhatro->arInsertNhaTro();
-		if(isset($_POST['btnAdd']))
-		{
-			$_POST = $this->input->post('member');
-			$data_info = array(
-									'MA_HUYEN' => $_POST['ma'],
-									'TENHUYEN' =>$_POST['ten']
-									);
-			$this->mchunhatro->getHuyen($data_info);
-			echo "insert thanh cong!";
-		}*/
+		//load thu vien de rang buoc du lieu nhap
+		$this->load->library('form_validation');
+		$this->load->helper(array('form', 'url'));
+		
+		// rang buoc các truong nhap tren text field
+		$this->form_validation->set_rules('TieuDe', 'Tên nhà trọ', 'required|min_length[5]');
+		$this->form_validation->set_rules('Quan', 'Quận', 'required');
+		$this->form_validation->set_rules('Phuong', 'Phường', 'required');
+		$this->form_validation->set_rules('Duong', 'Đường', 'required');
+		$this->form_validation->set_rules('Duong', 'Đường', 'required');
+		$this->form_validation->set_rules('MoTa', 'Mô tả', 'required|min_length[5]');
+		$this->form_validation->set_rules('Gio', 'Giờ', 'required');
+		$this->form_validation->set_rules('PhongConTrong1', 'Số phòng còn trống', 'required|numeric');
+		$this->form_validation->set_rules('DienTich1', 'Diện tích', 'required|numeric');
+		$this->form_validation->set_rules('Gia1', 'Giá', 'required|numeric');
+		
+		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+		
+		//------------------------------------------------------
 		$this->load->model('mchunhatro');
 		$this->load->helper('date');
 		$data['huyen'] = $this->mchunhatro->getHuyen();
@@ -83,6 +90,9 @@ class Chunhatro extends MY_Controller {
 			else if($_POST['LoaiPhong'] == 2)
 			{
 				//loai phong thu 1
+				$this->form_validation->set_rules('PhongConTrong2', 'Số phòng còn trống', 'required|numeric');
+				$this->form_validation->set_rules('DienTich2', 'Diện tích', 'required|numeric');
+				$this->form_validation->set_rules('Gia2', 'Giá', 'required|numeric');
 				foreach($ma as $v1)
 				{
 					echo $v1['MA_NHATRO'] ;
@@ -117,6 +127,14 @@ class Chunhatro extends MY_Controller {
 				//loai phong thu 3
 			else if($_POST['LoaiPhong'] == 3)
 			{
+				//validation type2
+				$this->form_validation->set_rules('PhongConTrong2', 'Số phòng còn trống', 'required|numeric');
+				$this->form_validation->set_rules('DienTich2', 'Diện tích', 'required|numeric');
+				$this->form_validation->set_rules('Gia2', 'Giá', 'required|numeric');
+				//validation type3
+				$this->form_validation->set_rules('PhongConTrong3', 'Số phòng còn trống', 'required|numeric');
+				$this->form_validation->set_rules('DienTich3', 'Diện tích', 'required|numeric');
+				$this->form_validation->set_rules('Gia3', 'Giá', 'required|numeric');
 				//loai phong thu 1
 				foreach($ma as $v1)
 				{
@@ -183,8 +201,13 @@ class Chunhatro extends MY_Controller {
 				}
 			}
 		$data['template'] = 'chunhatro/dangnhatro';
-		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
-	}
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
+		}
+		
+}
+	
 	/*********************************
 	//dua tra y kien nhan xet nha tro
 	//

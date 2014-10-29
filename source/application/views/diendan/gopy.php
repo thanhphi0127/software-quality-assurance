@@ -5,6 +5,7 @@
               <div class="panel-heading">Góp ý</div>
               <div class="panel-body">
               	  <form class="form-horizontal" role="form" method="post">
+					<?php echo form_open('form'); ?>
                   <div class="form-group">
                     <label for="inputEmail3" class="col-sm-3 control-label">Thành viên</label>
                     <div class="col-sm-8">
@@ -23,6 +24,7 @@
                     <label for="inputPassword3" class="col-sm-3 control-label" class="bg-primary">Nội dung</label>
                     <div class="col-sm-8">
                       <textarea class="form-control" rows="3" name='member[noidung]' placeholder="Nội dung"></textarea>
+                       <?php echo form_error('noidung');?></td>
                     </div>
                     <div class="form-group">
                     <label for="inputPassword3" class="col-sm-3 control-label" class="bg-primary">Mức đánh giá</label>

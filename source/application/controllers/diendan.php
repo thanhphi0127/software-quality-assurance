@@ -33,9 +33,17 @@ class Diendan extends MY_Controller
 	}
 	public function gopy()
 	{
+		//load thu vien de rang buoc du lieu nhap
+		$this->load->library('form_validation');
+		$this->load->helper(array('form', 'url'));
+		// rang buoc các truong nhap tren text field
+		$this->form_validation->set_rules('noidung', 'Nội dung', 'required|min_length[5]');
+		$this->form_validation->set_rules('member', 'Mức đánh giá', 'required');
+		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+		//-------------------------------------------------------------------------------------------
 		$this->load->helper('date');
 		$this->load->model('mdiendan');
-		$data['info'] = $this->mdiendan->	getThongTinThanhVien('nva');
+		$data['info'] = $this->mdiendan->getThongTinThanhVien('nva');
 		if(isset($_POST['btnGopY']))
 		{
 			$_POST = $this->input->post('member');
@@ -44,19 +52,37 @@ class Diendan extends MY_Controller
 				if(isset($_POST['r'][$i]))
 				{
 					echo $_POST['r'][$i]; // get gia tri cua radio button
-					$arr = array(
+					$arr1 = array(
 						'MSTHANHVIEN' =>$_POST['ma'],
-						'MA_NHATRO' =>'40',
+						'MA_NHATRO' =>'14',
 						'THOIGIAN' => date('Y-m-d'),
 						'MUCDODANHGIA' =>$_POST['r'][$i]
 						);
-						$this->mchunhatro->arGopY($arr);
+					$arr2 = array(
+						'MSTHANHVIEN' =>$_POST['ma'],
+						'MA_NHATRO' =>'14',
+						'THOIGIAN' => date('Y-m-d'),
+						'NOIDUNG' =>$_POST['noidung']
+						);
+						$this->mdiendan->arDanhGia($arr1);
 						echo "insert thanh cong roi!!!";
-				}
-			}
+						$this->mdiendan->arGopY($arr2);
+						echo "insert thanh cong roi!!!";
+				}//end set radio button
+			}// end of loop
+		}// end -- $_POST['btnGopY']
+		
+		//button huy
+		if(isset($_POST['btnHuy']))
+		{
+			header('Location:http://localhost/timkiemnhatro/');
 		}
+		
 		$data['template'] = 'diendan/gopy';
-		$this->load->view('layout/diendan', isset($data)? $data : NULL);
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('layout/diendan', isset($data)? $data : NULL);
+		}
 	}
 	
 	public function index()

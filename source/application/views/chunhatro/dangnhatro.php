@@ -2,6 +2,7 @@
 	<!-- Nội dung bên trong -->
 <form name='fDangnhatro' method='POST' action=''>
 <table width="48%" class="TableContainer standardform" >
+		<?php echo form_open('form'); ?>
     	<tr>
         	<td class="Header">Đăng Tin</td>
         </tr>
@@ -22,7 +23,10 @@
 					?>
                     <tr>
                         <td class="Left">Tên nhà trọ</td>
-                        <td><input type="text" name="member[TieuDe]"  class="shortInput" /></td>
+                        <td><input type="text" name="member[TieuDe]"  class="shortInput" />
+                         <?php echo form_error('TieuDe');?></td>
+                        </td>
+                        
                     </tr>
                     <tr>
                         <td class="Left">Số Điện Thoại</td>
@@ -58,12 +62,15 @@
 										?>
 										</select>		
 									<input type='text' name='member[SoNha]' placeholder='Nhập (tên hẻm) số nhà'/>
+                                    <?php echo form_error('Quan');?>
 						</td>
                     </tr>
                     
                     <tr>
                         <td class="Left">Mô tả ngắn</td>
-                        <td><textarea rows="5" cols="20" name="member[MoTa]" class="expandInput" ></textarea></td>
+                        <td><textarea rows="5" cols="20" name="member[MoTa]" class="expandInput" ></textarea>
+                        	<?php echo form_error('MoTa');?>
+                        </td>
                     </tr>
                     <tr>
                     	<td class="Left" >Tiện nghi</td>
@@ -86,6 +93,7 @@
                                 <option value='23 giờ'>23 giờ</option>
                                 <option value='0 giờ'>0 giờ</option>
                             </select>
+                            
                         </td>
                      </tr>
                      <tr>
@@ -114,19 +122,26 @@
                     </tr>
                      <tr>
                     	 <td class="Left">Tổng số phòng</td>
-                         <td><input type="text" name="txtTongSoPhong1" class="shortInputLoaiPhong" /></td>
+                         <td><input type="text" name="txtTongSoPhong1" class="shortInputLoaiPhong" />
+                         
+                         </td>
                     </tr>
                     <tr>
                          <td class="Left">Số phòng còn trống</td>
-                         <td><input type="text" name="member[PhongConTrong1]" class="shortInputLoaiPhong"/></td>
+                         <td><input type="text" name="member[PhongConTrong1]" class="shortInputLoaiPhong"/>
+                         		<?php echo form_error('PhongConTrong1');?>
+                         </td>
                     </tr>
                     <tr>
                     	<td class="Left">Diện tích mỗi phòng</td>
-                         <td><input type="text" name="member[DienTich1]"class="shortInputLoaiPhong"/>&nbsp;M<sup>2</sup></td>
+                         <td><input type="text" name="member[DienTich1]"class="shortInputLoaiPhong"/>&nbsp;M<sup>2</sup>
+                         		<?php echo form_error('DienTich1');?></td>
                     </tr>
                      <tr>
                     	<td class="Left">Giá</td>
-                         <td><input type="text" name="member[Gia1]" class="shortInputLoaiPhong"/>&nbsp;000</td>
+                         <td><input type="text" name="member[Gia1]" class="shortInputLoaiPhong"/>&nbsp;000
+                         		<?php echo form_error('Gia1');?>
+                         </td>
                     </tr>
                     
 					
@@ -145,15 +160,21 @@
                     </tr>
                     <tr>
                          <td class="Left">Số phòng còn trống</td>
-                         <td><input type="text" name="member[PhongConTrong2]" class="shortInputLoaiPhong"/></td>
+                         <td><input type="text" name="member[PhongConTrong2]" class="shortInputLoaiPhong"/>
+                         	<?php echo form_error('PhongConTrong2');?>
+                         </td>
                     </tr>
                     <tr>
                     	<td class="Left">Diện tích mỗi phòng</td>
-                         <td><input type="text" name="member[DienTich2]"class="shortInputLoaiPhong"/>&nbsp;M<sup>2</sup></td>
+                         <td><input type="text" name="member[DienTich2]"class="shortInputLoaiPhong"/>&nbsp;M<sup>2</sup>
+                         	<?php echo form_error('DienTich2');?>
+                         </td>
                     </tr>
                      <tr>
                     	<td class="Left">Giá</td>
-                         <td><input type="text" name="member[Gia2]" class="shortInputLoaiPhong"/>&nbsp;000</td>
+                         <td><input type="text" name="member[Gia2]" class="shortInputLoaiPhong"/>&nbsp;000
+                        	 <?php echo form_error('Gia2');?>
+                         </td>
                     </tr>
                 </table>
             </td>
@@ -170,20 +191,26 @@
                     </tr>
                     <tr>
                          <td class="Left">Số phòng còn trống</td>
-                         <td><input type="text" name="member[PhongConTrong3]" class="shortInputLoaiPhong"/></td>
+                         <td><input type="text" name="member[PhongConTrong3]" class="shortInputLoaiPhong"/>
+                         		<?php echo form_error('PhongConTrong3');?>
+                         </td>
                     </tr>
                     <tr>
                     	<td class="Left">Diện tích mỗi phòng</td>
-                         <td><input type="text" name="member[DienTich3]"class="shortInputLoaiPhong"/>&nbsp;M<sup>2</sup></td>
+                         <td><input type="text" name="member[DienTich3]"class="shortInputLoaiPhong"/>&nbsp;M<sup>2</sup>
+                         		<?php echo form_error('DienTich3');?>
+                         </td>
                     </tr>
                      <tr>
                     	<td class="Left">Giá</td>
-                         <td><input type="text" name="member[Gia3]" class="shortInputLoaiPhong"/>&nbsp;000</td>
+                         <td><input type="text" name="member[Gia3]" class="shortInputLoaiPhong"/>&nbsp;000
+                         	<?php echo form_error('Gia3');?>
+                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
-        <tr><td align="left"><input type="submit" name="btnXemTruoc" value="Xem trước bản đăng" class="nutnhan2" /><input type="submit" name="btnDangTin" value="Đăng tin" class="nutnhan" />
+        <tr><td align="left"><input type="submit" name="btnXemTruoc" value="Xem trước bản đăng" class="nutnhan2" /><input type="submit" name="btnDangTin" value="Đăng nhà trọ" class="nutnhan" />
         <input type="submit" name="btnXemTruoc1" value="chon duong" class="nutnhan" />  </td></tr>
     </table>
 </form>
