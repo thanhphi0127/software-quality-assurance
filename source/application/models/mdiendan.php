@@ -42,6 +42,12 @@ class Mdiendan extends CI_Model{
 	{
 		$this->db->insert('danhgia',$data);
 	}
+	//lay ma nha tro
+	
+	public function arGetMaNhaTro()
+	{
+		
+	}
 	
 	
 }
