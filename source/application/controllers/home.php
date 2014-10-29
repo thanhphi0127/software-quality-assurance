@@ -9,7 +9,8 @@ class Home extends MY_Controller {
 	public function index(){
 		$data['seo']['title'] = 'Trang chủ';
 		$data['template'] = 'home/index';
-		$this->load->view('layout/home', isset($data)? $data : NULL);
+		$this->load->view('layout/home', $data);
+		
 	}
 	
 	public function quanlythongtincanhan(){

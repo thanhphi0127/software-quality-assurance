@@ -50,10 +50,13 @@
 </head>
 <body>
 <?php 
-	/*$this->load->view("layout/bluesky/thanhvien_top");*/
-	$this->load->view ($template, isset($data)?$data:NULL);
-	$this->load->view("layout/bluesky/bottom");
+
+	$this->load->view("layout/standardlayout", isset($data) ? $data:null);
+	
 ?>
+	
+
+
 </body>
 </html>
 

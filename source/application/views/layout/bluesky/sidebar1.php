@@ -48,9 +48,9 @@
               <div class="art-blockcontent">
                 <p style="text-align: center;"> </p>
                 <p> </p>
-                <p style="text-align: center;"><a href="advancedsearch.html"><img width="120" height="96" alt="" src="public/img/19ca3799-7a56-47f0-b894-9fc8c7a4719c.png" class=""></a><br>
+                <p style="text-align: center;"><a href="<?php echo CIT_BASE_URL.'search/advancedsearch';?>"><img width="120" height="96" alt="" src="public/img/19ca3799-7a56-47f0-b894-9fc8c7a4719c.png" class=""></a><br>
                 </p>
-                <p style="text-align: center;">&nbsp;<a href="advancedsearch.html" class="art-button">Tìm nâng cao</a>&nbsp;<br>
+                <p style="text-align: center;">&nbsp;<a href="<?php echo CIT_BASE_URL.'search/advancedsearch';?>" class="art-button">Tìm nâng cao</a>&nbsp;<br>
                 </p>
               </div>
             </div>
