@@ -216,6 +216,7 @@ class Msearch extends CI_Model{
 	}
 	
 	function searchbytarget($MA_TIEUDIEM) {
+		
 		$MA_DUONG =  $this->db->query('select MA_DUONG
 									   from tieudiem
 									   where MA_TIEUDIEM = "'.$MA_TIEUDIEM.'"
@@ -247,6 +248,40 @@ class Msearch extends CI_Model{
 					}
 				}
 			}
+		$query['TEN_TIEUDIEM'] = $this->db->query('select TEN_TIEUDIEM
+												   from tieudiem
+												   where MA_TIEUDIEM = "'.$MA_TIEUDIEM.'"')->result_array()[0]['TEN_TIEUDIEM'];
+		return $query;
+	}
+	
+	
+	public function quicksearch($key) {
+		$query['count'] = 0;
+		$query['nhatro'] = array();
+		$i = 0;
+		$sql = 'select * 
+				from nhatro
+				where';
+		if ($key == '' || $key == 'tất cả') {
+			$sql .= ' 1';
+		}
+		else {
+			$array_key = explode(' ', $key);
+			foreach ($array_key as $item) {
+				$sql .= ' TEN_NHATRO like "%'.$item.'%" or  MOTA like "%'.$item.'%" or ';
+			}
+			$sql .= '0 > 1';
+		}
+		
+		$temp_query = $this->db->query($sql);
+		$temp_count = $temp_query->num_rows();
+		if ($temp_count != 0){
+			$query['count'] += $temp_count;
+			$query['nhatro'][$i] = $temp_query -> result_array();
+			$i ++;
+		}
+		
+		
 		return $query;
 	}
 }

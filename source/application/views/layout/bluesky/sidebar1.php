@@ -42,9 +42,9 @@
                 </p>
 				-->
 				<div>
-                  <form action="#" class="art-search standardform" method="get" name="searchform">
-                    <input type="text" value="" name="s" />
-                    <input type="submit" value="Search" name="search" class="art-search-button" />
+                  <form action="<?php echo CIT_BASE_URL.'search/quicksearch';?>" class="art-search standardform" method="post" name="searchform">
+                    <input type="text" style='padding: 3px 10px;padding-right: 29px !important;text-transform: none;' value="" name="keyword" placeholder='Bạn muốn tìm gì ?' />
+                    <input type="submit" value="Search" name="quicksearch" class="art-search-button" />
                   </form>
                 </div>
               </div>

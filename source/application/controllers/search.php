@@ -48,7 +48,20 @@ class Search extends MY_Controller {
 	
 	
 	public function quicksearch(){
-		$data['template'] = 'search/quichsearch';
+		$data['seo']['title'] = 'Kết quả tìm kiếm ';
+		$data['seo']['keyword'] = 'seach result';
+		$data['seo']['description'] = 'Kết quả tìm kiếm';	
+		
+		if ($this->input->post('keyword')){
+			$data['keyword'] = $this->input->post('keyword');
+		}
+		else 
+			$data['keyword'] = 'tất cả';
+		$data['result'] = $this->msearch->quicksearch($data['keyword']);
+		//load tiêu điểm
+		$data['tieudiem'] = $this->msearch->load_tieudiem();
+		
+		$data['template'] = 'search/quicksearch';
 		$this->load->view('layout/search', isset($data)? $data : NULL);
 	}
 	
@@ -64,7 +77,7 @@ class Search extends MY_Controller {
 		if ('advance' == $type){ 
 			$_post = $this->input->post('data');
 			$_option = $this->input->post('option');
-			$data['result'] = $this->msearch->searchbyadvanced($_post, $_option);	
+			$data['result'] = $this->msearch->searchbyadvanced($_post, $_option);
 			$data['type'] = 'nâng cao';
 		}
 		else if ('area' == $type){ //Mã là mã phường, hoặc mã đường
@@ -78,7 +91,7 @@ class Search extends MY_Controller {
 		else if ('quick' == $type){ //$mã là từ khóa
 			$data['type'] = 'nhanh';
 		}
-		
+	
 		$data['template'] = 'search/result';
 		$this->load->view('layout/search', isset($data)? $data : NULL);
 	}

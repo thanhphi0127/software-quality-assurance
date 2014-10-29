@@ -1,4 +1,6 @@
-﻿
+﻿a, a:active{
+	color:blue;
+}
 
 #duong {
 	margin:0px;
@@ -23,6 +25,7 @@ td.district , td.ward{
 #area div.panel {
 
 background-image:url(../../../img/footer-background.png);
+
 border-top:1px solid #ccc;
 border-left:1px solid #ccc;
 border-right:1px solid #ccc;

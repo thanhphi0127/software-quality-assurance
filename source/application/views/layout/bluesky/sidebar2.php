@@ -44,13 +44,18 @@
                 </ul>
                 <p style="text-align: center;"><a href="ho-tro/lien-he.html"><img width="131" height="75" alt="" src="public/img/lien_he.jpg" class=""></a><br>
                 </p>
-                <p style="text-align: left;"><span style="font-weight: bold;"><span style="color: rgb(226, 52, 29); text-decoration: underline;">Hot line 1:</span></span></p>
-                <p style="text-align: right;"><span style="color: rgb(226, 52, 29); font-weight: bold; font-style: italic;">0962 705 589</span></p>
-                <p style="text-align: left;"><span style="color: rgb(226, 52, 29); font-weight: bold; text-decoration: underline;">Hot line 2:</span></p>
-                <p style="text-align: right;"><span style="color: rgb(226, 52, 29); font-weight: bold; font-style: italic;">0929 775 678</span></p>
-                <p style="text-align: left;"><span style="color: rgb(226, 52, 29); font-weight: bold; text-decoration: underline;">Mail:</span></p>
-                <p style="text-align: right;"><span style="color: rgb(226, 52, 29); font-weight: bold; font-style: italic;">TKNhaTroCT@gmail.com</span></p>
-                <p> </p>
+                <p style="text-align: left;">
+					<span style="font-weight: bold;"><span style="color: rgb(226, 52, 29); text-decoration: underline;">Hot line 1:
+					<span style="color: rgb(226, 52, 29); font-weight: bold; font-style: italic;">0962 705 589</span>
+				</p>
+                <p style="text-align: left;">
+					<span style="color: rgb(226, 52, 29); font-weight: bold; text-decoration: underline;">Hot line 2:</span>
+					<span style="color: rgb(226, 52, 29); font-weight: bold; font-style: italic;">0929 775 678</span>
+				</p>
+                <p style="text-align: left;">
+					<span style="color: rgb(226, 52, 29); font-weight: bold; text-decoration: underline;">Mail:</span>
+					<span style="color: rgb(226, 52, 29); font-weight: bold; font-style: italic;">TKNhaTroCT@gmail.com</span>
+				</p>
               </div>
             </div>
             <div class="art-block clearfix">

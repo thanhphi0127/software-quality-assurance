@@ -1,5 +1,6 @@
 /* Created by Artisteer v4.3.0.60745 */
 
+
 #art-main
 {
    background: #C7CE40;
@@ -1251,6 +1252,7 @@ ul.art-hmenu>li.ext>.ext-off
    box-sizing: border-box;
    display: table-cell;
    vertical-align: top;
+   
 }
 
 /* need only for content layout in post content */ 
@@ -2042,7 +2044,7 @@ a img
 
 .art-article table, table.art-article
 {
-   border-collapse: collapse;
+   /*border-collapse: collapse;*/
    margin: 1px;
 }
 
@@ -2054,7 +2056,7 @@ a img
 .art-article th, .art-article td
 {
    padding: 2px;
-   border: dotted 1px #8C8C8C;
+   /*border: dotted 1px #8C8C8C;*/
    vertical-align: top;
    text-align: left;
 }
@@ -3019,3 +3021,10 @@ background-color: rgba(221, 193, 162, .7);
 border-radius: 5px;
 }
 /* End Additional CSS Styles */
+
+
+
+/* thêm */
+a{
+	text-decoration:none;
+}

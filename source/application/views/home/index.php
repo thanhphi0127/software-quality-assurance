@@ -23,12 +23,5 @@
                   </div>
                 </div>
                
-                <div class="art-content-layout">
-                  <div class="art-content-layout-row">
-                    <div class="art-layout-cell" style="width: 100%" >
-                      <p style="text-align: center;">&nbsp;<a href="" class="art-button">&lt;&lt;</a>&nbsp;<a href="trang-chu.html" class="art-button">[1]</a>&nbsp;<a href="trang-chu/page-2.html" class="art-button">2</a>&nbsp;&nbsp;<a href="trang-chu/page-2.html" class="art-button">&gt;&gt;</a>&nbsp;<br>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                
+</div>

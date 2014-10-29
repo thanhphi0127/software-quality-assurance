@@ -47,8 +47,10 @@
 	
 <!--end of home-->
 
-
-
+<?php if ('search/result' == $template || 'search/quicksearch' == $template) {
+		echo "<script src='public/template/js/search/result.js'></script>";
+	}
+?>
 </head>
 
 <body>
