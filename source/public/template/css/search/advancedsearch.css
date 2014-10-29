@@ -71,7 +71,7 @@ table.detailedsearch > tbody > tr >  td, table.detailedsearch > tr  td{
 
 
 table.detailedsearch tr td select, input[type='text'], div.area table tr  td select {
-      width:100%;
+      width:97%;
 	  padding:3px;
 }
 
@@ -86,8 +86,8 @@ fieldset {
 
 input.btnSelectall {
 	position:absolute;
-	right:0;
-	top:10;
+	right:5px;
+	top:10px;
 }
 #search div.district, #search div.ward, #search div.street {
 	border-bottom: 1px solid gray;
@@ -177,9 +177,9 @@ border-radius: 25px;
 }
 #target {
 	float:right;
-	width:32%;
+	width:100%;
 	height:auto;
-	min-height:346px;
+	/*min-height:346px;*/
 }
 
 fieldset.target {
@@ -196,23 +196,15 @@ fieldset.target legend{
 div.target ul li {	
 	display:block;
 }
-div.target ul li:before{	
-	content:"";
-width: 0px;
-height: 0px;
-margin: 7px 8px 0px 0px;
-float: left;
-border: 2px solid;
-border-radius: 25px;
 
-}
 
 div.searchstyle ul li{
 	margin:10px 0px;
 }
 div.searchstyle ul li{
 	display:inline-block;
-	
+	padding-left: 20px;
+	padding-right: 10px;
 }
 
 footer {

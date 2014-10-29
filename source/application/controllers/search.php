@@ -6,7 +6,7 @@ class Search extends MY_Controller {
 		parent::__construct();
 	
 	}
-	public function advancedsearch(){
+	public function detailsearch(){
 	
 		$data['seo']['title'] = 'Tìm kiếm nâng cao';
 		$data['seo']['keyword'] = 'advanced seach';
@@ -21,10 +21,31 @@ class Search extends MY_Controller {
 		//load tiêu điểm
 		$data['tieudiem'] = $this->msearch->load_tieudiem();
 		
-		$data['template'] = 'search/advancedsearch';
+		$data['template'] = 'search/detailsearch';
 		$this->load->view('layout/search', isset($data)? $data : NULL);
 		
 	}
+	public function areasearch(){
+	
+		$data['seo']['title'] = 'Tìm kiếm theo khu vực';
+		$data['seo']['keyword'] = 'advanced seach';
+		$data['seo']['description'] = 'Tìm kiếm theo nhiều tiêu chí';
+		
+		// load quận
+		$data['quan'] = $this->msearch->load_quan();
+		// load phường
+		$data['phuong'] = $this->msearch->load_phuong();
+		//load duong
+		$data['duong'] = $this->msearch->load_duong();
+		//load tiêu điểm
+		$data['tieudiem'] = $this->msearch->load_tieudiem();
+		
+		$data['template'] = 'search/areasearch';
+		$this->load->view('layout/search', isset($data)? $data : NULL);
+		
+	}
+	
+	
 	
 	public function quicksearch(){
 		$data['template'] = 'search/quichsearch';
@@ -36,7 +57,10 @@ class Search extends MY_Controller {
 		$data['seo']['title'] = 'Kết quả tìm kiếm ';
 		$data['seo']['keyword'] = 'seach result';
 		$data['seo']['description'] = 'Kết quả tìm kiếm';	
+		//load tiêu điểm
 		$data['tieudiem'] = $this->msearch->load_tieudiem();
+		
+		
 		if ('advance' == $type){ 
 			$_post = $this->input->post('data');
 			$_option = $this->input->post('option');

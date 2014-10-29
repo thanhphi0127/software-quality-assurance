@@ -1,8 +1,4 @@
-﻿
-
-
-<section id='cit_wrapper'>
-<section id='area'>
+﻿<section id='area'>
 	<div class='panel area'>Kết quả tìm kiếm <?php echo $type;?>
 		
 			<p><?php if ('theo khu vực' == $type) {
@@ -80,20 +76,8 @@
 </section>
 
 
-<section id='target'>
-	<div class='target'>
-		<fieldset class='target'>
-			<legend>Tiêu điểm tìm kiếm</legend>
-			<ul class='target'>
-				<?php foreach ($tieudiem as $row) {?>
-				<li><a href='<?php echo CIT_BASE_URL.'search/result/target/'.$row['MA_TIEUDIEM'];?>'><?php echo $row['TEN_TIEUDIEM'];?></a></li>
-				<?php }?>
-			</ul>
-							
-		</fieldset>
-	</div>
-</section>
 
-</section>
+
+
 
 

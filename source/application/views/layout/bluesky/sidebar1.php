@@ -1,8 +1,9 @@
-<div class="art-block clearfix">
+Ôªø<div class="art-block clearfix">
               <div class="art-blockheader">
-                <h3 class="t">tÏm ki?m nhanh</h3>
+                <h3 class="t">T√¨m ki·∫øm nhanh</h3>
               </div>
               <div class="art-blockcontent">
+			  <!--
                 <p style="text-align: left;">
                   <label for="newsletter" style="font-style: italic; font-size: 14px;">Qu?n - Huy?n</label>
                   <select id="newsletter" name="newsletter">
@@ -39,36 +40,47 @@
                 </p>
                 <p style="text-align: center;">&nbsp;<a href="trang-chu.html" class="art-button">TÏm Nhanh</a>&nbsp;<br>
                 </p>
+				-->
+				<div>
+                  <form action="#" class="art-search standardform" method="get" name="searchform">
+                    <input type="text" value="" name="s" />
+                    <input type="submit" value="Search" name="search" class="art-search-button" />
+                  </form>
+                </div>
               </div>
             </div>
             <div class="art-block clearfix">
               <div class="art-blockheader">
-                <h3 class="t">tÏm ki?m n‚ng cao</h3>
+                <h3 class="t">T√¨m ki·∫øm n√¢ng cao</h3>
               </div>
               <div class="art-blockcontent">
                 <p style="text-align: center;"> </p>
                 <p> </p>
-                <p style="text-align: center;"><a href="<?php echo CIT_BASE_URL.'search/advancedsearch';?>"><img width="120" height="96" alt="" src="public/img/19ca3799-7a56-47f0-b894-9fc8c7a4719c.png" class=""></a><br>
-                </p>
-                <p style="text-align: center;">&nbsp;<a href="<?php echo CIT_BASE_URL.'search/advancedsearch';?>" class="art-button">TÏm n‚ng cao</a>&nbsp;<br>
+                
+                <p style="text-align: center;">
+					<a href="<?php echo CIT_BASE_URL.'search/detailsearch';?>"><!--<img width="120" height="96" alt="" src="public/img/19ca3799-7a56-47f0-b894-9fc8c7a4719c.png" class="">--></a>
+					<a href="<?php echo CIT_BASE_URL.'search/detailsearch';?>" class="art-button">T√¨m ki·∫øm chi ti·∫øt</a>&nbsp;<br>
+					<a href="<?php echo CIT_BASE_URL.'search/areasearch';?>"><!--<img width="120" height="96" alt="" src="public/img/19ca3799-7a56-47f0-b894-9fc8c7a4719c.png" class="">--></a>
+					<a href="<?php echo CIT_BASE_URL.'search/areasearch';?>" class="art-button">T√¨m ki·∫øm theo khu v·ª±c</a>&nbsp;<br>
+					<?php $this->load->view('search/targetsearch');?>
                 </p>
               </div>
             </div>
             <div class="art-block clearfix">
               <div class="art-blockheader">
-                <h3 class="t">thÙng b·o - luu ˝</h3>
+                <h3 class="t">Th√¥ng b√°o - L∆∞u √Ω</h3>
               </div>
               <div class="art-blockcontent">
                 <p> </p>
                 <p style="text-align: center;"> </p>
                 <p><a href="thong-bao.html"><img width="150" height="165" alt="" src="public/img/92b6fd37-ee07-4c6c-bd13-67e5a33b493a.png" class=""></a><br>
                 </p>
-                <p style="text-align: center;"><a href="thong-bao.html" class="art-button">thÙng b·o</a></p>
+                <p style="text-align: center;"><a href="thong-bao.html" class="art-button">Th√¥ng b√°o</a></p>
               </div>
             </div>
             <div class="art-block clearfix">
               <div class="art-blockheader">
-                <h3 class="t">qu?ng c·o</h3>
+                <h3 class="t">Qu·∫£ng c√°o</h3>
               </div>
               <div class="art-blockcontent">
                 <p><br>
@@ -77,7 +89,7 @@
             </div>
             <div class="art-block clearfix">
               <div class="art-blockheader">
-                <h3 class="t">qu?ng c·o</h3>
+                <h3 class="t">Qu·∫£ng c√°o</h3>
               </div>
               <div class="art-blockcontent">
                 <p><br>

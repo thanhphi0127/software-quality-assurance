@@ -2992,7 +2992,7 @@ blockquote p,
    border-right:1px solid #ABABAB;
    margin:0 auto;
    /*width: 200px;*/
-   width:27%;
+   width:20%;
 }
 
 .art-content-layout .art-content
@@ -3006,7 +3006,7 @@ blockquote p,
    background: transparent;
    border-left:1px solid #ABABAB;
    margin:0 auto;
-   width: 200px;
+   width: 20%;
 }
 
 /* Begin Additional CSS Styles */

@@ -31,19 +31,7 @@
                 <p> </p>
               </div>
             </div>
-            <div class="art-block clearfix">
-              <div class="art-blockheader">
-                <h3 class="t">Search</h3>
-              </div>
-              <div class="art-blockcontent">
-                <div>
-                  <form action="#" class="art-search" method="get" name="searchform">
-                    <input type="text" value="" name="s" />
-                    <input type="submit" value="Search" name="search" class="art-search-button" />
-                  </form>
-                </div>
-              </div>
-            </div>
+            
             <div class="art-block clearfix">
               <div class="art-blockheader">
                 <h3 class="t">hỗ trợ</h3>

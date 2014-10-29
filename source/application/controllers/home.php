@@ -9,6 +9,9 @@ class Home extends MY_Controller {
 	public function index(){
 		$data['seo']['title'] = 'Trang chủ';
 		$data['template'] = 'home/index';
+		//load tiêu điểm
+		$data['tieudiem'] = $this->msearch->load_tieudiem();
+		
 		$this->load->view('layout/home', $data);
 		
 	}
