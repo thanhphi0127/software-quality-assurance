@@ -17,7 +17,11 @@ class Mchunhatro extends CI_Model{
 		return $query->result_array();
 	}
 	
-	
+	public function update_chunhatro($id, $arr)
+	{
+		$this->db->where('MSCHU',$id);
+		$this->db->update("chunhatro", $arr);
+	}
 	//**************************************************
 	/*author: Ngọc
 	** date: 19/10/2014

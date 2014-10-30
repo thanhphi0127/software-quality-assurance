@@ -11,10 +11,42 @@ class Chunhatro extends MY_Controller {
 		$this->load->model('mchunhatro');
 		$ms = 2;
 		$data['datainfo'] = $this->mchunhatro->load_chunhatro( $ms);
+		
+		if($this->input->post('btnSuaProfile'))
+		{
+			$_POST = $this->input->post('edit');
+			$data_info = array(
+				'HOTEN' => $_POST['ten'],
+				'NGAYSINH' => $_POST['ngaysinh'],
+				'MAIL' => $_POST['email'],
+				'SDT' => $_POST['sdt']
+				);
+			$this->mchunhatro->update_chunhatro($ms,$data_info);
+			echo "update thanh cong";
+		}
+		
 		$data['template'] = 'profile/profile';
 		$this->load->view('layout/profile', isset($data)? $data : NULL);
 		
 	}
+	
+	public function update_chunhatro()
+	{
+		if(isset($_POST['btnSuaProfile']))
+		{
+			$_POST = $this->input->post('edit');
+			$this->load->model('mchunhatro');
+			$data_info = array(
+				'HOTEN' => $_POST['ten'],
+				'NGAYSINH' => $_POST['ngaysinh']
+				);
+			$this->mchunhatro->update_chunhatro('2',$data_info);
+			echo "update thanh cong";
+		}
+		$data['template'] = 'profile/profile';
+		$this->load->view('layout/profile', isset($data)? $data : NULL);
+	}
+	
 	
 	public function quanlynhatro(){
 		$data['template'] = 'chunhatro/quanlynhatro';
