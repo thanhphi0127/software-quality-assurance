@@ -180,7 +180,6 @@ class Admin extends MY_Controller {
 					header('Location:http://localhost/timkiemnhatro/admin/duyetnhatro');
 				}// end if(isset($_POST['daduyet'][$i]))
 			}// end for loop
-			echo "xoa roi sao :'( huc huc";
 		}//end if(isset($_POST['btnXoaNhaTro']))
 		$data['template'] = 'admin/duyetnhatro';
 		$this->load->view('layout/admin', isset($data)? $data : NULL);
@@ -213,7 +212,6 @@ class Admin extends MY_Controller {
 			}
 			echo "duyet thanh cong";
 		}
-	
 		$data['template'] = 'admin/duyettungnhatro';
 		$this->load->view('layout/admin', isset($data)? $data : NULL);
 	}
@@ -225,6 +223,7 @@ class Admin extends MY_Controller {
 		$data['data_info'] = $this->madmin->arSelectUpdate($id);
 		if(isset($_POST['btnDuyetTin']))
 		{
+			$this->madmin->arXoaPhong($id);
 			$this->madmin->arMultiple_Delete($id);	
 			echo "xoa roi do";
 			header('Location:http://localhost/timkiemnhatro/admin/duyetnhatro');
