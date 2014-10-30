@@ -9,7 +9,8 @@ class Chunhatro extends MY_Controller {
 	public function profile_chunhatro(){
 		
 		$this->load->model('mchunhatro');
-		$data['datainfo'] = $this->mchunhatro->load_chunhatro();
+		$ms = 2;
+		$data['datainfo'] = $this->mchunhatro->load_chunhatro( $ms);
 		$data['template'] = 'profile/profile';
 		$this->load->view('layout/profile', isset($data)? $data : NULL);
 		
