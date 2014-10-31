@@ -51,8 +51,12 @@
 <section class='cit_timkiemnhatro'>
 	<!-- Nội dung bên trong -->
  <div class="container">
+	
     <form method="post" action =''>
     	<h3>Nhà trọ chưa duyệt</h3>
+		<?php if ($data_info['count'] > 10) 
+					$this->load->view('layout/pagination');
+		?>
         <table width="80%"  class="table table-bordered">
             <tr class="danger">
                 <th class="cotSTT">Chọn</th>
@@ -65,7 +69,7 @@
             <?php
                 foreach($info as $v)
                 {                   
-                    echo "<tr>";
+                    echo "<tr class='result_chuaduyet'>";
                     echo "<td><input type='checkbox' name = member[] value='".$v['MA_NHATRO']."'/></td>";
                     echo "<td hidden class='layma'>
                             ".$v['MA_NHATRO']."
@@ -86,11 +90,16 @@
                 </td>
             </tr>
     </table>
-
+	<?php if ($data_info['count'] > 10) 
+					$this->load->view('layout/pagination');
+	?>
 
     <!--danh sach nha tro da duyet-->
     
 		<h3>Nhà trọ đã duyệt</h3>
+		<?php if ($info['count'] > 10) 
+					$this->load->view('layout/pagination');
+		?>
         <table width="100%" class="table table-bordered">
             <tr class="danger">
                 <th class="cotSTT">Chọn</th>
@@ -103,7 +112,7 @@
             <?php
                 foreach($data_info as $b)
                 {
-                    echo "<tr>";
+                    echo "<tr class='result_daduyet'>";
                     echo "<td><input name = daduyet[] value='".$b['MA_NHATRO']."' type='checkbox' class='cotNutChucNang' value='".$b['MA_NHATRO']."' /></td>";
 					 echo "<td hidden class='layma'>
                             ".$b['MA_NHATRO']."
@@ -118,10 +127,15 @@
                     echo "</tr>";
                 }
             ?>
+		
          <tr>
         	<td colspan="5"><button type="submit" class="btn btn-primary" name='btnXoaNhaTro'>Xóa nhà trọ</button></td>
         </tr> 
+		
     </table>
+		<?php if ($info['count'] > 10) 
+					$this->load->view('layout/pagination');
+			?>
  </form>
  </div>
 </section>

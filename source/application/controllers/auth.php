@@ -1,12 +1,24 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Auth extends MY_Controller {
+	private $username;
+	private $ma_quyen;
 	private $auth;
 	public function __construct(){
 		parent::__construct();
-		$this->auth = $this->lib_authentication->check_cookie();			
+		date_default_timezone_set('Asia/Ho_Chi_Minh');
+		
+		$this->auth = $this->lib_authentication->check_cookie();
+		$this->username = $this->auth['username'];			
+		if ($this->auth != NULL) 
+			$this->ma_quyen = $this->auth['ma_quyen'];
+		else
+			$this->ma_quyen = 0;
 	}
+	
 	public function login(){
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		if ($this->auth != NULL) {
 			$this->lib_string->alert(NULL, CIT_BASE_URL.'home/index');
 		}
@@ -43,20 +55,19 @@ class Auth extends MY_Controller {
 	}
 	
 	public function forgot(){
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		$data['seo']['title'] = 'Quên mật khẩu';
 		$data['seo']['keyword'] = 'forgot password';
 		$data['seo']['description'] = '';
+		//load tiêu điểm
+		$data['tieudiem'] = $this->msearch->load_tieudiem();
 		$data['template'] = 'auth/forgot';
 		if ($this->input->post('send'))
 		{
-			$_post = $this->input->post('data');
-			$data['data']['_post'] = $_post;
-			$this->form_validation->set_rules('data[email]', 'Email', 'trim|required|valid_email|exist_email');
-			if ($this->form_validation->run())
-			{
-				$this->change->create_new_password($_post['email']);
-				$this->lib_string->alert("Thành công ! Kiểm tra mail để nhận mật khẩu", CIT_BASE_URL.'auth/login');				
-			}
+			
+			$this->lib_string->alert("Thành công ! Kiểm tra mail để nhận mật khẩu", CIT_BASE_URL.'home/index');				
+			
 			
 		}	
 		$this->load->view('layout/auth', isset($data) ? $data : NULL);

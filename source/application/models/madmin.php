@@ -15,24 +15,28 @@ class Madmin extends CI_Model{
 	//**************************************************
 	public function arDSNhaTroDuyet()
 	{
-		$query = $this->db->query(
+		$sql = $this->db->query(
 		 "SELECT a.*, b.*, CONCAT('đường ', c.TEN_DUONG,'- phường ' ,d.TEN_PHUONGXA, '- quận ', e.TENHUYEN)  as diachi1
 			FROM (nhatro as a, chunhatro as b, duong as c, phuongxa as d, quanhuyen as e) 
 			WHERE a.MSCHU = b.MSCHU AND a.MA_DUONG = c.MA_DUONG AND c.MA_PHUONGXA = d.MA_PHUONGXA 
 					AND d.MA_HUYEN = e.MA_HUYEN AND a.STATUS = 1"
 		 );
-		return $query->result_array();
+		 $query = $sql->result_array();
+		 $query['count'] = $sql->num_rows();
+		return $query;
 	}
 	
 	public function arDSNhaTroChuaDuyet()
 	{
-		$query = $this->db->query(
+		$sql = $this->db->query(
 		 "SELECT a.*, b.*, CONCAT('đường ', c.TEN_DUONG,'- phường ' ,d.TEN_PHUONGXA, '- quận ', e.TENHUYEN)  as diachi
 			FROM (nhatro as a, chunhatro as b, duong as c, phuongxa as d, quanhuyen as e) 
 			WHERE a.MSCHU = b.MSCHU AND a.MA_DUONG = c.MA_DUONG AND c.MA_PHUONGXA = d.MA_PHUONGXA 
 					AND d.MA_HUYEN = e.MA_HUYEN AND a.STATUS = 0"
 		 );
-		return $query->result_array();
+		 $query = $sql->result_array();
+		 $query['count'] = $sql->num_rows();
+		return $query;
 	}
 	
 	public function arCountDaDuyet()
@@ -99,7 +103,7 @@ class Madmin extends CI_Model{
 	{
 		$query = $this->db->query(
 		 "select a.*, b.* from dangtindiendan as a, thanhvien as b
-		 	where a.NGUOIDANG = b.MSTHANHVIEN
+		 	where a.NGUOIDANG = b.USERNAME
 			and a.TRANGTHAI = 0
 		 "
 		 );
@@ -110,7 +114,7 @@ class Madmin extends CI_Model{
 	{
 		$query = $this->db->query(
 		 "select a.*, b.* from dangtindiendan as a, thanhvien as b
-		 	where a.NGUOIDANG = b.MSTHANHVIEN
+		 	where a.NGUOIDANG = b.USERNAME
 			and a.TRANGTHAI = 1
 		 "
 		 );
@@ -151,7 +155,7 @@ class Madmin extends CI_Model{
 	public function arSelectUpdateTin($bien)
 	{
 		$query = $this->db->query('select a.*, b.* from dangtindiendan as a, thanhvien b
-						where a.NGUOIDANG = b.MSTHANHVIEN
+						where a.NGUOIDANG = b.USERNAME
 						and a.MA_DANGTIN ='.$bien);
 		$data = $query->result_array();
 		return $data; 
@@ -176,9 +180,9 @@ class Madmin extends CI_Model{
 	+ Kết quả: Trả về một mảng thành viên
 	******************************************************/
 	public function DanhSachThanhVien() {
-		$result = $this->db->query("SELECT MSTHANHVIEN, HOTEN, GIOITINH, MAIL, SDT, DIACHI, NGAYSINH, NGAYDANGKI 
+		$result = $this->db->query("SELECT USERNAME, HOTEN, GIOITINH, MAIL, SDT, DIACHI, NGAYSINH, NGAYDANGKI 
 									FROM thanhvien
-									ORDER BY MSTHANHVIEN ASC");
+									ORDER BY USERNAME ASC");
 		return $result->result_array();
 	}
 	
@@ -204,7 +208,7 @@ class Madmin extends CI_Model{
 	******************************************************/
 	public function ThemThanhVien($data) {
 		$array_thanhvien = array(
-			'msthanhvien' => $data['maso'],
+			'USERNAME' => $data['maso'],
 			'hoten' => $data['hoten'],
 			'gioitinh' => $data['gioitinh'],
 			'mail' => $data['mail'],
@@ -260,7 +264,7 @@ class Madmin extends CI_Model{
 	+ Kết quả: 
 	******************************************************/
 	public function KiemTraThanhVien($username) {
-		$count = $this->db->where(array('msthanhvien' => $username))->from('thanhvien')->count_all_results();
+		$count = $this->db->where(array('USERNAME' => $username))->from('thanhvien')->count_all_results();
 		if ($count == 0) return false;
 		else return true;	
 	}	
@@ -274,7 +278,7 @@ class Madmin extends CI_Model{
 	public function CapNhatNguoiDung($data, $mstv) {
 		//Bien update_data de cap nhat du lieu xuong model
 		$update_data = array(
-			"msthanhvien" => $mstv,
+			"USERNAME" => $mstv,
 			"hoten" => $data['hoten'],
 			"ngaysinh" => $data['ngaysinh'],
 			"sdt" => $data['sdt'],
@@ -283,7 +287,7 @@ class Madmin extends CI_Model{
 			"diachi" => $_POST[$mstv]['diachi'],
 			"mail" => $data['mail']
 		);
-		$this->db->where('msthanhvien', $update_data['msthanhvien']);
+		$this->db->where('USERNAME', $update_data['USERNAME']);
 		$result = $this->db->update('thanhvien', $update_data);
 		return $result;	
 	}
@@ -297,7 +301,7 @@ class Madmin extends CI_Model{
 	+ Kết quả: 
 	******************************************************/
 	public function XoaDanhGiaThanhVien($mstv) {
-		$this->db->where('msthanhvien',$mstv);
+		$this->db->where('USERNAME',$mstv);
 		$result = $this->db->delete('danhgia');
 		return $result;	
 	}
@@ -310,7 +314,7 @@ class Madmin extends CI_Model{
 	+ Kết quả: 
 	******************************************************/
 	public function XoaGopYThanhVien($mstv) {
-		$this->db->where('msthanhvien',$mstv);
+		$this->db->where('USERNAME',$mstv);
 		$result = $this->db->delete('gopy');
 		return $result;	
 	}
@@ -323,7 +327,7 @@ class Madmin extends CI_Model{
 	+ Kết quả: 
 	******************************************************/
 	public function XoaThanhVien($mstv) {
-		$this->db->where('msthanhvien',$mstv);
+		$this->db->where('USERNAME',$mstv);
 		$result = $this->db->delete('thanhvien');
 		return $result;	
 	}

@@ -9,7 +9,7 @@
       <div class="art-content-layout">
         <div class="art-content-layout-row">
 			
-		<?php if ($template != 'chunhatro/dangnhatro') {?>	
+		<?php if (substr($template, 0, 4) == 'home' || substr($template, 0, 6) == 'search' || substr($template, 0, 4) == 'auth') {?>	
 				 
           <div class="art-layout-cell art-sidebar1">
             <?php $this->load->view('layout/bluesky/sidebar1');?>
@@ -22,7 +22,7 @@
 				?>
             </article>
           </div>
-          <?php if ($template != 'chunhatro/dangnhatro') {?>	
+          <?php if (substr($template, 0, 4) == 'home' || substr($template, 0, 6) == 'search' || substr($template, 0, 4) == 'auth') {?>	
 		  <div class="art-layout-cell art-sidebar2">
             <div class="art-block clearfix">
                <?php $this->load->view('layout/bluesky/sidebar2');?>

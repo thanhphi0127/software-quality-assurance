@@ -12,7 +12,7 @@ class Mdiendan extends CI_Model{
 	}
 	public function arGetNguoiDang($bien)
 	{
-		$this->db->where('MSTHANHVIEN', $bien);
+		$this->db->where('USERNAME', $bien);
 		$query = $this->db->get('thanhvien');
 		$data = $query->result_array();
 		return $data; 
@@ -26,8 +26,8 @@ class Mdiendan extends CI_Model{
 	
 	public function getThongTinThanhVien($ma)
 	{
-		 $this->db->select('HOTEN, MSTHANHVIEN');
-		 $this->db->where('MSTHANHVIEN', $ma);
+		 $this->db->select('HOTEN, USERNAME');
+		 $this->db->where('USERNAME', $ma);
 		 $query = $this->db->get('thanhvien');
 		 return $query->result_array();
 	}

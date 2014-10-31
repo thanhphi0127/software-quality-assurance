@@ -2,13 +2,28 @@
 
 class Admin extends MY_Controller {
 	
+	private $username;
+	private $ma_quyen;
+	private $auth;
 	public function __construct(){
 		parent::__construct();
 		date_default_timezone_set('Asia/Ho_Chi_Minh');
-	
+		
+		$this->auth = $this->lib_authentication->check_cookie();
+		$this->username = $this->auth['username'];			
+		
+		if ($this->auth != NULL) {
+			if ($this->auth['ma_quyen'] != 1)
+				$this->lib_string->alert('Bạn không có quyền truy cập', CIT_BASE_URL.'auth/logout');
+			$this->ma_quyen = $this->auth['ma_quyen'];
+		}
+		else 
+			$this->ma_quyen = 0;
 	}
 	
-	public function quanlynguoidung(){
+	public function quanlynguoidung(){	
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		$data['title'] = 'Quản lý thành viên';
 		$data['press_add'] = 0;
 		$data['press_modify'] = 0;
@@ -121,6 +136,8 @@ class Admin extends MY_Controller {
 	//**************************************************
 	public function duyetnhatro()
 	{
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		$this->load->model('madmin');
 		$data['data_info'] = $this->madmin->arDSNhaTroDuyet();
 		$data['info'] = $this->madmin->arDSNhaTroChuaDuyet();
@@ -188,6 +205,8 @@ class Admin extends MY_Controller {
 	
 	public function xoaTinNhaTro($id)
 	{
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		$this->load->model(madmin);
 		$data['data_info'] = $this->madmin->arSelectUpdate($id);
 		$this->madmin->arDelete($id);
@@ -199,6 +218,8 @@ class Admin extends MY_Controller {
 	// duyet tung nha tro
 	public function duyettungnhatro($id)
 	{
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		$this->load->model(madmin);
 		$data['data_info'] = $this->madmin->arSelectUpdate($id);
 		if(isset($_POST['btnDuyetTin']))
@@ -241,6 +262,8 @@ class Admin extends MY_Controller {
 	
 	public function duyettintuc()
 	{
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		$this->load->model('madmin');
 		$data['data_info'] = $this->madmin->arDSTinDuyet();
 		$data['info'] = $this->madmin->arDSTinChuaDuyet();
@@ -295,6 +318,8 @@ class Admin extends MY_Controller {
 	
 	public function duyettungtin($id)
 	{
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		$this->load->model(madmin);
 		$data['data_info'] = $this->madmin->arSelectUpdateTin($id);
 		if(isset($_POST['btnDuyetTin']))

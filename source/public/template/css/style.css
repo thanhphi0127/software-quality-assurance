@@ -1445,7 +1445,7 @@ input, select, textarea, a.art-search-button span
    font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
    font-weight: bold;
    font-style: normal;
-   text-transform: uppercase;
+   /*text-transform: uppercase;*/
 }
 
 .art-block select 
@@ -1517,7 +1517,7 @@ input[type="text"], input[type="password"], input[type="email"], input[type="url
    font-family: Verdana, Geneva, Arial, Helvetica, Sans-Serif;
    font-weight: bold;
    font-style: normal;
-   text-transform: uppercase;
+   /*text-transform: uppercase;*/
    text-shadow: none;
 }
 input.art-error, textarea.art-error

@@ -218,3 +218,10 @@ ul.art-hmenu{
 	float: left;
 	margin-left: -99px !important;
 }
+
+.quangcao_one:hover {
+	position:absolute;
+	left:0%;
+	width:40%;
+	height:auto;
+}

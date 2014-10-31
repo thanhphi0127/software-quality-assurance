@@ -66,24 +66,18 @@
                 </p>
               </div>
             </div>
-            <div class="art-block clearfix">
-              <div class="art-blockheader">
-                <h3 class="t">Thông báo - Lưu ý</h3>
-              </div>
-              <div class="art-blockcontent">
-                <p> </p>
-                <p style="text-align: center;"> </p>
-                <p><a href="thong-bao.html"><img width="150" height="165" alt="" src="public/img/92b6fd37-ee07-4c6c-bd13-67e5a33b493a.png" class=""></a><br>
-                </p>
-                <p style="text-align: center;"><a href="thong-bao.html" class="art-button">Thông báo</a></p>
-              </div>
-            </div>
+            
+              
             <div class="art-block clearfix">
               <div class="art-blockheader">
                 <h3 class="t">Quảng cáo</h3>
               </div>
               <div class="art-blockcontent">
-                <p><br>
+                <p class='quangcao_one'>
+					<video width="100%" height="auto" controls>
+				  <source src="public/video/kokomi.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+				</video>
                 </p>
               </div>
             </div>
@@ -92,7 +86,7 @@
                 <h3 class="t">Quảng cáo</h3>
               </div>
               <div class="art-blockcontent">
-                <p><br>
+                <p><img src='public/img/danhchoquangcao.jpg' width='90%' height='auto'/>
                 </p>
               </div>
             </div>

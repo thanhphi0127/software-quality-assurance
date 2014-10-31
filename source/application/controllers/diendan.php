@@ -3,13 +3,24 @@
 class Diendan extends MY_Controller
 	{
 	
+	private $username;
+	private $ma_quyen;
+	private $auth;
 	public function __construct(){
 		parent::__construct();
-	
+		date_default_timezone_set('Asia/Ho_Chi_Minh');
+		
+		$this->auth = $this->lib_authentication->check_cookie();
+		$this->username = $this->auth['username'];			
+		if ($this->auth != NULL) 
+			$this->ma_quyen = $this->auth['ma_quyen'];
+		else
+			$this->ma_quyen = 0;
 	}
 	
 	public function dangtintuc()
 	{
+		$data['ma_quyen'] = $this->ma_quyen;
 		$this->load->model('mdiendan');
 		$this->load->helper('date');
 		$bien = 'nva';
@@ -33,6 +44,7 @@ class Diendan extends MY_Controller
 	}
 	public function gopy()
 	{
+		$data['ma_quyen'] = $this->ma_quyen;
 		//load thu vien de rang buoc du lieu nhap
 		$this->load->library('form_validation');
 		$this->load->helper(array('form', 'url'));
@@ -87,6 +99,7 @@ class Diendan extends MY_Controller
 	
 	public function index()
 	{
+		$data['ma_quyen'] = $this->ma_quyen;
 		$data['template'] = 'diendan/index';
 		$this->load->view('layout/diendan', isset($data)? $data : NULL);
 	}	

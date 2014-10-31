@@ -2,12 +2,26 @@
 
 class Search extends MY_Controller {
 	
+	private $username;
+	private $ma_quyen;
+	private $auth;
+	
 	public function __construct(){
 		parent::__construct();
-	
+		date_default_timezone_set('Asia/Ho_Chi_Minh');
+		
+		$this->auth = $this->lib_authentication->check_cookie();
+		$this->username = $this->auth['username'];			
+		if ($this->auth != NULL) 
+			$this->ma_quyen = $this->auth['ma_quyen'];
+		else
+			$this->ma_quyen = 0;
+		
 	}
-	public function detailsearch(){
 	
+	public function detailsearch(){
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		$data['seo']['title'] = 'Tìm kiếm nâng cao';
 		$data['seo']['keyword'] = 'advanced seach';
 		$data['seo']['description'] = 'Tìm kiếm theo nhiều tiêu chí';
@@ -26,7 +40,8 @@ class Search extends MY_Controller {
 		
 	}
 	public function areasearch(){
-	
+		$data['username'] = $this->username;
+		$data['ma_quyen'] = $this->ma_quyen;
 		$data['seo']['title'] = 'Tìm kiếm theo khu vực';
 		$data['seo']['keyword'] = 'advanced seach';
 		$data['seo']['description'] = 'Tìm kiếm theo nhiều tiêu chí';
@@ -48,6 +63,8 @@ class Search extends MY_Controller {
 	
 	
 	public function quicksearch(){
+		$data['username'] = $this->username;
+		$data['ma_quyen'] = $this->ma_quyen;
 		$data['seo']['title'] = 'Kết quả tìm kiếm ';
 		$data['seo']['keyword'] = 'seach result';
 		$data['seo']['description'] = 'Kết quả tìm kiếm';	
@@ -66,7 +83,8 @@ class Search extends MY_Controller {
 	}
 	
 	public function result($type, $MA = null){
-		
+		$data['username'] = $this->username;
+		$data['ma_quyen'] = $this->ma_quyen;
 		$data['seo']['title'] = 'Kết quả tìm kiếm ';
 		$data['seo']['keyword'] = 'seach result';
 		$data['seo']['description'] = 'Kết quả tìm kiếm';	

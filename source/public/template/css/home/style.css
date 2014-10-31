@@ -396,9 +396,9 @@ height: 410px;
 	border-radius: 5px;
 	padding: 5px; 
 	margin: auto;
-	width: 87%;
+	width: 100%;
 	min-width: 800px !important;
-	max-width: 87%;
+	/*max-width: 87%;*/
 	border: 1px solid #E6EBE6;
 	background-color: #FFF;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.5);

@@ -2,12 +2,28 @@
 
 class Chunhatro extends MY_Controller {
 	
+	private $username;
+	private $ma_quyen;
+	private $auth;
 	public function __construct(){
 		parent::__construct();
+		date_default_timezone_set('Asia/Ho_Chi_Minh');
 		
+		$this->auth = $this->lib_authentication->check_cookie();
+		$this->username = $this->auth['username'];			
+		if ($this->auth != NULL) {
+			if ($this->auth['ma_quyen'] != 2)
+				$this->lib_string->alert('Bạn không có quyền truy cập', CIT_BASE_URL.'auth/logout');
+			$this->ma_quyen = $this->auth['ma_quyen'];
+		}
+		else
+			$this->ma_quyen = 0;
 	}
+	
+	
 	public function profile_chunhatro(){
-		
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		$this->load->model('mchunhatro');
 		$ms = 2;
 		$data['datainfo'] = $this->mchunhatro->load_chunhatro($ms);
@@ -59,11 +75,15 @@ class Chunhatro extends MY_Controller {
 	}
 	
 	public function quanlynhatro(){
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		$data['template'] = 'chunhatro/quanlynhatro';
 		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
 	}
 	
 	public function dangnhatro(){
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		$data['title'] = 'Dang Tin Nha Tro';
 		//load thu vien de rang buoc du lieu nhap
 		$this->load->library('form_validation');
@@ -259,6 +279,8 @@ class Chunhatro extends MY_Controller {
 	**********************************/
 	public function gopy()
 	{
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		$this->load->helper('date');
 		$this->load->model('mchunhatro');
 		$data['info'] = $this->mchunhatro->	getThongTinThanhVien('nva');

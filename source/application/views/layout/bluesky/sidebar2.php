@@ -2,33 +2,42 @@
                 <h3 class="t">Đăng nhập</h3>
               </div>
               <div class="art-blockcontent">
-                <p>Tài khoản:</p>
-                <p>
-                  <input type="text">
-                  <br>
-                </p>
-                <p>Mật khẩu:</p>
-                <p>
-                  <input type="text">
-                  <br>
-                </p>
-                <p>
-                  <label class="art-checkbox">
-                    <input type="checkbox">
-                    &nbsp;Ghi nhớ</label>
-                  <br>
-                </p>
-                <p>&nbsp;<a href="" class="art-button">Đăng nhập</a>&nbsp;</p>
-                <p></p>
+				<?php if ($ma_quyen == 0) {?>
+				<form action='<?php echo CIT_BASE_URL."home/index";?>' method='post'>
+					<p>Tài khoản:</p>
+					<p>
+					  <input type="text" name='data[username]'>
+					  <br>
+					</p>
+					<p>Mật khẩu:</p>
+					<p>
+					  <input type="password" name='data[password]'>
+					  <br>
+					</p>
+					<p>
+					  <label class="art-checkbox">
+						<input type="checkbox">
+						&nbsp;Ghi nhớ</label>
+					  <br>
+					</p>
+					<p>&nbsp;<input type='submit' class="art-button" name='login' value='Đăng nhập'/></p>
+				</form>
+				<p></p>
                 <ul>
-                  <li><span style="font-size: 12px; line-height: normal;"><a href="quen-mat-khau.html">Quên mật khẩu</a></span><br>
-                  </li>
-                  <li><span style="font-size: 12px; line-height: normal;"><a href="quen-mat-khau.html">Quên tài khoản</a></span><br>
-                  </li>
+                  <li><span style="font-size: 12px; line-height: normal;"><a href="<?php echo CIT_BASE_URL.'auth/forgot';?>">Quên mật khẩu</a></span><br>
+                  </li>                  
                   <li><span style="font-size: 12px; line-height: normal;"><a href="%c4%91ang-ky.html">Đăng ký mới</a></span><br>
                   </li>
                 </ul>
                 <p> </p>
+				<?php }
+					else { ?>
+					<p><?php echo "Chào, ".$username;?></p>
+					<p><span style="font-size: 12px; line-height: normal;"><a href="<?php echo CIT_BASE_URL.'auth/logout';?>">Đăng xuất</a></span></p>
+				<?php	}
+				?>
+				
+                
               </div>
             </div>
             

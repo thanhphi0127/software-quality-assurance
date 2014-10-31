@@ -217,7 +217,7 @@
 
 
 <!-- NOI DUNG -->
-<div class="khung" style="font-family:'Times New Roman'; margin-top: -39px; ">
+<div class="khung" style="font-family:'Times New Roman'; margin-top: 0px; ">
 <form action="" method="post">
     <div class="row top_row">
         
