@@ -1,12 +1,12 @@
 ﻿<div>
 		<table width="48%" class="TableContainer standardform">
+		<form action='' method='POST'>
     	<tr>
         	<td class="Header">Cập nhật thông tin</td>
         </tr>
-        <tr>
+        <tr>		
 		<?php
 			echo "
-			<form action='' method='POST'>
         	<td>
             	<table width='100%' class='TableForm'>
                 	<tr>
@@ -14,9 +14,12 @@
                         <td><input name='edit[ten]' type='text' value='' /></td>
                     </tr>	
 					<tr>
-						<td class='Left'>Giới tính:</td>";
-						
-						echo"	<td><input type='radio' name='edit[sex]' value='1' checked='' /> Nam     <input type='radio' name='edit[sex]' value='2' checked='' /> Nữ</td>
+						<td class='Left'>Giới tính:</td>
+						<td><select name='edit[sex]'>
+							<option>Nam</option>
+							<option>Nữ</option>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td class='Left'>Ngày sinh:</td>
@@ -32,31 +35,48 @@
                     </tr>
 					<tr>
 						<td class='Left'>Quận - Huyện:</td>
-						<td><select name='edit[quanhuyen]'>
-								<option></option>
-							</select>
-						</td>
+							<td><select name='edit[quanhuyen]'>";
+							foreach ($quan as $key)
+							{
+							echo "
+								<option>".$key['TENHUYEN']."</option>";
+							}
+					echo "
+						</select></td>
 					</tr>
 					<tr>
 						<td class='Left'>Xã - Phường:</td>
-						<td><select name='edit[xaphuong]'>
-								<option></option>
+						<td><select name='edit[xaphuong]'>";
+							foreach ($phuong as $key)
+							{
+								echo "
+								<option>".$key['TEN_PHUONGXA']."</option>";
+								}
+					echo "
 							</select>
 						</td>
 					</tr>
 					<tr>
 						<td class='Left'>Đường:</td>
-						<td><select name='edit[duong]'>
-								<option></option>
+						<td><select name='edit[duong]'>";
+							foreach ($duong as $key)
+							{
+								echo "
+								<option value=".$key['MA_DUONG'].">".$key['TEN_DUONG']."</option>";
+							}
+					echo "
 							</select>
 						</td>
 					</tr>
                  </table>
             </td>
-			</form>
 			";
 		?>
+		
         </tr>
-        <tr><td align="left"><input type="submit" name="btnUpdateproFile" value="Chỉnh sửa" class="nutnhan2"  /> </td></tr>
+        <tr><td align="left"><input type="submit" name="btnUpdateproFile" value="Hoàn tất" class="nutnhan2"  />
+			<input type="submit" name="btnUpdateCancle" value="Hủy bỏ" class="nutnhan2"  /> </td>
+		</tr>
+		</form>
     </table>
 </div>

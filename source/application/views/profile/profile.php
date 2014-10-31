@@ -51,7 +51,7 @@
 			";
 		}?>
         </tr>
-        <tr><td align="left"><input type="submit" name="btnSuaProfile" value="Chỉnh sửa" class="nutnhan2" href="updateprofile.php" /> </td></tr>
+        <tr><td align="left"><input type="submit" name="btnSuaProfile" value="Chỉnh sửa" class="nutnhan2" href="<?php echo CIT_BASE_URL.'chunhatro/update_chunhatro';?>" /> </td></tr>
     </table>
 	</form>
 </div>

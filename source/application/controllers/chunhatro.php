@@ -19,18 +19,30 @@ class Chunhatro extends MY_Controller {
 	
 	public function update_chunhatro()
 	{
-		if(isset($_POST['btnSuaProfile']))
+	$ms = '2';
+		$this->load->model('mchunhatro');
+	//******* load huyen - xa - duong len select box	
+		// load quận
+		$data['quan'] = $this->msearch->load_quan();
+		// load phường
+		$data['phuong'] = $this->msearch->load_phuong();
+		//load duong
+		$data['duong'] = $this->msearch->load_duong();
+		
+		//print_r ($data['duong']);
+	//******** code update chu nha tro
+		if(isset($_POST['btnUpdateproFile']))
 		{
 			$_POST = $this->input->post('edit');
-			$this->load->model('mchunhatro');
 			$data_info = array(
 				'HOTEN' => $_POST['ten'],
 				'NGAYSINH' => $_POST['ngaysinh'],
 				'MAIL' => $_POST['email'],
 				'SDT' => $_POST['sdt'],
-				'GIOITINH' => $_POST['sex']
+				'GIOITINH' => $_POST['sex'],
+				'MA_DUONG' => $_POST['duong']
 				);
-			$this->mchunhatro->update_chunhatro('2',$data_info);
+			$this->mchunhatro->update_chunhatro($ms,$data_info);
 			echo "update thanh cong";
 		}
 		$data['template'] = 'profile/updateprofile';
