@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Lof JSliderNews 2.0 - Jquery 1.7.x</title>
+
+<link rel="stylesheet" type="text/css" href="css/style6.css" />
+<script language="javascript" type="text/javascript" src="js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="js/jquery.easing.js"></script>
+<script language="javascript" type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript">
+ $(document).ready( function(){	
+		var buttons = { previous:$('#jslidernews3 .button-previous') ,
+						next:$('#jslidernews3 .button-next') };
+  
+		var _complete = function(slider, index){ 
+								$('#jslidernews3 .slider-description').animate({height:0});
+								slider.find(".slider-description").animate({height:100}) 
+						};							;
+	 	$('#jslidernews3').lofJSidernews( { interval : 4000,
+												direction		: 'opacity',	
+											 	easing			: 'easeOutBounce',
+												duration		: 1200,
+												auto		 	: true,
+												mainWidth:980,
+												buttons			: buttons,
+												onComplete:_complete } );	
+	});
+</script>
+
+</head>
+<body>
+
+    		
+<!------------------------------------- THE CONTENT ------------------------------------------------->
+<div id="jslidernews3" class="lof-slidecontent" style="width:980px; height:340px;">
+	<div class="preload"><div></div></div>
+            
+            <div  class="button-previous">Previous</div>
+                   
+    <!-- MAIN CONTENT --> 
+    <div class="main-slider-content" style="width:980px; height:340px;">
+                <ul class="sliders-wrap-inner">
+                    <li>
+                            <img src="images/thumbl_980x340.png" title="Newsflash 2" >           
+                          <div class="slider-description"><div class="description-wrapper">
+                            slide 1
+                         </div></div>
+                    </li> 
+                   <li>
+                      <img src="images/thumbl_980x340_002.png" title="Newsflash 1" >           
+                         <div class="slider-description"><div class="description-wrapper">
+                           slide 2
+                         </div></div>
+                  </li> 
+                   <li>
+                      <img src="images/thumbl_980x340_003.png" title="Newsflash 3" >            
+                        <div class="slider-description"><div class="description-wrapper">
+                          slide 3
+			
+                     	</div></div>
+                  </li> 
+                    <li>
+                      <img src="images/thumbl_980x340_004.png" title="Newsflash 5" >            
+                        <div class="slider-description"><div class="description-wrapper">
+                          slide 4
+                     	</div></div>
+                    </li> 
+                    <li>
+                      <img src="images/thumbl_980x340_005.png" title="Newsflash 5" >            
+                        <div class="slider-description"><div class="description-wrapper">
+							slide 5
+                      </div></div>
+                    </li> 
+                    <li>
+            
+                      <img src="images/thumbl_980x340_006.png" title="Newsflash 5" >            
+                        <div class="slider-description"><div class="description-wrapper">
+                          slide 6
+                     	</div> </div>
+                    </li> 
+                
+      </ul>  	
+            </div>
+ 		   <!-- END MAIN CONTENT --> 
+       
+    <div class="button-next">Next</div>
+ </div> 
+
+<!------------------------------------- END OF THE CONTENT ------------------------------------------------->
+
+</body>
+</html>
