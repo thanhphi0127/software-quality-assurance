@@ -40,6 +40,9 @@
                
                   </div>
             </form>
+            <script language="javascript">
+		  CKEDITOR.replace( 'member[noidung]');
+		 </script>
 			</div>
    	 </div>
 </div>

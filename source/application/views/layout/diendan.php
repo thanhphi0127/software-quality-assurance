@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="public/template/css/home/bootstrap.css">
 
 <link rel="stylesheet" type="text/css" href="public/template/css/home/home.css">
+<script src='public/ckeditor/ckeditor.js'></script>
 <!--<link rel="stylesheet" type="text/css" href="public/template/css/home/style.css">-->
 
 	<?php
