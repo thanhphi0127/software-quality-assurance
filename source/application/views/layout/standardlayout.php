@@ -9,11 +9,12 @@
       <div class="art-content-layout">
         <div class="art-content-layout-row">
 			
-				
+		<?php if ($template != 'chunhatro/dangnhatro') {?>	
 				 
           <div class="art-layout-cell art-sidebar1">
             <?php $this->load->view('layout/bluesky/sidebar1');?>
           </div>
+		<?php } ?>
           <div class="art-layout-cell art-content">
             <article class="art-post art-article">
                 <?php //$this->load->view('home/sidebarcontent');
@@ -21,11 +22,13 @@
 				?>
             </article>
           </div>
-          <div class="art-layout-cell art-sidebar2">
+          <?php if ($template != 'chunhatro/dangnhatro') {?>	
+		  <div class="art-layout-cell art-sidebar2">
             <div class="art-block clearfix">
                <?php $this->load->view('layout/bluesky/sidebar2');?>
             </div>
           </div>
+		  <?php }?>
         </div>
       </div>
     </div>

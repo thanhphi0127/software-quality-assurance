@@ -68,6 +68,8 @@ class Chunhatro extends MY_Controller {
 		$this->load->helper('date');
 		$data['huyen'] = $this->mchunhatro->getHuyen();
 		$data['thongtin'] = $this->mchunhatro->getTenChu('nva');
+		//load tiêu điểm
+		$data['tieudiem'] = $this->msearch->load_tieudiem();
 		if(isset($_POST['btnDangTin']))
 		{
 			$_POST = $this->input->post('member');

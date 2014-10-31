@@ -61,7 +61,7 @@
 						<div class="art-content-layout result">
 									  <div class="art-content-layout-row">
 										<div class="art-layout-cell layout-item-0" style="width: 35%" >
-										  <p>
+										  <p >
 												<img width="145" height="108" alt="" class="art-lightbox" src="public/img/nhatro/<?php if (isset($row['HINHANH']) && !empty($row['HINHANH'])) 
 																																			echo $row['HINHANH'];
 																																		else 
@@ -70,8 +70,13 @@
 												<br/>											
 										  </p>
 										</div>
-										<div class="art-layout-cell" style="width: 65%" >
-										  <p><a href="<?php echo CIT_BASE_URL.'search/houseinfo/'.$row['MA_NHATRO']; ?>"><span style="color: rgb(246, 161, 4); "><?php echo $row['TEN_NHATRO'];?></span><span style="color: rgb(246, 161, 4); "></span></a><span style="color: #F6A104;"></span></p>
+										<div class="art-layout-cell" style="width: 65%;" >
+										  <p style='margin-top: 6px;'>
+											<a href="<?php echo CIT_BASE_URL.'search/houseinfo/'.$row['MA_NHATRO']; ?>">
+												<span style="color: rgb(246, 161, 4); "><?php echo $row['TEN_NHATRO'];?></span><span style="color: rgb(246, 161, 4); "></span>
+											</a>
+											<span style="color: #F6A104;"></span>
+										  </p>
 										  <p><?php echo $row['MOTA']; ?></p>
 										  <?php 
 												if (isset($result['phong'][$row['MA_NHATRO']]) && !empty($result['phong'][$row['MA_NHATRO']])) {
