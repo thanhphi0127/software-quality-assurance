@@ -8,7 +8,13 @@ class Mchunhatro extends CI_Model{
 	
 	public function load_chunhatro ($ms)
 	{
-		$query = $this->db->query("select HOTEN, GIOITINH, NGAYSINH, SDT, MAIL, TEN_DUONG, TEN_PHUONGXA, TENHUYEN
+		/*$query = $this->db->query("select HOTEN, GIOITINH, NGAYSINH, SDT, MAIL, TEN_DUONG, TEN_PHUONGXA, TENHUYEN
+									FROM chunhatro as a, DUONG as b, PHUONGXA as c, QUANHUYEN as d
+									where MSCHU like ".$ms." AND
+										a.MA_DUONG = b.MA_DUONG AND
+										b.MA_PHUONGXA = c.MA_PHUONGXA AND
+										c.MA_HUYEN = d.MA_HUYEN");*/
+		$query = $this->db->query("select a.*, b.*, c.*, d.*
 									FROM chunhatro as a, DUONG as b, PHUONGXA as c, QUANHUYEN as d
 									where MSCHU like ".$ms." AND
 										a.MA_DUONG = b.MA_DUONG AND

@@ -10,7 +10,7 @@ class Chunhatro extends MY_Controller {
 		
 		$this->load->model('mchunhatro');
 		$ms = 2;
-		$data['datainfo'] = $this->mchunhatro->load_chunhatro( $ms);
+		$data['datainfo'] = $this->mchunhatro->load_chunhatro($ms);
 				
 		$data['template'] = 'profile/profile';
 		$this->load->view('layout/profile', isset($data)? $data : NULL);
@@ -48,7 +48,15 @@ class Chunhatro extends MY_Controller {
 		$data['template'] = 'profile/updateprofile';
 		$this->load->view('layout/updateprofile', isset($data)? $data : NULL);
 	}
-	
+	////////////////////
+	public function capnhatChu($id)
+	{
+		$this->load->model('mchunhatro');
+		$data['datainfo'] = $this->mchunhatro->load_chunhatro($id);
+		
+		$data['template'] = 'profile/updateprofile';
+		$this->load->view('layout/updateprofile', isset($data)? $data : NULL);
+	}
 	
 	public function quanlynhatro(){
 		$data['template'] = 'chunhatro/quanlynhatro';

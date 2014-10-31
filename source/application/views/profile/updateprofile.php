@@ -6,12 +6,14 @@
         </tr>
         <tr>		
 		<?php
+		foreach($datainfo as $k)
+		{
 			echo "
         	<td>
             	<table width='100%' class='TableForm'>
                 	<tr>
                     	<td class='Left'>Họ tên:</td>
-                        <td><input name='edit[ten]' type='text' value='' /></td>
+                        <td><input name='edit[ten]' type='text' value='".$k['HOTEN']."' /></td>
                     </tr>	
 					<tr>
 						<td class='Left'>Giới tính:</td>
@@ -23,15 +25,15 @@
 					</tr>
 					<tr>
 						<td class='Left'>Ngày sinh:</td>
-						<td><input name='edit[ngaysinh]' type='date' class='shortInput'  value='' /></td>
+						<td><input name='edit[ngaysinh]' type='date' class='shortInput'  value='".$k['NGAYSINH']."' /></td>
                     </tr>
                     <tr>
 						<td class='Left'>Email: </td>
-                        <td><input type='text' name='edit[email]' class='shortInput' value=''  /></td>
+                        <td><input type='text' name='edit[email]' class='shortInput' value='".$k['MAIL']."'  /></td>
 					<tr>
                      <tr>
                         <td class='Left'>Số điện thoại::</td>
-                        <td><input type='text' name='edit[sdt]' class='shortInput' value='' /></td>
+                        <td><input type='text' name='edit[sdt]' class='shortInput' value='".$k['SDT']."' /></td>
                     </tr>
 					<tr>
 						<td class='Left'>Quận - Huyện:</td>
@@ -71,6 +73,7 @@
                  </table>
             </td>
 			";
+		}
 		?>
 		
         </tr>
