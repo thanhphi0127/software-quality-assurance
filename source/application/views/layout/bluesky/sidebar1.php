@@ -62,6 +62,19 @@
 					<a href="<?php echo CIT_BASE_URL.'search/detailsearch';?>" class="art-button">Tìm kiếm chi tiết</a>&nbsp;<br>
 					<a href="<?php echo CIT_BASE_URL.'search/areasearch';?>"><!--<img width="120" height="96" alt="" src="public/img/19ca3799-7a56-47f0-b894-9fc8c7a4719c.png" class="">--></a>
 					<a href="<?php echo CIT_BASE_URL.'search/areasearch';?>" class="art-button">Tìm kiếm theo khu vực</a>&nbsp;<br>
+                </p>
+              </div>
+            </div>
+			
+			<div class="art-block clearfix">
+              <div class="art-blockheader">
+                <h3 class="t">Tiêu điểm <img src='public/img/iconhot.gif'/></h3>
+              </div>
+              <div class="art-blockcontent">
+                <p style="text-align: center;"> </p>
+                <p> </p>
+                
+                <p style="text-align: center;">
 					<?php $this->load->view('search/targetsearch');?>
                 </p>
               </div>
@@ -75,9 +88,9 @@
               <div class="art-blockcontent">
                 <p class='quangcao_one'>
 					<video width="100%" height="auto" controls>
-				  <source src="public/video/kokomi.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-				</video>
+						<source src="public/video/kokomi.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
                 </p>
               </div>
             </div>

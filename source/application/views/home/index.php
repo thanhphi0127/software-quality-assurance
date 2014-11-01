@@ -5,7 +5,7 @@
                       <p style="text-align: center;"><span style="font-weight: bold; color: #F6A104;">Hình ảnh</span></p>
                     </div>
                     <div class="art-layout-cell" style="width: 65%" >
-                      <p style="text-align: left;"><span style="color: rgb(246, 161, 4); font-weight: bold;">Mô tả sơ lược</span></p>
+                      <p style="text-align: left;"><span style="color: #48B4DB; font-weight: bold;">Mô tả sơ lược</span></p>
                     </div>
                   </div>
                 </div>
@@ -16,7 +16,7 @@
                       </p>
                     </div>
                     <div class="art-layout-cell" style="width: 65%" >
-                      <p><a href="thong-tin-nha-tro.html"><span style="color: rgb(246, 161, 4); ">Nhà trọ: Huy Hoàng - 91/3/2 Hẻm 12, Nguyễn Văn Cừ, Xuân Khán</span><span style="color: rgb(246, 161, 4); ">h</span></a><span style="color: #F6A104;"></span></p>
+                      <p><a href="thong-tin-nha-tro.html"><span style="color: #48B4DB; ">Nhà trọ: Huy Hoàng - 91/3/2 Hẻm 12, Nguyễn Văn Cừ, Xuân Khán</span><span style="color: #48B4DB; ">h</span></a><span style="color: #F6A104;"></span></p>
                       <p>Giá phòng: 1.000.000 / tháng</p>
                       <p>Thông tin: 14 m<span style="vertical-align: super;">2</span>, có gác, bảo vệ trực cổng 24/24. Giờ giấc thoải mái, có internet.</p>
                     </div>

@@ -22,6 +22,7 @@ class Chunhatro extends MY_Controller {
 	
 	
 	public function profile_chunhatro(){
+		$data['title_page'] = 'Hồ sơ';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
 		$this->load->model('mchunhatro');
@@ -35,6 +36,7 @@ class Chunhatro extends MY_Controller {
 	
 	public function update_chunhatro()
 	{
+		$data['title_page'] = 'Cập nhật chủ nhà trọ';
 	$ms = '2';
 		$this->load->model('mchunhatro');
 	//******* load huyen - xa - duong len select box	
@@ -67,6 +69,7 @@ class Chunhatro extends MY_Controller {
 	////////////////////
 	public function capnhatChu($id)
 	{
+		$data['title_page'] = 'Cập nhật chủ nhà trọ';
 		$this->load->model('mchunhatro');
 		$data['datainfo'] = $this->mchunhatro->load_chunhatro($id);
 		
@@ -75,6 +78,7 @@ class Chunhatro extends MY_Controller {
 	}
 	
 	public function quanlynhatro(){
+		$data['title_page'] = 'Quản lý nhà trọ';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
 		$data['template'] = 'chunhatro/quanlynhatro';
@@ -82,6 +86,7 @@ class Chunhatro extends MY_Controller {
 	}
 	
 	public function dangnhatro(){
+		$data['title_page'] = 'Đăng nhà trọ';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
 		$data['title'] = 'Dang Tin Nha Tro';
@@ -279,6 +284,7 @@ class Chunhatro extends MY_Controller {
 	**********************************/
 	public function gopy()
 	{
+		$data['title_page'] = 'Góp ý';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
 		$this->load->helper('date');

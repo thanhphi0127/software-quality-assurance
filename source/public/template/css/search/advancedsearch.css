@@ -244,3 +244,8 @@ table.result tr td:last-child{
 .count_result {
 	color:blue;
 }
+#result  > p:first-child{
+padding: 0px 46px;
+margin: -43px 0px;
+background: rgba(187, 227, 242, 0.8);
+}

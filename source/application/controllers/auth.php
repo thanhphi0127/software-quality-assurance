@@ -17,6 +17,7 @@ class Auth extends MY_Controller {
 	}
 	
 	public function login(){
+		$data['title_page'] = 'Đăng nhập';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
 		if ($this->auth != NULL) {
@@ -55,6 +56,7 @@ class Auth extends MY_Controller {
 	}
 	
 	public function forgot(){
+		$data['title_page'] = 'Quên mật khẩu';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
 		$data['seo']['title'] = 'Quên mật khẩu';
@@ -74,6 +76,7 @@ class Auth extends MY_Controller {
 		
 	}
 	public function register(){
+		$data['title_page'] = 'Đăng ký';
 		$data['seo']['title'] = 'Đăng kí';
 		$data['seo']['keyword'] = 'register';
 		$data['seo']['description'] = '';

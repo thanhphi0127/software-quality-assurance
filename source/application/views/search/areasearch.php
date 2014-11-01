@@ -1,5 +1,5 @@
 ﻿<section id='area'>
-	<div class='panel area'>Tìm theo khu vực</div>
+	
 	<div class='standardform'>
 			<table>
 				<tr>

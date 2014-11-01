@@ -20,6 +20,7 @@ class Home extends MY_Controller {
 
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
+		$data['title_page'] = 'Bảng xếp hạng nhà trọ';
 		$data['seo']['title'] = 'Trang chủ';
 		$data['template'] = 'home/index';
 		//load tiêu điểm
@@ -53,6 +54,7 @@ class Home extends MY_Controller {
 	}
 	
 	public function quanlythongtincanhan(){
+		$data['title_page'] = 'Quản lý thông tin cá nhân';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['template'] = 'home/quanlythongtincanhan';
 		$this->load->view('layout/home', isset($data)? $data : NULL);

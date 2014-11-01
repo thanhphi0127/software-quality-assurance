@@ -33,8 +33,7 @@
 <script language='javascript' src="public/template/js/home.js" ></script>
 <!-- <link rel="stylesheet" type="text/css" href="public/template/css/home/bootstrap.css">-->
 <link rel="stylesheet" type="text/css" href="public/template/css/home/css-dangky.css">
-<link rel="stylesheet" type="text/css" href="public/template/css/index-include.css">
-<script src="public/template/js/index-include.js"></script>
+
 
 
 <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->

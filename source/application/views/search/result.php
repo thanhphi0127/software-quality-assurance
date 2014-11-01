@@ -1,6 +1,5 @@
-﻿<section id='area'>
-	<div class='panel area'>Kết quả tìm kiếm <?php echo $type;?>
-		
+﻿<section id='result'>
+	
 			<p><?php if ('theo khu vực' == $type) {
 						echo "Quận ";
 						echo $result['area'][0]['TENHUYEN'];
@@ -31,10 +30,7 @@
 				echo "</span></p>";
 			?>
 			
-				
-			</p>
 			
-	</div>
 	
 	
 	<!-- Kết quả tìm kiếm-->			

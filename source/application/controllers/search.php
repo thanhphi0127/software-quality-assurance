@@ -21,6 +21,7 @@ class Search extends MY_Controller {
 	
 	public function detailsearch(){
 		$data['ma_quyen'] = $this->ma_quyen;
+		$data['title_page'] = 'Tìm kiếm chi tiết';
 		$data['username'] = $this->username;
 		$data['seo']['title'] = 'Tìm kiếm nâng cao';
 		$data['seo']['keyword'] = 'advanced seach';
@@ -40,6 +41,7 @@ class Search extends MY_Controller {
 		
 	}
 	public function areasearch(){
+		$data['title_page'] = 'Tìm kiếm theo khu vực';
 		$data['username'] = $this->username;
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['seo']['title'] = 'Tìm kiếm theo khu vực';
@@ -64,6 +66,7 @@ class Search extends MY_Controller {
 	
 	public function quicksearch(){
 		$data['username'] = $this->username;
+		$data['title_page'] = 'Kết quả tìm kiếm nhanh';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['seo']['title'] = 'Kết quả tìm kiếm ';
 		$data['seo']['keyword'] = 'seach result';
@@ -83,6 +86,8 @@ class Search extends MY_Controller {
 	}
 	
 	public function result($type, $MA = null){
+		
+		
 		$data['username'] = $this->username;
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['seo']['title'] = 'Kết quả tìm kiếm ';
@@ -109,7 +114,7 @@ class Search extends MY_Controller {
 		else if ('quick' == $type){ //$mã là từ khóa
 			$data['type'] = 'nhanh';
 		}
-	
+		$data['title_page'] = 'Kết quả tìm kiếm '.$data['type'];
 		$data['template'] = 'search/result';
 		$this->load->view('layout/search', isset($data)? $data : NULL);
 	}

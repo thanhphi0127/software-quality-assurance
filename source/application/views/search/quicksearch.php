@@ -1,5 +1,5 @@
-﻿<section id='area'>
-	<div class='panel area'>Kết quả tìm kiếm 
+﻿<section id='result'>
+
 		
 		<p>
 			<?php echo '"'.$keyword.'"';?><br/>
@@ -7,7 +7,7 @@
 			
 		</p>
 		
-	</div>
+
 	
 	
 	<!-- Kết quả tìm kiếm-->			

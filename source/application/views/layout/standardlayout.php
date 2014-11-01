@@ -17,9 +17,16 @@
 		<?php } ?>
           <div class="art-layout-cell art-content">
             <article class="art-post art-article">
-                <?php //$this->load->view('home/sidebarcontent');
+				<div class="art-postmetadataheader">
+                    <h2 class="art-postheader"><span class="art-postheadericon"><?php if (isset($title_page)) echo $title_page;?></span></h2>
+                                                            
+                </div>
+				<div class="art-postcontent art-postcontent-0 clearfix">
+					<p><?php //$this->load->view('home/sidebarcontent');
 					$this->load->view ($template);
-				?>
+				?></p>
+				</div>
+                
             </article>
           </div>
           <?php if (substr($template, 0, 4) == 'home' || substr($template, 0, 6) == 'search' || substr($template, 0, 4) == 'auth') {?>	

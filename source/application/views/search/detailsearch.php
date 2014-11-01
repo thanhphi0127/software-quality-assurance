@@ -1,6 +1,6 @@
 ﻿<section  id='search'>
 	
-   <div class='panel detailedsearch'>Tìm kiếm Chi tiết</div>
+
    <div class='detailedsearch'>
 		<form class='standardform' action='<?php echo CIT_BASE_URL.'search/result/advance';?>' method='post'>
 			<table class='detailedsearch'>
