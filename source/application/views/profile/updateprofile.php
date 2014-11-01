@@ -13,7 +13,7 @@
             	<table width='100%' class='TableForm'>
                 	<tr>
                     	<td class='Left'>Họ tên:</td>
-                        <td><input name='edit[ten]' type='text' value='".$k['HOTEN']."' /></td>
+                        <td><input name='edit[ten]' id='ten' type='text' value='".$k['HOTEN']."' /></td>
                     </tr>	
 					<tr>
 						<td class='Left'>Giới tính:</td>
@@ -29,11 +29,11 @@
                     </tr>
                     <tr>
 						<td class='Left'>Email: </td>
-                        <td><input type='text' name='edit[email]' class='shortInput' value='".$k['MAIL']."'  /></td>
+                        <td><input type='text' name='edit[email]' id='mail' class='shortInput' value='".$k['MAIL']."'  /></td>
 					<tr>
                      <tr>
                         <td class='Left'>Số điện thoại::</td>
-                        <td><input type='text' name='edit[sdt]' class='shortInput' value='".$k['SDT']."' /></td>
+                        <td><input type='text' name='edit[sdt]' id='sdt' class='shortInput' value='".$k['SDT']."' /></td>
                     </tr>
 					<tr>
 						<td class='Left'>Quận - Huyện:</td>
@@ -78,7 +78,7 @@
 		
         </tr>
         <tr><td align="left"><input type="submit" name="btnUpdateproFile" value="Hoàn tất" class="nutnhan2"  />
-			<input type="submit" name="btnUpdateCancle" value="Hủy bỏ" class="nutnhan2"  /> </td>
+			<input type="submit" onclick="javascript:eraseText();" name="btnUpdateCancle" value="Hủy bỏ" class="nutnhan2"  /> </td>
 		</tr>
 		</form>
     </table>

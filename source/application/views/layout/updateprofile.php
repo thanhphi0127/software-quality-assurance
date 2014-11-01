@@ -8,7 +8,13 @@
 		<link rel="stylesheet" type="text/css" href="public/template/css/manageinfo/standardform.css">
 		<link rel="stylesheet"	type="text/css" href="public/template/css/manageinfo/style.css" />
 
-		<script language='javascript' src="public/template/js/search/advancedsearch.js" ></script>	
+		<script language='javascript' src="public/template/js/search/advancedsearch.js" ></script>
+		<script language='javascript'>
+			function earseText()
+			{
+				document.getElementById("output").ten = "";
+			}
+		</script>
 <link rel='stylesheet' href='public/template/css/index.css' />
 <link rel="stylesheet" type="text/css" href="public/template/css/home/home.css">
 <link rel="stylesheet" type="text/css" href="public/template/css/home/style.css">
