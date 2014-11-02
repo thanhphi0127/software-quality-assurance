@@ -1,0 +1,77 @@
+/* CSS Document */
+
+.header {
+	font-size: 20px;
+}
+
+.panelBody {
+	margin: 0px 100px 0px 40px;
+}
+
+#panel-body {
+	padding: 0px 0px 0px 10px;
+}
+
+.labelBirthday {
+	padding-left: 0px;
+}
+
+.day {
+	width: 68px; 
+	margin-left: 40px;
+}
+
+.month {
+	margin-left: 20px; 
+	margin-top: 25px; 
+	width: 68px;
+}
+
+.year {
+	margin-top: 25px; 
+	width: 80px;
+}
+
+.ho , .ten{
+	width: 178px; 
+	height: 37px;
+}
+
+.ho {
+	margin-bottom: 15px;
+}
+
+.ten {
+	margin: 0px 5px 10px 35px;
+}
+
+.username {
+	margin-bottom: 15px; 
+	width: 402px; 
+	height: 37px;
+}
+
+.labelSex {
+	margin-top: 30px;
+}
+
+.contentSex {
+	margin-top: 9px;
+}
+
+.selectSex {
+	margin-top: 15px; 
+	width: 90px;
+}
+
+div .pull-right {
+	margin-top: 30px	
+}
+
+#cancel {
+	margin: 0px -78px 0px 29px;
+}
+
+.error {
+	color: red;
+}
