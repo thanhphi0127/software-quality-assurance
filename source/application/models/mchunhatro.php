@@ -40,11 +40,6 @@ class Mchunhatro extends CI_Model{
 	
 	public function arInsertNhaTro($data)
 	{
-		/*$this->db->select('*')
-				 ->from('quanhuyen');
-				
-		$query = $this->db->get();
-		return $query->result_array();*/
 		$this->db->insert('nhatro', $data);
 	}
 	public function arInsertPhongTro($data)
@@ -53,9 +48,6 @@ class Mchunhatro extends CI_Model{
 	}
 	public function getHuyen()
 	{
-		//$this->db->insert('quanhuyen',$data);
-		/*$this->db->select('*')
-				 ->from('quanhuyen');*/
 		$query = $this->db->get('quanhuyen');
 		return $query->result_array();	
 	}
@@ -108,5 +100,44 @@ class Mchunhatro extends CI_Model{
 		$this->db->insert('danhgia',$data);
 	}
 	
+	/******************************
+	** Cap nhat nha tro
+	** Cap nhat phong tro
+	*******************************/
 	
+	// lay thong tin nha tro thong qua MA_NHATRO
+	public function NhaTroInfo($id)
+	{
+		$this->db->where('MA_NHATRO', $id);
+		$query = $this->db->get('nhatro');
+		return $query->result_array();
+	}
+	// lay thong tin phong tro thong qua MA_NHATRO
+	public function PhongInfo($id)
+	{
+		$this->db->where('MA_NHATRO', $id);
+		$q = $this->db->get('phong');
+		return $q->result_array();
+	}
+	
+	//dem so phong tro trong nha tro
+	public function CountPhongTro($id)
+	{
+		$this->db->where('MA_NHATRO', $id);
+		$query = $this->db->get('phong');
+		return $query->num_rows();
+	}
+		
+	//cap nhat nha tro	
+	public function CapNhatNhaTro($id, $data)
+	{
+		$this->db->where('MA_NHATRO');
+		$this->db->update('nhatro', $data);
+	}
+	//cap nhap phong tro
+	public function CapNhatPhong($id, $data)
+	{
+		$this->db->where('MA_NHATRO');
+		$this->db->update('phong', $data);
+	}
 }

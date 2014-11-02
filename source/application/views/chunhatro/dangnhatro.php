@@ -74,6 +74,14 @@
               </select></td>
           </tr>
           <tr>
+            <td class="Left" >Tiện nghi chung</td>
+            <td><input type="checkbox" name="member[NauAN]"  />
+              Nấu ăn <br />
+              <input type="checkbox" name="member[BaiDauXe]" />
+              Bãi đậu xe<br />
+           </td>
+          </tr>
+          <tr>
           	<td class="Left">Tự quản</td>
             <td>
             	<input type="radio" name='member[TuQuan]' checked="checked" value="1" />Có &nbsp;&nbsp;

@@ -37,7 +37,7 @@ class Chunhatro extends MY_Controller {
 	public function update_chunhatro()
 	{
 		$data['title_page'] = 'Cập nhật chủ nhà trọ';
-	$ms = '2';
+		$ms = '2';
 		$this->load->model('mchunhatro');
 	//******* load huyen - xa - duong len select box	
 		// load quận
@@ -297,6 +297,39 @@ class Chunhatro extends MY_Controller {
 		}
 		
 }
+
+	/************************************************
+	** Cập nhật thông tin nhà trọ và phòng trọ
+	**
+	*************************************************/
+	
+	public function CapNhatNhaTro($id)
+	{
+		$this->load->model('mchunhatro');
+		$data['tenchu'] = $this->mchunhatro->getTenChu('thuyngoc');
+		$data['info'] = $this->mchunhatro->NhaTroInfo($id);
+		$data['phong'] = $this->mchunhatro->PhongInfo($id);
+		$so_loai =$this->mchunhatro->CountPhongTro($id);
+		$data['template'] = 'chunhatro/capnhatnhatro';
+		
+		/*if($so_loai == 1)
+		{	
+			$data['template'] = 'chunhatro/capnhatnhatro';
+		}
+		else if($so_loai == 2)
+		{
+			$data['template'] = 'chunhatro/capnhatnhatro2Loai';
+		}
+		else if($so_loai == 3)
+		{
+			$data['template'] = 'chunhatro/capnhatnhatro3Loai';
+		}*/
+		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
+	}
+	
+	
+	
+	
 	
 	/*********************************
 	//dua tra y kien nhan xet nha tro
