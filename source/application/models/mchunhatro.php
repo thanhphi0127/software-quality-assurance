@@ -129,15 +129,17 @@ class Mchunhatro extends CI_Model{
 	}
 		
 	//cap nhat nha tro	
-	public function CapNhatNhaTro($id, $data)
+	public function CapNhatNhaTro($data, $id)
 	{
-		$this->db->where('MA_NHATRO');
+		$this->db->where('MA_NHATRO', $id);
 		$this->db->update('nhatro', $data);
 	}
 	//cap nhap phong tro
-	public function CapNhatPhong($id, $data)
+	public function CapNhatPhong($data, $id1, $id2)
 	{
-		$this->db->where('MA_NHATRO');
+		$this->db->where('MA_PHONG', $id1);
+		$this->db->where('MA_NHATRO', $id2);
 		$this->db->update('phong', $data);
 	}
+	/*****************************************************************/
 }

@@ -310,20 +310,44 @@ class Chunhatro extends MY_Controller {
 		$data['info'] = $this->mchunhatro->NhaTroInfo($id);
 		$data['phong'] = $this->mchunhatro->PhongInfo($id);
 		$so_loai =$this->mchunhatro->CountPhongTro($id);
-		$data['template'] = 'chunhatro/capnhatnhatro';
+		// cap nhat
+		if(isset($_POST['btnCapNhat']))
+		{
+			$_POST = $this->input->post('member');
+			
+			$data_info = array(
+								'TEN_NHATRO' =>$_POST['TenNhaTro'],
+								'MSCHU' =>$_POST['MaNguoiDang'],
+								'MA_DUONG'=>'NK-XK-1',
+								'MOTA'=> $_POST['MoTa'],
+								'NAU_AN' =>isset($_POST['NauAn'])?1:0,
+								'BAIDAUXE' =>isset($_POST['BaiDauXe'])?1:0,
+								/*'SO' => $_POST['SoNha'],*/
+								'LUOCXEM' =>'0',
+								/*HINHANH =>*/
+								'TUQUAN' => $_POST['TuQuan'],
+								'GIODONGCUA' =>$_POST['Gio'],
+								'NGAYDANG'=> date('Y-m-d'),
+								);
+			$this->mchunhatro-> CapNhatNhaTro($data_info, $id);
+			echo "cap nhat thanh cong";
+			for($i = 1; $i <= $so_loai; $i++)
+			{
+				$data_phong[$i] = array(
+									'SL_NGUOI' => $_POST['SoLuongNguoi'.$i],
+									'CONTRONG' => $_POST['PhongConTrong'.$i],
+									'DIENTICH' => $_POST['DienTich'.$i],
+									'GIA' => $_POST['Gia'.$i],
+									'TOILETTRONG' =>isset($_POST['NhaVeSinh'.$i])?1:0,
+									'GAC' =>isset($_POST['CoGac'.$i])?1:0
+									);
+				$this->mchunhatro->CapNhatPhong($data_phong[$i], $i, $id);
+				echo "Cap nhat thanh cong";
+			}
+			
+		}
 		
-		/*if($so_loai == 1)
-		{	
-			$data['template'] = 'chunhatro/capnhatnhatro';
-		}
-		else if($so_loai == 2)
-		{
-			$data['template'] = 'chunhatro/capnhatnhatro2Loai';
-		}
-		else if($so_loai == 3)
-		{
-			$data['template'] = 'chunhatro/capnhatnhatro3Loai';
-		}*/
+		$data['template'] = 'chunhatro/capnhatnhatro';
 		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
 	}
 	

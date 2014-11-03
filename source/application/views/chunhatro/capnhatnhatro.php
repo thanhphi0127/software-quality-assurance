@@ -51,7 +51,7 @@
           </tr>
            <tr>
             <td class="Left" >Tiện nghi chung</td>
-            <td><input type="checkbox" name="member[NauAN]" <?php if($nt['NAU_AN'] == 1) echo "checked='checked'"; ?> />
+            <td><input type="checkbox" name="member[NauAn]" <?php if($nt['NAU_AN'] == 1) echo "checked='checked'"; ?> />
               Nấu ăn <br />
               <input type="checkbox" name="member[BaiDauXe]" <?php if($nt['BAIDAUXE']== 1) echo "checked='checked'"; ?> />
               Bãi đậu xe <br />
@@ -120,6 +120,12 @@
               </td>
           </tr>
           <tr>
+            <td class="Left">Giá</td>
+            <td><input type="text" name="member[Gia<?php echo $c; ?>]" class="shortInputLoaiPhong" value="<?php echo $p['GIA']; ?>" />&nbsp;000
+              <?php echo form_error('Gia1');?>
+              </td>
+          </tr>
+          <tr>
             <td class="Left" >Tiện nghi</td>
             <td><input type="checkbox" name="member[CoGac<?php echo $c; ?>]"  <?php if($p['GAC'] == 1) echo "checked='checked'"; ?>  />
               Có Gác <br />
@@ -141,7 +147,7 @@
     </tr>
     <tr>
       <td align="left"><input type="submit" name="btnXemTruoc" value="Xem trước bản đăng" class="nutnhan2" />
-        <input type="submit" name="btnDangTin" value="Đăng tin" class="nutnhan" />
+        <input type="submit" name="btnCapNhat" value="Cập nhật" class="nutnhan" />
         <input type="submit" name="btnXemTruoc1" value="chon duong" class="nutnhan" /></td>
     </tr>
   </table>
