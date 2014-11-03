@@ -42,7 +42,8 @@
 <link rel='stylesheet' href='public/template/css/index.css' />
 <link rel="stylesheet" type="text/css" href="public/template/css/home/home.css">
 <link rel="stylesheet" type="text/css" href="public/template/css/home/style.css">
-<script src='public/template/js/admin/result.js'></script>
+<script src='public/template/js/result.js'></script>
+<link rel="stylesheet" type="text/css" href="public/template/css/result.css">
 
 <?php
 	if($template == 'admin/duyetnhatro')

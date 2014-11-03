@@ -54,7 +54,7 @@ class Auth extends MY_Controller {
 		if ($this->auth != NULL) 
 			setcookie(CIT_PREFIX.'_user_logged', NULL, time()-3600, '/');
 			
-		$this->lib_string->alert(NULL, CIT_BASE_URL."auth/login");
+		$this->lib_string->alert(NULL, CIT_BASE_URL."home/index");
 	}
 	
 	public function forgot(){

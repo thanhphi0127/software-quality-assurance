@@ -295,6 +295,9 @@ class Chunhatro extends MY_Controller {
 	
 	public function CapNhatNhaTro($id)
 	{
+		$data['title_page'] = 'Đăng nhà trọ';
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		$this->load->model('mchunhatro');
 		$data['tenchu'] = $this->mchunhatro->getTenChu('thuyngoc');
 		$data['info'] = $this->mchunhatro->NhaTroInfo($id);

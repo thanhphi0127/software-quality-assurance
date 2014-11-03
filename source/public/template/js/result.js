@@ -1,5 +1,6 @@
 ﻿$(document).ready(function(){	
 	var i = 0;
+	
 	var g_page = 1;
 	var g_maxpage = parseInt($('#maxpage').val());
 	$('.result').hide();
@@ -21,10 +22,14 @@
 				$(this).show();
 			i ++;
 		});
+		$('a.page').removeClass('active_page');
+		$(this).addClass('active_page');
+		
 	});
 	
 	$('a.nextpage').click(function(e){
 		g_page ++;
+		
 		if (g_page > g_maxpage){
 			g_page = g_maxpage;
 			e.preventDefault();
@@ -41,6 +46,8 @@
 					$(this).show();
 			});
 		}
+		$('a.page').removeClass('active_page');
+		$('a.page:contains('+g_page+')').addClass('active_page');
 		
 	});
 	
@@ -63,6 +70,8 @@
 					$(this).show();
 			});
 		}
+		$('a.page').removeClass('active_page');
+		$('a.page:contains('+g_page+')').addClass('active_page');
 	});
 	
 });

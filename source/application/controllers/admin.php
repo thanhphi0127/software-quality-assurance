@@ -144,6 +144,7 @@ class Admin extends MY_Controller {
 		$this->load->model('madmin');
 		$data['data_info'] = $this->madmin->arDSNhaTroDuyet();
 		$data['info'] = $this->madmin->arDSNhaTroChuaDuyet();
+		
 		$bien = $this->madmin->arCountChuaDuyet();
 		
 		//****************************
