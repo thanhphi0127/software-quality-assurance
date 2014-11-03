@@ -1,7 +1,7 @@
 <div class="art-content-layout">
                   <div class="art-content-layout-row">
                     <div class="art-layout-cell" style="width: 100%" >
-                      <p style="text-align: center;margin-top: 51px;margin-bottom: 18px;">&nbsp;
+                      <p style="text-align: center;">&nbsp;
 						<a class="art-button prevpage" >&lt;&lt;</a>&nbsp;
 						<?php for ($i = 0; $i < ceil($result['count']/IP); $i ++) {?>
 								<a class="art-button page"><?php echo ($i + 1);?></a>&nbsp;
