@@ -139,9 +139,9 @@
           <div class="modal-body" style="margin: 0px padding: 3px;">  
           <table id="table_add" border="0">
                     <tr>
-                    	<td><label>Mã thành viên (*)</label></td>
+                    	<td><label>User name(*)</label></td>
                         <td>
-                        	<input type="text" class="form-control" name="add[maso]" value="<?php echo $maso['MS']; ?>" readonly="readonly" /> 
+                        	<input type="text" class="form-control" name="add[maso]" value="" /> 
                             <?php echo form_error('maso');?></td>
                     </tr>
                     
@@ -218,7 +218,7 @@
 
 <!-- NOI DUNG -->
 <div class="khung" style="font-family:'Times New Roman'; margin-top: 0px; ">
-<form action="" method="post">
+  <form action="" method="post">
     <div class="row top_row">
         
         <input type="hidden" value="<?php echo $press_modify; ?>" id="hidden_modify" />
@@ -228,7 +228,7 @@
                <tr>
                	<th colspan="11" class="student_header">Danh sách người dùng</th>
                </tr>
-                   <tr>
+               <tr>
                    	   <th><input type="checkbox" name="checked[]" onclick="toggle(this)" value="" class="checkall"/></th>
                        <th>STT</th>
                        <th>Mã số</th>
@@ -247,23 +247,23 @@
 				$i = 1;
 				foreach ($DanhSachThanhVien as $a => $ds) {
 				echo "<tr>
-					<td><input type='checkbox' name='checked[]' value='".$ds['MSTHANHVIEN']."'/></td>
+					<td><input type='checkbox' name='checked[]' value='".$ds['USERNAME']."'/></td>
 					<td>$i</td>";
 				echo "<td>
-						<span class='pModify'>".$ds['MSTHANHVIEN']."</span>
+						<span class='pModify'>".$ds['USERNAME']."</span>
 						<span class='txtModify' hidden>
-						<input class='maso' readonly type='text' name='".$ds['MSTHANHVIEN']."[maso]' value='".$ds['MSTHANHVIEN']."'/></span>
+						<input class='maso' readonly type='text' name='".$ds['USERNAME']."[maso]' value='".$ds['USERNAME']."'/></span>
 					  </td>";	
 					  
 				echo "<td>
 						<span class='pModify'>".$ds['HOTEN']."</span>
 						<span class='txtModify' hidden>
-						<input class='hoten' type='text' name='".$ds['MSTHANHVIEN']."[hoten]' value='".$ds['HOTEN']."'/></span>
+						<input class='hoten' type='text' name='".$ds['USERNAME']."[hoten]' value='".$ds['HOTEN']."'/></span>
 					  </td>";
 			     echo "<td>
 						<span class='pModify'>".$ds['GIOITINH']."</span>
 						<span class='txtModify' hidden>
-						  <select name='".$ds['MSTHANHVIEN']."[gioitinh]'>
+						  <select name='".$ds['USERNAME']."[gioitinh]'>
 						     <option value='Nam'";
 						     if ($ds['GIOITINH'] == 'Nam') echo 'selected';
 			     echo                                ">Nam</option>
@@ -274,27 +274,27 @@
 			     echo "<td>
 						<span class='pModify'>".$ds['MAIL']."</span>
 						<span class='txtModify' hidden>
-						<input type='text' name='".$ds['MSTHANHVIEN']."[mail]' value='".$ds['MAIL']."'/></span>
+						<input type='text' name='".$ds['USERNAME']."[mail]' value='".$ds['MAIL']."'/></span>
 					  </td>";
 			     echo "<td>
 						<span class='pModify'>".$ds['SDT']."</span>
 						<span class='txtModify' hidden>
-						<input type='text' name='".$ds['MSTHANHVIEN']."[sdt]' value='".$ds['SDT']."'/></span>
+						<input type='text' name='".$ds['USERNAME']."[sdt]' value='".$ds['SDT']."'/></span>
 					  </td>";
 			     echo "<td>
 						<span class='pModify'>".$ds['NGAYSINH']."</span>
 						<span class='txtModify' hidden>
-						<input type='text' name='".$ds['MSTHANHVIEN']."[ngaysinh]' value='".$ds['NGAYSINH']."'/></span>
+						<input type='text' name='".$ds['USERNAME']."[ngaysinh]' value='".$ds['NGAYSINH']."'/></span>
 					  </td>";
 			     echo "<td>
 						<span class='pModify'>".$ds['DIACHI']."</span>
 						<span class='txtModify' hidden>
-						<input type='text' name='".$ds['MSTHANHVIEN']."[diachi]' value='".$ds['DIACHI']."'/></span>
+						<input type='text' name='".$ds['USERNAME']."[diachi]' value='".$ds['DIACHI']."'/></span>
 					  </td>";
 			     echo "<td>
 						<span class='pModify'>".$ds['NGAYDANGKI']."</span>
 						<span class='txtModify' hidden>
-						<input type='text' readonly name='".$ds['MSTHANHVIEN']."[ngaydangki]' value='".$ds['NGAYDANGKI']."'/></span>
+						<input type='text' readonly name='".$ds['USERNAME']."[ngaydangki]' value='".$ds['NGAYDANGKI']."'/></span>
 					  </td>
 					</tr>";
 					$i++;
@@ -336,7 +336,7 @@
 			<div class="col-md-2"></div>
          </div><!--end div row -->
          
-    </div> <!--end div col-md-12-->
+    
 
         
     </div><!--end div row-->
@@ -350,14 +350,14 @@
 /*
 
 			     echo "<td>
-						<span class='pModify'>".$ds['MSTHANHVIEN']."</span>
+						<span class='pModify'>".$ds['USERNAME']."</span>
 						<span class='txtModify' hidden>
-						<input class='maso' type='text' name='".$ds['MSTHANHVIEN']."[maso]' value='".$ds['MSTHANHVIEN']."'/></span>
+						<input class='maso' type='text' name='".$ds['USERNAME']."[maso]' value='".$ds['USERNAME']."'/></span>
 					  </td>";	
 			     echo "<td>
 						<span class='pModify'>".$ds['HOTEN']."</span>
 						<span class='txtModify' hidden>
-						<input class='hoten' type='text' name='".$ds['MSTHANHVIEN']."[hoten]' value='".$ds['HOTEN']."'/></span>
+						<input class='hoten' type='text' name='".$ds['USERNAME']."[hoten]' value='".$ds['HOTEN']."'/></span>
 					  </td>";
 			     echo "<td>
 						<span class='pModify'>".$ds['GIOITINH']."</span>
@@ -375,27 +375,27 @@
 			     echo "<td>
 						<span class='pModify'>".$ds['MAIL']."</span>
 						<span class='txtModify' hidden>
-						<input type='text' name='".$ds['MSTHANHVIEN']."[mail]' value='".$ds['MAIL']."'/></span>
+						<input type='text' name='".$ds['USERNAME']."[mail]' value='".$ds['MAIL']."'/></span>
 					  </td>";
 			     echo "<td>
 						<span class='pModify'>".$ds['SDT']."</span>
 						<span class='txtModify' hidden>
-						<input type='text' name='".$ds['MSTHANHVIEN']."[sdt]' value='".$ds['SDT']."'/></span>
+						<input type='text' name='".$ds['USERNAME']."[sdt]' value='".$ds['SDT']."'/></span>
 					  </td>";
 			     echo "<td>
 						<span class='pModify'>".$ds['NGAYSINH']."</span>
 						<span class='txtModify' hidden>
-						<input type='text' name='".$ds['MSTHANHVIEN']."[ngaysinh]' value='".$ds['NGAYSINH']."'/></span>
+						<input type='text' name='".$ds['USERNAME']."[ngaysinh]' value='".$ds['NGAYSINH']."'/></span>
 					  </td>";
 			     echo "<td>
 						<span class='pModify'>".$ds['DIACHI']."</span>
 						<span class='txtModify' hidden>
-						<input type='text' name='".$ds['MSTHANHVIEN']."[diachi]' value='".$ds['DIACHI']."'/></span>
+						<input type='text' name='".$ds['USERNAME']."[diachi]' value='".$ds['DIACHI']."'/></span>
 					  </td>";
 			     echo "<td>
 						<span class='pModify'>".$ds['NGAYDANGKI']."</span>
 						<span class='txtModify' hidden>
-						<input type='text' readonly name='".$ds['MSTHANHVIEN']."[ngaydangki]' value='".$ds['NGAYDANGKI']."'/></span>
+						<input type='text' readonly name='".$ds['USERNAME']."[ngaydangki]' value='".$ds['NGAYDANGKI']."'/></span>
 					  </td>";	
 
 */

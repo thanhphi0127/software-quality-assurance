@@ -24,6 +24,8 @@ class Admin extends MY_Controller {
 	public function quanlynguoidung(){	
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
+		$data['title_page'] = 'Quản lý người dùng';
+		
 		$data['title'] = 'Quản lý thành viên';
 		$data['press_add'] = 0;
 		$data['press_modify'] = 0;
@@ -46,6 +48,7 @@ class Admin extends MY_Controller {
 			$this->form_validation->set_error_delimiters('<div class="error">','</div>');
 			
 			//Kiểm tra dữ liệu nhập vào
+			$this->form_validation->set_rules('maso','Username','trim|required|min_length[5]|max_length[15]');
 			$this->form_validation->set_rules('matkhau','Mật khẩu','trim|required|min_length[5]|max_length[15]');
 			$this->form_validation->set_rules('hoten', 'Họ tên', 'trim|required|min_length[3]|max_length[40]');					
 			$this->form_validation->set_rules('sodt', 'Số điện thoại', 'required|trim|regex_match[/^([0-9])+$/i]');

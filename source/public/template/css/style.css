@@ -2334,7 +2334,7 @@ pre
     bottom: 0;
 }
 
-.art-postcontent ul>li:before,  .art-post ul>li:before,  .art-textblock ul>li:before
+.art-postcontent ul>li.yes:before,  .art-post ul>li.yes:before,  .art-textblock ul>li.yes:before
 {
    content:url('../../img/postbullets.png');
    margin-right:6px;
@@ -2345,6 +2345,7 @@ pre
    font-size:0;
    line-height:0;
 }
+
 .opera .art-postcontent ul>li:before, .opera   .art-post ul>li:before, .opera   .art-textblock ul>li:before
 {
    /* Vertical-align:middle in Opera doesn't need additional offset */

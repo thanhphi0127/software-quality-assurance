@@ -35,13 +35,13 @@
                 </div>
                 
                 <!-- Save data to tranfer to controller-->
-                <input type="text" name="delete[ma_nhatro]" id="dl_ma_nhatro"/>
+                <input type="hidden" name="delete[ma_nhatro]" id="dl_ma_nhatro"/>
                 <!--<input type="text" id="dl_ma_chude"/>-->
                 
                 
                 <div class="modal-footer clearfix">
-                    <input type="submit" value="Yes" name="btn_delete" class="btn btn-warning"/>
-                    <button type="button" id="delete_cancel" class="btn btn-warning"><img src="<?php echo CIT_BASE_URL?>public/img/delete.png" width="14px" height="14px"/> No</button>
+                    <input type="submit" value="Yes" name="btn_delete" class="btn btn-warning" />
+                    <button type="button" id="delete_cancel" class="btn btn-warning"> No</button>
                 </div>                
             </form>
         </div>

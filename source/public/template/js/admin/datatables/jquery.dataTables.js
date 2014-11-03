@@ -2076,7 +2076,7 @@
 			var sSearchStr = oSettings.oLanguage.sSearch;
 			sSearchStr = (sSearchStr.indexOf('_INPUT_') !== -1) ?
 			  sSearchStr.replace('_INPUT_', '<input type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm"/>') :
-			  sSearchStr==="" ? '<input type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm"/>' : sSearchStr+' <input style="margin: 5px 0px 10px 10px; display:inline; width: 460px" type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm" />';
+			  sSearchStr==="" ? '<input type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm"/>' : sSearchStr+' <input style="margin: 5px 0px 10px 10px; display:inline; width: 338px" type="text" class="form-control" placeholder="Nhập thông tin tìm kiếm" />';
 			
 			var nFilter = document.createElement( 'div' );
 			nFilter.className = oSettings.oClasses.sFilter;

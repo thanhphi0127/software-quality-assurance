@@ -5,7 +5,7 @@ $.extend( true, $.fn.dataTable.defaults, {
 		"t"+
 		"<'row'<'col-xs-6'i><'col-xs-6'p>>",
 	"oLanguage": {
-		"sLengthMenu": "<span style='margin: 10px 10px 10px 20px; padding-left: 18px; border-radius: 5px;'>Chọn số lượng hiển thị</span> _MENU_"
+		"sLengthMenu": "<span style='margin: 10px 10px 10px 20px; padding-left: 47px; border-radius: 5px;'>Chọn số lượng hiển thị</span> _MENU_"
 	}
 } );
 

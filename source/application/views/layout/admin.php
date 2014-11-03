@@ -47,15 +47,15 @@
 <?php
 	if($template == 'admin/duyetnhatro')
 	{
-		echo "<link rel='stylesheet' type='text/css' href='public/template/assets/bootstrap.css' />";
+		echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/bootstrap.css' />";
 	}
 	else if($template == 'admin/duyettintuc')
 	{
-		echo "<link rel='stylesheet' type='text/css' href='public/template/assets/bootstrap.css'/> ";
+		echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/bootstrap.css'/> ";
 	}
 	else if($template == 'admin/duyettungtin')
 	{
-		echo "<link rel='stylesheet' type='text/css' href='public/template/assets/bootstrap.css'/> ";
+		echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/bootstrap.csscss/admin/bootstrap.css'/> ";
 	}
 	else if ('admin/quanlynguoidung' == $template){
 			echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/quanlynguoidung.css'>";
