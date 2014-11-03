@@ -1,28 +1,29 @@
 ﻿<div class="art-blockheader">
+			 <div class="art-blockheader">
                 <h3 class="t">Đăng nhập</h3>
-              </div>
-              <div class="art-blockcontent">
+             </div>
+              <div class="art-blockcontent" >
 				<?php if ($ma_quyen == 0) {?>
 				<form action='<?php echo CIT_BASE_URL."home/index";?>' method='post'>
 					<p>Tài khoản:</p>
 					<p>
 					  <input type="text" name='data[username]'>
-					  <br>
+					 
 					</p>
 					<p>Mật khẩu:</p>
 					<p>
 					  <input type="password" name='data[password]'>
-					  <br>
+					 
 					</p>
 					<p>
 					  <label class="art-checkbox">
-						<input type="checkbox">
+						<input type="checkbox"/>
 						&nbsp;Ghi nhớ</label>
-					  <br>
+					  
 					</p>
 					<p>&nbsp;<input type='submit' class="art-button" name='login' value='Đăng nhập'/></p>
 				</form>
-				<p></p>
+				
                 <ul>
                   <li><span style="font-size: 12px; line-height: normal;"><a href="<?php echo CIT_BASE_URL.'auth/forgot';?>">Quên mật khẩu</a></span><br>
                   </li>                  
@@ -43,7 +44,7 @@
             
             <div class="art-block clearfix">
               <div class="art-blockheader">
-                <h3 class="t">hỗ trợ</h3>
+                <h3 class="t">Hỗ trợ</h3>
               </div>
               <div class="art-blockcontent">
                 <ul>
@@ -69,7 +70,7 @@
             </div>
             <div class="art-block clearfix">
               <div class="art-blockheader">
-                <h3 class="t">qui định</h3>
+                <h3 class="t">Qui định</h3>
               </div>
               <div class="art-blockcontent">
                 <p></p>
@@ -84,9 +85,10 @@
             </div>
             <div class="art-block clearfix">
               <div class="art-blockheader">
-                <h3 class="t">quảng cáo</h3>
+                <h3 class="t">Quảng cáo</h3>
               </div>
               <div class="art-blockcontent">
                 <p><br>
                 </p>
               </div>
+			 </div>

@@ -42,11 +42,11 @@
 				<!-- Tiêu đề -->
 				<div class="art-content-layout">
                   <div class="art-content-layout-row">
-                    <div class="art-layout-cell layout-item-0" style="width: 35%" >
-                      <p style="text-align: center;"><span style="font-weight: bold; color: #F6A104;">Hình ảnh</span></p>
+                    <div class="art-layout-cell layout-item-0" style="width: 35%;" >
+                      <p style="text-align: center;margin-top:30px;"><span style="font-weight: bold; color: #48B4DB;">Hình ảnh</span></p>
                     </div>
-                    <div class="art-layout-cell" style="width: 65%" >
-                      <p style="text-align: left;"><span style="color: rgb(246, 161, 4); font-weight: bold;">Mô tả sơ lược</span></p>
+                    <div class="art-layout-cell" style="width: 65%;" >
+                      <p style="text-align: left;margin-top:30px;"><span style="color: #48B4DB; font-weight: bold;">Mô tả sơ lược</span></p>
                     </div>
                   </div>
                 </div>
@@ -69,7 +69,7 @@
 										<div class="art-layout-cell" style="width: 65%;" >
 										  <p style='margin-top: 6px;'>
 											<a href="<?php echo CIT_BASE_URL.'search/houseinfo/'.$row['MA_NHATRO']; ?>">
-												<span style="color: rgb(246, 161, 4); "><?php echo $row['TEN_NHATRO'];?></span><span style="color: rgb(246, 161, 4); "></span>
+												<span style="color: #48B4DB; "><?php echo $row['TEN_NHATRO'];?></span><span style="color: rgb(246, 161, 4); "></span>
 											</a>
 											<span style="color: #F6A104;"></span>
 										  </p>

@@ -61,7 +61,7 @@
 					<a href="<?php echo CIT_BASE_URL.'search/detailsearch';?>"><!--<img width="120" height="96" alt="" src="public/img/19ca3799-7a56-47f0-b894-9fc8c7a4719c.png" class="">--></a>
 					<a href="<?php echo CIT_BASE_URL.'search/detailsearch';?>" class="art-button">Tìm kiếm chi tiết</a>&nbsp;<br>
 					<a href="<?php echo CIT_BASE_URL.'search/areasearch';?>"><!--<img width="120" height="96" alt="" src="public/img/19ca3799-7a56-47f0-b894-9fc8c7a4719c.png" class="">--></a>
-					<a href="<?php echo CIT_BASE_URL.'search/areasearch';?>" class="art-button">Tìm kiếm theo khu vực</a>&nbsp;<br>
+					<a href="<?php echo CIT_BASE_URL.'search/areasearch';?>" class="art-button">Tìm theo khu vực</a>&nbsp;<br>
                 </p>
               </div>
             </div>

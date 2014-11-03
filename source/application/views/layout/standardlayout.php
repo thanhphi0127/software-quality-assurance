@@ -22,20 +22,22 @@
                                                             
                 </div>
 				<div class="art-postcontent art-postcontent-0 clearfix">
-					<p><?php //$this->load->view('home/sidebarcontent');
+					<?php //$this->load->view('home/sidebarcontent');
 					$this->load->view ($template);
-				?></p>
+				?>
 				</div>
                 
             </article>
           </div>
-          <?php if (substr($template, 0, 4) == 'home' || substr($template, 0, 6) == 'search' || substr($template, 0, 4) == 'auth') {?>	
+         
 		  <div class="art-layout-cell art-sidebar2">
-            <div class="art-block clearfix">
-               <?php $this->load->view('layout/bluesky/sidebar2');?>
-            </div>
+			
+				<div class="art-block clearfix">
+				   <?php $this->load->view('layout/bluesky/sidebar2');?>
+				</div>
+
           </div>
-		  <?php }?>
+		
         </div>
       </div>
     </div>

@@ -17,6 +17,8 @@ class Auth extends MY_Controller {
 	}
 	
 	public function login(){
+		//load tiêu điểm
+		$data['tieudiem'] = $this->msearch->load_tieudiem();
 		$data['title_page'] = 'Đăng nhập';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
@@ -52,7 +54,7 @@ class Auth extends MY_Controller {
 		if ($this->auth != NULL) 
 			setcookie(CIT_PREFIX.'_user_logged', NULL, time()-3600, '/');
 			
-		$this->lib_string->alert(NULL, CIT_BASE_URL."home/index");
+		$this->lib_string->alert(NULL, CIT_BASE_URL."auth/login");
 	}
 	
 	public function forgot(){

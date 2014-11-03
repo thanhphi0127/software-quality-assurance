@@ -91,10 +91,19 @@ class Chunhatro extends MY_Controller {
 		$data['username'] = $this->username;
 		$data['title'] = 'Dang Tin Nha Tro';
 		//load thu vien de rang buoc du lieu nhap
-		$this->load->library('form_validation');
+		
 		$this->load->helper(array('form', 'url'));
 		
-		// rang buoc các truong nhap tren text field
+		
+		
+		//------------------------------------------------------
+		
+		$this->load->helper('date');
+		
+		
+		if(isset($_POST['btnDangTin']))
+		{
+			// rang buoc các truong nhap tren text field
 		$this->form_validation->set_rules('TenNhaTro', 'Tên nhà trọ', 'required|min_length[5]');
 		$this->form_validation->set_rules('Quan', 'Quận', 'required');
 		$this->form_validation->set_rules('Phuong', 'Phường', 'required');
@@ -109,16 +118,6 @@ class Chunhatro extends MY_Controller {
 		$this->form_validation->set_rules('Gia1', 'Giá', 'required|numeric');
 		
 		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
-		
-		//------------------------------------------------------
-		$this->load->model('mchunhatro');
-		$this->load->helper('date');
-		$data['huyen'] = $this->mchunhatro->getHuyen();
-		$data['thongtin'] = $this->mchunhatro->getTenChu('thuyngoc');
-		//load tiêu điểm
-		$data['tieudiem'] = $this->msearch->load_tieudiem();
-		if(isset($_POST['btnDangTin']))
-		{
 			$_POST = $this->input->post('member');
 			$data_info = array(
 								'TEN_NHATRO' =>$_POST['TenNhaTro'],
@@ -272,29 +271,20 @@ class Chunhatro extends MY_Controller {
 				echo "3 loai";
 			}// end loai phong thu 3
 		}// end of button Dang Tin
-
-			if(isset($_POST['btnXemTruoc']))
-			{
-				$_POST = $this->input->post('member');
-				if(isset($_POST['Quan']))
-				{
-						$data['phuong'] = $this->mchunhatro->getPhuong($_POST['Quan']);	
-				}
-			}
-			if(isset($_POST['btnXemTruoc1']))
-			{
-				$_POST = $this->input->post('member');
-				if(isset($_POST['Phuong']))
-				{
-					
-						$data['Duong'] = $this->mchunhatro->getDuong($_POST['Phuong']);	
-				}
-			}
+				// load quận
+		$data['huyen'] = $this->msearch->load_quan();
+		// load phường
+		$data['phuong'] = $this->msearch->load_phuong();
+		//load duong
+		$data['duong'] = $this->msearch->load_duong();
+		
+		$data['thongtin'] = $this->mchunhatro->getTenChu($this->username);
+		//load tiêu điểm
+		$data['tieudiem'] = $this->msearch->load_tieudiem();
+		
 		$data['template'] = 'chunhatro/dangnhatro';
-		if ($this->form_validation->run() == FALSE)
-		{
-			$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
-		}
+		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
+		
 		
 }
 

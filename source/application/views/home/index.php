@@ -1,11 +1,11 @@
 <div class="art-postcontent art-postcontent-0 clearfix">
                 <div class="art-content-layout">
                   <div class="art-content-layout-row">
-                    <div class="art-layout-cell layout-item-0" style="width: 35%" >
-                      <p style="text-align: center;"><span style="font-weight: bold; color: #F6A104;">Hình ảnh</span></p>
+                    <div class="art-layout-cell layout-item-0" style="width: 35%;" >
+                      <p style="text-align: center;margin-top:30px;"><span style="font-weight: bold; color: #48B4DB;">Hình ảnh</span></p>
                     </div>
-                    <div class="art-layout-cell" style="width: 65%" >
-                      <p style="text-align: left;"><span style="color: #48B4DB; font-weight: bold;">Mô tả sơ lược</span></p>
+                    <div class="art-layout-cell" style="width: 65%;" >
+                      <p style="text-align: left;margin-top:30px;"><span style="color: #48B4DB; font-weight: bold;margin-top:30px;">Mô tả sơ lược</span></p>
                     </div>
                   </div>
                 </div>

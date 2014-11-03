@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="public/template/css/bootstrap.css">
 <link rel='stylesheet' type='text/css' href='public/template/css/bootstrap.min.css'>
 <link rel='stylesheet' type='text/css' href='public/template/css/bootstrap.css'>
+<link rel='stylesheet' type='text/css' href='public/template/css/auth/auth.css'>
 
 <script src='public/template/js/login.js' language='javascript'></script>
 <script src='public/template/js/jquery-2.1.1.min.js'></script>
@@ -70,3 +71,4 @@
 ?>
 </body>
 </html>
+
