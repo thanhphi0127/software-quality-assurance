@@ -20,7 +20,16 @@ class Chunhatro extends MY_Controller {
 			$this->ma_quyen = 0;
 	}
 	
-	
+	public function danhsachnhatro(){
+		$data['title_page'] = 'Danh sách nhà trọ thuộc sở hữu';
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
+		$data['count_nhatro'] = $this->mchunhatro->load_nhatro($this->username)['count'];
+		if ($data['count_nhatro'] > 0)
+			$data['nhatro'] = $this->mchunhatro->load_nhatro($this->username)['nhatro'];
+		$data['template'] = 'chunhatro/danhsachnhatro';
+		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
+	}
 	public function profile_chunhatro(){
 		$data['title_page'] = 'Hồ sơ';
 		$data['ma_quyen'] = $this->ma_quyen;

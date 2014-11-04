@@ -142,4 +142,13 @@ class Mchunhatro extends CI_Model{
 		$this->db->update('phong', $data);
 	}
 	/*****************************************************************/
+	
+	public function load_nhatro($username){
+		$MSCHU = $this->db->query('select MSCHU from chunhatro where USERNAME = "'.$username.'"')->result_array()[0]['MSCHU'];
+		$sql = $this->db->get_where('nhatro', array('MSCHU' => $MSCHU));
+		$query['count'] = $sql->num_rows();
+		if ($query['count'] > 0) 
+			$query['nhatro'] = $sql->result_array();
+		return $query;
+	}
 }

@@ -15,7 +15,16 @@ class Home extends MY_Controller {
 		else
 			$this->ma_quyen = 0;
 	}
-		
+	public function quydinhdangnhatro(){
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
+		$data['title_page'] = 'Quy định đăng nhà trọ';
+		$data['seo']['title'] = 'Quy định đăng nhà trọ';
+		$data['template'] = 'home/quydinhdangnhatro';
+		//load tiêu điểm
+		$data['tieudiem'] = $this->msearch->load_tieudiem();
+		$this->load->view('layout/home', $data);
+	}
 	public function index(){
 
 		$data['ma_quyen'] = $this->ma_quyen;

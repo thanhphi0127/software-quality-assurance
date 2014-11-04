@@ -4,7 +4,7 @@
   <table  class="TableContainer standardform" >
 		<?php echo form_open('form'); ?>
     	<tr>
-        	<td class="Header">Đăng Tin</td>
+        	<td ><a href='<?php echo CIT_BASE_URL.'chunhatro/danhsachnhatro';?>'><< Quay về danh sách nhà trọ</a></td>
         </tr>
         <tr>
         	<td>
@@ -16,7 +16,7 @@
 							{	
 						?>
             			<td><input name="member[TenNguoiDang]" type="text" class="shortInput" value="<?php echo $tt['HOTEN'] ?>" readonly="readonly"/></td>
-           			    <td><input name="member[MaNguoiDang]" type="text" class="shortInput" value="<?php echo $tt['MSCHU'] ?>" hidden=""/></td>
+           			    <td><input name="member[MaNguoiDang]" type="hidden" class="shortInput" value="<?php echo $tt['MSCHU'] ?>" hidden=""/></td>
           </tr>
           				<?php
 							}

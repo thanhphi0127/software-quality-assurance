@@ -10,11 +10,17 @@
 		<?php if (isset($ma_quyen) && $ma_quyen != 0) {
 				if ($ma_quyen == 2) { 
 		?>
-					<li><a href="<?php echo CIT_BASE_URL.'chunhatro/dangnhatro';?>">Đăng nhà trọ</a></li>
+					<li><a >Quản lý nhà trọ</a>
+						<ul>
+							<li><a href="<?php echo CIT_BASE_URL.'chunhatro/dangnhatro';?>">Đăng nhà trọ</a></li>
+							<li><a href="<?php echo CIT_BASE_URL.'chunhatro/danhsachnhatro';?>">Danh sách nhà trọ</a></li>
+						
+						</ul>
+					</li>
 		<?php   }
 				else if ($ma_quyen == 1){
 		?>
-					<li><a href="<?php echo CIT_BASE_URL.'admin/index';?>">Quản lý</a>
+					<li><a href="<?php echo CIT_BASE_URL.'admin/duyetnhatro';?>">Quản lý</a>
 						<ul>
 							<li><a href="<?php echo CIT_BASE_URL.'admin/duyetnhatro';?>">Quản lý nhà trọ</a></li>
 							<li><a href="<?php echo CIT_BASE_URL.'admin/quanlynguoidung';?>">Quản lý người dùng</a></li>
@@ -26,10 +32,10 @@
 			
 			
 		?>
-        <li><a href="qui-đinh.html">Qui định</a>
+        <li><a href="<?php echo CIT_BASE_URL.'home/quydinhdangnhatro';?>">Qui định</a>
           <ul>
-            <li><a href="qui-đinh/qui-đinh-đang-tin.html">Qui định đăng tin</a></li>
-            <li><a href="qui-đinh/qui-đinh-đang-ky.html">Qui định đăng ký</a></li>
+            <li><a href="<?php echo CIT_BASE_URL.'home/quydinhdangnhatro';?>">Qui định đăng tin</a></li>
+            <li><a href="<?php echo CIT_BASE_URL.'home/quydinhdangnhatro';?>">Qui định đăng ký</a></li>
           </ul>
         </li>
         <li></li>

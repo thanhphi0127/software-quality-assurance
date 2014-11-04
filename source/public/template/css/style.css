@@ -2131,7 +2131,7 @@ pre
 
 .art-postheadericon:before
 {
-   /*content:url('../../img/postheadericon.png');*/
+   content:url('../../img/postheadericon.png');
    margin-right:6px;
    bottom: 3px;
    position:relative;

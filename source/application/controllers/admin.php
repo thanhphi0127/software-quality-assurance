@@ -139,6 +139,7 @@ class Admin extends MY_Controller {
 	//**************************************************
 	public function duyetnhatro()
 	{
+		$data['title_page'] = 'Duyệt nhà trọ';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
 		$this->load->model('madmin');

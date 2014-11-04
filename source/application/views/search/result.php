@@ -67,7 +67,7 @@
 										  </p>
 										</div>
 										<div class="art-layout-cell" style="width: 65%;" >
-										  <p style='margin-top: 6px;'>
+										  <p style='margin-top: 18px;'>
 											<a href="<?php echo CIT_BASE_URL.'search/houseinfo/'.$row['MA_NHATRO']; ?>">
 												<span style="color: #48B4DB; "><?php echo $row['TEN_NHATRO'];?></span><span style="color: rgb(246, 161, 4); "></span>
 											</a>
