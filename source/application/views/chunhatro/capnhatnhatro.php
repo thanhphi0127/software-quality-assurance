@@ -37,6 +37,17 @@
                         
           </tr>
           <tr>
+          	<td class="Left"> Địa chỉ cũ </td>
+            <?php
+				foreach($diachicu as $dc)
+				{
+			?>
+            <td colspan='2'><textarea style='width:500px; height:40px;' rows="5" cols="20" name="txtDiaChiCu" class="expandInput"  readonly="readonly"><?php echo $dc['diachi'];?></textarea></td>
+          </tr>
+          <?php
+				}
+		  ?>
+          <tr>
 					<td class="Left">Khu vực</td>
 					<td>  <div style='width:155px; float:left' >&nbsp;Quận</div> <div style='width:155px; float:left' >&nbsp;Phường</div> <div style='width:155px; float:left' >&nbsp;Đường</div><br/>
 							<p> <select style='width: 135px;' id='sel_quan' name='member[Quan]'>

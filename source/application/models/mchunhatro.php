@@ -118,6 +118,18 @@ class Mchunhatro extends CI_Model{
 							");
 		return $query->result_array();*/
 	}
+	
+	//lay thong tin duuong
+	public function DiaChiCu($id)
+	{
+		$query = $this->db->query(
+		 "SELECT a.*, b.*, CONCAT('đường ', c.TEN_DUONG,'- phường ' ,d.TEN_PHUONGXA, '- quận ', e.TENHUYEN)  as diachi
+			FROM (nhatro as a, chunhatro as b, duong as c, phuongxa as d, quanhuyen as e) 
+			WHERE a.MSCHU = b.MSCHU AND a.MA_DUONG = c.MA_DUONG AND c.MA_PHUONGXA = d.MA_PHUONGXA 
+					AND d.MA_HUYEN = e.MA_HUYEN AND a.MA_NHATRO=".$id
+		 );
+		return $query->result_array();
+	}
 	// lay thong tin phong tro thong qua MA_NHATRO
 	public function PhongInfo($id)
 	{

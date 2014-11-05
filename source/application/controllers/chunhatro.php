@@ -129,7 +129,7 @@ class Chunhatro extends MY_Controller {
 			$data_info = array(
 								'TEN_NHATRO' =>$_POST['TenNhaTro'],
 								'MSCHU' =>$_POST['MaNguoiDang'],
-								'MA_DUONG'=>'NK-XK-1',
+								'MA_DUONG'=>$_POST['Duong'],
 								'MOTA'=> $_POST['MoTa'],
 								'NAU_AN' =>isset( $_POST['NauAn'] )?1:0,
 								'BAIDAUXE' =>isset( $_POST['BaiDauXe'] )?1:0,
@@ -296,6 +296,7 @@ class Chunhatro extends MY_Controller {
 		$data['info'] = $this->mchunhatro->NhaTroInfo($id);
 		$data['phong'] = $this->mchunhatro->PhongInfo($id);
 		$so_loai =$this->mchunhatro->CountPhongTro($id);
+		$data['diachicu'] = $this->mchunhatro->DiaChiCu($id);
 		// cap nhat
 		if(isset($_POST['btnCapNhat']))
 		{
@@ -304,11 +305,11 @@ class Chunhatro extends MY_Controller {
 			$data_info = array(
 								'TEN_NHATRO' =>$_POST['TenNhaTro'],
 								'MSCHU' =>$_POST['MaNguoiDang'],
-								'MA_DUONG'=>'NK-XK-1',
+								'MA_DUONG'=>$_POST['Duong'],
 								'MOTA'=> $_POST['MoTa'],
 								'NAU_AN' =>isset($_POST['NauAn'])?1:0,
 								'BAIDAUXE' =>isset($_POST['BaiDauXe'])?1:0,
-								/*'SO' => $_POST['SoNha'],*/
+								'SO' => $_POST['SoNha'],
 								'LUOCXEM' =>'0',
 								/*HINHANH =>*/
 								'TUQUAN' => $_POST['TuQuan'],
@@ -338,6 +339,7 @@ class Chunhatro extends MY_Controller {
 		$data['phuong'] = $this->msearch->load_phuong();
 		//load duong
 		$data['duong'] = $this->msearch->load_duong();
+		
 		
 		$data['template'] = 'chunhatro/capnhatnhatro';
 		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
