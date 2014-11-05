@@ -1,5 +1,5 @@
 <!-- Nội dung bên trong -->
-
+<div>
 <form name='fDangnhatro' method='POST' action=''>
   <table  class="TableContainer standardform" >
 		<?php echo form_open('form'); ?>
@@ -15,8 +15,8 @@
 							foreach($tenchu as $tt)
 							{	
 						?>
-            			<td><input name="member[TenNguoiDang]" type="text" class="shortInput" value="<?php echo $tt['HOTEN'] ?>" readonly="readonly"/></td>
-           			    <td><input name="member[MaNguoiDang]" type="hidden" class="shortInput" value="<?php echo $tt['MSCHU'] ?>" hidden=""/></td>
+            			<td><input name="member[TenNguoiDang]" style='width:363px;' type="text" class="shortInput" value="<?php echo $tt['HOTEN'] ?>" readonly="readonly"/>
+           			    <input name="member[MaNguoiDang]" style='width: 75px;' type="hidden" class="shortInput" value="<?php echo $tt['MSCHU'] ?>" hidden=""/></td>
           </tr>
           				<?php
 							}
@@ -31,24 +31,67 @@
 					$tu_quan = $nt['TUQUAN'];
 					$gio = $nt['GIODONGCUA'];
 			?>
-            <td colspan='2'><input type="text" name="member[TenNhaTro]"  class="shortInput" value="<?php echo $nt['TEN_NHATRO']; ?>" />
+            <td colspan='2'><input type="text" style='width: 476px;' name="member[TenNhaTro]"  class="shortInput" value="<?php echo $nt['TEN_NHATRO']; ?>" />
             
             </td>
                         
           </tr>
           <tr>
-            <td class="Left">Mô tả ngắn</td>
-            <td colspan='2'><textarea rows="5" cols="20" name="member[MoTa]" class="expandInput" ><?php echo $nt['MOTA']; ?></textarea></td>
+					<td class="Left">Khu vực</td>
+					<td>  <div style='width:155px; float:left' >&nbsp;Quận</div> <div style='width:155px; float:left' >&nbsp;Phường</div> <div style='width:155px; float:left' >&nbsp;Đường</div><br/>
+							<p> <select style='width: 135px;' id='sel_quan' name='member[Quan]'>
+									<?php
+										foreach($huyen as $v) { ?>
+										
+										<option value='<?php echo $v['MA_HUYEN'];?>'><?php echo $v['TENHUYEN'];?></option>
+									<?php 	}
+									?>
+								</select>
+							
+							<select style='width: 135px;' id='sel_phuong' name='member[Phuong]'>
+									<?php
+										foreach($phuong as $v) { ?>
+										
+										<option value='<?php echo $v['MA_PHUONGXA'];?>'><?php echo $v['TEN_PHUONGXA'];?></option>
+									<?php 	}
+									?>
+								</select>
+							
+							<select id='sel_duong' name='member[Duong]'>
+									<?php 
+										foreach($duong as $MA_PHUONG => $DSDUONG) { 
+											foreach($DSDUONG as $v){?>
+										
+										<option class='<?php echo $MA_PHUONG;?>' value='<?php echo $v['MA_DUONG'];?>'><?php echo $v['TEN_DUONG'];?></option>
+									<?php 	}}
+									?>
+								</select>
+							</p>
+							 
+					</td>
+				</tr>
+				<tr>
+					<td class="Left">Địa chỉ</td>
+					<td><p class='sonha' style='font-weight:bold;width:500px;'></p>
+						<p><input type='text' id='sonha' name='member[SoNha]' placeholder='Nhập (tên hẻm) số nhà'/></p>
+						
+					</td>
+				</tr>
+				</tr>
+                <tr>
+                    <td class="Left" >Giờ Đóng cửa</td>
+                    <td><select name="member[Gio]" >
+                        <option <?php if($gio == 'Không quy định giờ') echo 'selected'; ?> value='Không quy định giờ'>Không quy định giờ</option>
+                        <option  <?php if($gio == '22') echo 'selected'; ?>  value='22'>22 giờ</option>
+                        <option  <?php if($gio == '23') echo 'selected'; ?>   value='23'>23 giờ</option>
+                        <option <?php if($gio == '0') echo 'selected'; ?>  value='0'>0 giờ</option>
+                      </select></td>
           </tr>
           <tr>
-            <td class="Left" >Giờ Đóng cửa</td>
-            <td><select name="member[Gio]" >
-                <option <?php if($gio == 'Không quy định giờ') echo 'selected'; ?> value='Không quy định giờ'>Không quy định giờ</option>
-                <option  <?php if($gio == '22') echo 'selected'; ?>  value='22'>22 giờ</option>
-                <option  <?php if($gio == '23') echo 'selected'; ?>   value='23'>23 giờ</option>
-                <option <?php if($gio == '0') echo 'selected'; ?>  value='0'>0 giờ</option>
-              </select></td>
+            <td class="Left">Mô tả ngắn</td>
+            <td colspan='2'><textarea style='width:500px; height:40px;' rows="5" cols="20" name="member[MoTa]" class="expandInput" ><?php echo $nt['MOTA']; ?></textarea></td>
           </tr>
+          
            <tr>
             <td class="Left" >Tiện nghi chung</td>
             <td><input type="checkbox" name="member[NauAn]" <?php if($nt['NAU_AN'] == 1) echo "checked='checked'"; ?> />
@@ -71,25 +114,27 @@
                  value="0" /> Không
             </td>
           </tr>
+          <tr><td></td><td><img src="public/img/nhatro/<?php echo $nt['HINHANH']; ?>" width="50" height="" /></td></tr>
           <?php
+		  //../../../public/img/nhatro/2221-large.jpg
 				}
 		  ?>
-          <tr>
+          <!--<tr>
             <td class="Left">Số loại phòng</td>
             <td colspan='2'><select name="member[LoaiPhong]" id='cbLoaiPhong' class="shortInputCB">
                 <option value='1'>1 loại</option>
                 <option value='2'>2 loại</option>
                 <option value='3'>3 loại</option>
               </select></td>
-          </tr>
+          </tr>-->
           
         </table></td>
     </tr>
      <!--table thu 2 -->
     <tr class='1st-type type'><!-- Loai 1 -->
-      <td><table class="TableForm">
+      <td><table class="TableForm" style='width:100% !important'>
           <tr >
-            <td>Loại Phòng Thứ Nhất</td>
+            <td><b>Loại Phòng Thứ Nhất<b></td>
             <td><span class='hidethistype'>Ẩn / Hiện</span></td>
           </tr>
           <tr>
@@ -121,7 +166,7 @@
           </tr>
           <tr>
             <td class="Left">Giá</td>
-            <td><input type="text" name="member[Gia<?php echo $c; ?>]" class="shortInputLoaiPhong" value="<?php echo $p['GIA']; ?>" />&nbsp;000
+            <td><input type="text" style='width:100px;' name="member[Gia<?php echo $c; ?>]" class="shortInputLoaiPhong" value="<?php echo $p['GIA']; ?>" />&nbsp;000 000&nbsp;VNĐ
               <?php echo form_error('Gia1');?>
               </td>
           </tr>
@@ -133,10 +178,7 @@
               Nhà vệ sinh trong<br />
            </td>
           </tr>
-          <tr>
-            <td class="Left">Hình ảnh</td>
-            <td><input type="file" name="fHinhAnh" class="shortInput"/></td>
-          </tr>
+          
           <tr><td colspan="2">-------------------------------------------------------
           --------------------------------------------------</td></tr>
           <?php
@@ -152,3 +194,4 @@
     </tr>
   </table>
 </form>
+</div>

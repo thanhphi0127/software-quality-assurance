@@ -143,26 +143,24 @@ class Chunhatro extends MY_Controller {
 								'NGAYDANG'=> date('Y-m-d'),
 								'STATUS' =>'0'
 								);
-			$this->mchunhatro-> arInsertNhaTro($data_info);
-			$ma = $this->mchunhatro->getMaNhaTro();
+			$ma = $this->mchunhatro-> arInsertNhaTro($data_info);
+
 			echo "insert thanh cong :D";
 			if($_POST['LoaiPhong'] == 1)
 			{
-				foreach($ma as $v)
-				{
-					echo $v['MA_NHATRO'] ;
+				echo $_POST['SoLuongNguoi1'];
 				
 				$phongtro_thu1 = array(
 									'MA_PHONG' =>'1',
-									'MA_NHATRO' =>$v['MA_NHATRO'],
+									'MA_NHATRO' =>$ma,
 									'SL_NGUOI' => $_POST['SoLuongNguoi1'],
 									'CONTRONG' => $_POST['PhongConTrong1'],
-									'DIENTICH' => $_POST['ChieuDai1']."x".$_POST['ChieuRong1'],
+									'DIENTICH' => $_POST['ChieuDaia']."x".$_POST['ChieuRonga'],
 									'GIA' => $_POST['Gia1'],
 									'TOILETTRONG' =>isset($_POST['NhaVeSinh1'])?1:0,
 									'GAC' =>isset($_POST['CoGac1'])?1:0
 									);
-				}
+				
 				$this->mchunhatro-> arInsertPhongTro($phongtro_thu1);
 				
 				echo "insert phong tro thanh cong :D";
@@ -308,7 +306,7 @@ class Chunhatro extends MY_Controller {
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
 		$this->load->model('mchunhatro');
-		$data['tenchu'] = $this->mchunhatro->getTenChu('thuyngoc');
+		$data['tenchu'] = $this->mchunhatro->getTenChu($this->username);
 		$data['info'] = $this->mchunhatro->NhaTroInfo($id);
 		$data['phong'] = $this->mchunhatro->PhongInfo($id);
 		$so_loai =$this->mchunhatro->CountPhongTro($id);
@@ -348,6 +346,12 @@ class Chunhatro extends MY_Controller {
 			}
 			
 		}
+			// load quận
+		$data['huyen'] = $this->msearch->load_quan();
+		// load phường
+		$data['phuong'] = $this->msearch->load_phuong();
+		//load duong
+		$data['duong'] = $this->msearch->load_duong();
 		
 		$data['template'] = 'chunhatro/capnhatnhatro';
 		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);

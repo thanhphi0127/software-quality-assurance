@@ -41,6 +41,7 @@ class Mchunhatro extends CI_Model{
 	public function arInsertNhaTro($data)
 	{
 		$this->db->insert('nhatro', $data);
+		return $this->db->insert_id();
 	}
 	public function arInsertPhongTro($data)
 	{
@@ -111,6 +112,11 @@ class Mchunhatro extends CI_Model{
 		$this->db->where('MA_NHATRO', $id);
 		$query = $this->db->get('nhatro');
 		return $query->result_array();
+		/* $query = $this->db->query("select a.*, b.* from nhatro as a, chunhatro as b
+							where a.MSCHU = b.MSCHU	and 
+								  a.MA_NHATRO = $id and b.USERNAME = $user
+							");
+		return $query->result_array();*/
 	}
 	// lay thong tin phong tro thong qua MA_NHATRO
 	public function PhongInfo($id)
@@ -118,6 +124,13 @@ class Mchunhatro extends CI_Model{
 		$this->db->where('MA_NHATRO', $id);
 		$q = $this->db->get('phong');
 		return $q->result_array();
+		/* $query = $this->db->query("select a.*,b.*, c.* 
+		 							from nhatro as a, phong as b, chunhatro as c
+									where a.MA_NHATRO = b.MA_NHATRO	and a.MSCHU = c.MSCHU 
+								  	a.MA_NHATRO = $id and b.USERNAME = $user
+							");
+		return $query->result_array();*/
+		
 	}
 	
 	//dem so phong tro trong nha tro

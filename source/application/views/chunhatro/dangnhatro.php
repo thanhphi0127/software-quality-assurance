@@ -125,11 +125,11 @@
 			<td class="Left" >Chiều dài x Chiều rộng
 			
 			 </td>
-			<td><input type="text" style='width:45px;' name="member[ChieuDai1]"class="shortInputLoaiPhong"/>
+			<td><input type="text" style= "width:45px;" name="member[ChieuDaia]" class="shortInputLoaiPhong" value='1'/>
 				&nbsp; x &nbsp;
 			   <?php echo form_error('ChieuDai1');?>
 			   
-			   <input type="text" style='width:45px;' name="member[ChieuRong1]"class="shortInputLoaiPhong"/>
+			   <input type="text" style='width:45px;' name="member[ChieuRonga]" class="shortInputLoaiPhong" value='2'/>
 			  &nbsp;Mét
 			  <?php echo form_error('ChieuRong1');?>
 			 </td>
