@@ -28,5 +28,17 @@ class thongTinNhaTro extends MY_Controller {
 		$data['template'] = 'thongTinNhaTro/thongTinNhaTro';
 		$this->load->view('layout/thongTinNhaTro', isset($data)? $data : NULL);
 	}
+	public function xem_nhatro ($id)
+	{
+		$data['title_page'] = 'Danh sách nhà trọ sở hữu';
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
+		$this->load->model ('mthongTinNhaTro');
+		//$ma_nhatro = 1;
+		$data['nhatro'] = $this->mthongTinNhaTro->load_nhatro ($id);
+		$data['phongtro'] = $this->mthongTinNhaTro->load_phongtro ($id);
+		$data['template'] = 'thongTinNhaTro/thongTinNhaTro';
+		$this->load->view('layout/thongTinNhaTro', isset($data)? $data : NULL);
+	}
 }
 ?>

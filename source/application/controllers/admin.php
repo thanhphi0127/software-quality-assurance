@@ -225,7 +225,7 @@ class Admin extends MY_Controller {
 	{
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
-		$this->load->model(madmin);
+		//$this->load->model(madmin);
 		$data['data_info'] = $this->madmin->arSelectUpdate($id);
 		if(isset($_POST['btnDuyetTin']))
 		{
