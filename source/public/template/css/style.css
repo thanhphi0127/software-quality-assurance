@@ -2062,7 +2062,7 @@ a img
 .art-article th, .art-article td
 {
    padding: 2px;
-   border: dotted 1px #A6A6A6;
+   border: 1px dotted #A6A6A6 ;
    vertical-align: top;
    text-align: left;
 }

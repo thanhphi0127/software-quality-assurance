@@ -50,22 +50,12 @@
 <link rel="stylesheet" type="text/css" href="public/template/css/home/home.css">
 
 <link rel="stylesheet" type="text/css" href="public/template/css/home/style.css">
-<script src="public/template/js/chunhatro/dangtin.js"></script>
 <?php
 	
-	if ('chunhatro/dangnhatro' == $template) 
+	
+	 if ('thongTinNhaTro/xem_nhatro' == $template) 
 	{
-		echo "<link rel='stylesheet' type='text/css' href='public/template/css/chunhatro/style.css'/>";
-	} 
-	/*else if ('chunhatro/vidu' == $template) 
-	{
-		echo "<link rel='stylesheet' type='text/css' href='public/template/css/style.css'/>";
-		echo "<link rel='stylesheet' type='text/css' href='public/template/css/standardform.css'/>";
-		
-	} */
-	else if ('chunhatro/gopy' == $template) 
-	{
-		echo "<link rel='stylesheet' type='text/css' href='public/template/assets/bootstrap.css' ";
+		echo "<link rel='stylesheet' type='text/css' href='public/template/css/thongtinnhatro/style.css'/>";
 		
 	} 
 ?>
