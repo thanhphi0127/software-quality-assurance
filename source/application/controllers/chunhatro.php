@@ -103,8 +103,6 @@ class Chunhatro extends MY_Controller {
 		
 		$this->load->helper(array('form', 'url'));
 		
-		
-		
 		//------------------------------------------------------
 		
 		$this->load->helper('date');
@@ -144,18 +142,16 @@ class Chunhatro extends MY_Controller {
 								'STATUS' =>'0'
 								);
 			$ma = $this->mchunhatro-> arInsertNhaTro($data_info);
-
 			echo "insert thanh cong :D";
 			if($_POST['LoaiPhong'] == 1)
 			{
-				echo $_POST['SoLuongNguoi1'];
-				
+				echo $ma;
 				$phongtro_thu1 = array(
 									'MA_PHONG' =>'1',
 									'MA_NHATRO' =>$ma,
 									'SL_NGUOI' => $_POST['SoLuongNguoi1'],
 									'CONTRONG' => $_POST['PhongConTrong1'],
-									'DIENTICH' => $_POST['ChieuDaia']."x".$_POST['ChieuRonga'],
+									'DIENTICH' => $_POST['ChieuDai1']."x".$_POST['ChieuRong1'],
 									'GIA' => $_POST['Gia1'],
 									'TOILETTRONG' =>isset($_POST['NhaVeSinh1'])?1:0,
 									'GAC' =>isset($_POST['CoGac1'])?1:0
@@ -169,19 +165,17 @@ class Chunhatro extends MY_Controller {
 			//----------------------------------------------
 			else if($_POST['LoaiPhong'] == 2)
 			{
+				echo $ma;
 				//loai phong thu 1
 				$this->form_validation->set_rules('PhongConTrong2', 'Số phòng còn trống', 'numeric');
 				$this->form_validation->set_rules('SoLuongNguoi2', 'Số lượng người', 'numeric');
 				$this->form_validation->set_rules('ChieuDai2', 'Chiều dài', 'required|numeric');
 				$this->form_validation->set_rules('ChieuRong2', 'Chiều rộng', 'required|numeric');
 				$this->form_validation->set_rules('Gia2', 'Giá', 'required|numeric');
-				foreach($ma as $v1)
-				{
-					echo $v1['MA_NHATRO'] ;
 				
 				$phongtro_thu1 = array(
 									'MA_PHONG' =>'1',
-									'MA_NHATRO' =>$v1['MA_NHATRO'],
+									'MA_NHATRO' =>$ma,
 									'SL_NGUOI' => $_POST['SoLuongNguoi1'],
 									'CONTRONG' => $_POST['PhongConTrong1'],
 									'DIENTICH' => $_POST['ChieuDai1']."x".$_POST['ChieuRong1'],
@@ -189,16 +183,14 @@ class Chunhatro extends MY_Controller {
 									'TOILETTRONG' =>isset($_POST['NhaVeSinh1'])?1:0,
 									'GAC' =>isset($_POST['CoGac1'])?1:0
 									);
-				}
+				
 				$this->mchunhatro-> arInsertPhongTro($phongtro_thu1);
 				// loai phong thu hai
-				foreach($ma as $v2)
-				{
-					echo $v2['MA_NHATRO'] ;
+				
 				
 				$phongtro_thu2 = array(
 									'MA_PHONG' =>'2',
-									'MA_NHATRO' =>$v2['MA_NHATRO'],
+									'MA_NHATRO' =>$ma,
 									'SL_NGUOI' => $_POST['SoLuongNguoi2'],
 									'CONTRONG' => $_POST['PhongConTrong2'],
 									'DIENTICH' => $_POST['ChieuDai2']."x".$_POST['ChieuRong2'],
@@ -206,7 +198,7 @@ class Chunhatro extends MY_Controller {
 									'TOILETTRONG' =>isset($_POST['NhaVeSinh2'])?1:0,
 									'GAC' =>isset($_POST['CoGac2'])?1:0
 									);
-				}
+				
 				$this->mchunhatro-> arInsertPhongTro($phongtro_thu2);
 			}
 				//---------------------------------------------------------
@@ -226,13 +218,10 @@ class Chunhatro extends MY_Controller {
 				$this->form_validation->set_rules('ChieuRong3', 'Chiều rộng', 'required|numeric');
 				$this->form_validation->set_rules('Gia3', 'Giá', 'required|numeric');
 				//loai phong thu 1
-				foreach($ma as $v1)
-				{
-					echo $v1['MA_NHATRO'] ;
 				
 				$phongtro_thu1 = array(
 									'MA_PHONG' =>'1',
-									'MA_NHATRO' =>$v1['MA_NHATRO'],
+									'MA_NHATRO' =>$ma,
 									'SL_NGUOI' => $_POST['SoLuongNguoi1'],
 									'CONTRONG' => $_POST['PhongConTrong1'],
 									'DIENTICH' => $_POST['ChieuDai1']."x".$_POST['ChieuRong1'],
@@ -240,16 +229,13 @@ class Chunhatro extends MY_Controller {
 									'TOILETTRONG' =>isset($_POST['NhaVeSinh1'])?1:0,
 									'GAC' =>isset($_POST['CoGac1'])?1:0
 									);
-				}
+				
 				$this->mchunhatro-> arInsertPhongTro($phongtro_thu1);
 				// loai phong thu hai
-				foreach($ma as $v2)
-				{
-					echo $v2['MA_NHATRO'] ;
-				
+					
 				$phongtro_thu2 = array(
 									'MA_PHONG' =>'2',
-									'MA_NHATRO' =>$v2['MA_NHATRO'],
+									'MA_NHATRO' => $ma,
 									'SL_NGUOI' => $_POST['SoLuongNguoi2'],
 									'CONTRONG' => $_POST['PhongConTrong2'],
 									'DIENTICH' => $_POST['ChieuDai2']."x".$_POST['ChieuRong2'],
@@ -257,15 +243,13 @@ class Chunhatro extends MY_Controller {
 									'TOILETTRONG' =>isset($_POST['NhaVeSinh2'])?1:0,
 									'GAC' =>isset($_POST['CoGac2'])?1:0
 									);
-				}
+				
 				$this->mchunhatro-> arInsertPhongTro($phongtro_thu2);
-				foreach($ma as $v3)
-				{
-					echo $v3['MA_NHATRO'] ;
+				//////////////////
 				
 				$phongtro_thu3 = array(
 									'MA_PHONG' =>'3',
-									'MA_NHATRO' =>$v3['MA_NHATRO'],
+									'MA_NHATRO' =>$ma,
 									'SL_NGUOI' => $_POST['SoLuongNguoi3'],
 									'CONTRONG' => $_POST['PhongConTrong3'],
 									'DIENTICH' => $_POST['ChieuDai3']."x".$_POST['ChieuRong3'],
@@ -273,11 +257,13 @@ class Chunhatro extends MY_Controller {
 									'TOILETTRONG' =>isset($_POST['NhaVeSinh3'])?1:0,
 									'GAC' =>isset($_POST['CoGac3'])?1:0
 									);
-				}
+				
 				$this->mchunhatro-> arInsertPhongTro($phongtro_thu3);
 				echo "3 loai";
-			}// end loai phong thu 3
-		}// end of button Dang Tin
+				
+		}// end loai phong thu 3
+}// end of button Dang Tin
+		
 				// load quận
 		$data['huyen'] = $this->msearch->load_quan();
 		// load phường

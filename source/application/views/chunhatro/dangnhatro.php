@@ -88,6 +88,13 @@
 					<td class="Left">Mô tả ngắn</td>
 					<td ><textarea style='width:500px; height:40px;'name="member[MoTa]" class="" ></textarea></td>
 				  </tr>
+               <tr>
+            <td class="Left" >Tiện nghi chung</td>
+            <td><input type="checkbox" name="member[NauAn]"  />
+              Nấu ăn <br />
+              <input type="checkbox" name="member[BaiDauXe]" />
+              Bãi đậu xe <br />
+           </td>
 			  <tr>
 			<td class="Left">Hình ảnh</td>
 			<td><input type="file" name="fHinhAnh" class="shortInput"/></td>
@@ -125,11 +132,11 @@
 			<td class="Left" >Chiều dài x Chiều rộng
 			
 			 </td>
-			<td><input type="text" style= "width:45px;" name="member[ChieuDaia]" class="shortInputLoaiPhong" value='1'/>
+			<td><input type="text" style= "width:45px;" name="member[ChieuDai1]" class="shortInputLoaiPhong" value=''/>
 				&nbsp; x &nbsp;
 			   <?php echo form_error('ChieuDai1');?>
 			   
-			   <input type="text" style='width:45px;' name="member[ChieuRonga]" class="shortInputLoaiPhong" value='2'/>
+			   <input type="text" style='width:45px;' name="member[ChieuRong1]" class="shortInputLoaiPhong" value=''/>
 			  &nbsp;Mét
 			  <?php echo form_error('ChieuRong1');?>
 			 </td>
@@ -173,18 +180,18 @@
 			<td class="Left" >Chiều dài x Chiều rộng
 			
 			 </td>
-			<td><input type="text" style='width:45px;' name="member[ChieuDai1]"class="shortInputLoaiPhong"/>
+			<td><input type="text" style='width:45px;' name="member[ChieuDai2]"class="shortInputLoaiPhong"/>
 				&nbsp; x &nbsp;
 			   <?php echo form_error('ChieuDai1');?>
 			   
-			   <input type="text" style='width:45px;' name="member[ChieuRong1]"class="shortInputLoaiPhong"/>
+			   <input type="text" style='width:45px;' name="member[ChieuRong2]"class="shortInputLoaiPhong"/>
 			  &nbsp;Mét
 			  <?php echo form_error('ChieuRong1');?>
 			 </td>
 		  </tr>
 		  <tr>
 			<td class="Left">Giá</td>
-			<td><input type="text" style='width:100px;' name="member[Gia1]" class="shortInputLoaiPhong"/>&nbsp;000 000&nbsp;VNĐ
+			<td><input type="text" style='width:100px;' name="member[Gia2]" class="shortInputLoaiPhong"/>&nbsp;000 000&nbsp;VNĐ
 			  <?php echo form_error('Gia1');?>
 			  </td>
 		  </tr>
@@ -221,18 +228,18 @@
 			<td class="Left" >Chiều dài x Chiều rộng
 			
 			 </td>
-			<td><input type="text" style='width:45px;' name="member[ChieuDai1]"class="shortInputLoaiPhong"/>
+			<td><input type="text" style='width:45px;' name="member[ChieuDai3]"class="shortInputLoaiPhong"/>
 				&nbsp; x &nbsp;
 			   <?php echo form_error('ChieuDai1');?>
 			   
-			   <input type="text" style='width:45px;' name="member[ChieuRong1]"class="shortInputLoaiPhong"/>
+			   <input type="text" style='width:45px;' name="member[ChieuRong3]"class="shortInputLoaiPhong"/>
 			  &nbsp;Mét
 			  <?php echo form_error('ChieuRong1');?>
 			 </td>
 		  </tr>
 		  <tr>
 			<td class="Left">Giá</td>
-			<td><input type="text" style='width:100px;' name="member[Gia1]" class="shortInputLoaiPhong"/>&nbsp;000 000&nbsp;VNĐ
+			<td><input type="text" style='width:100px;' name="member[Gia3]" class="shortInputLoaiPhong"/>&nbsp;000 000&nbsp;VNĐ
 			  <?php echo form_error('Gia1');?>
 			  </td>
 		  </tr>
@@ -251,7 +258,7 @@
 	<tr>
 	  <td align="left">
 		<input type="submit" name="btnXemTruoc" value="Xem trước bản đăng" class="nutnhan2" />
-		<input type="submit" name="btnDangTin" value="Đăng tin" class="nutnhan" />
+		<input type="submit" name="btnDangTin" value="Đăng nhà trọ" class="nutnhan" />
 	  </td>
 	</tr>
 </table>
