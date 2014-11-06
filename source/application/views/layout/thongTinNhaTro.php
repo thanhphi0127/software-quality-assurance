@@ -55,7 +55,7 @@
 	
 	 if ('thongTinNhaTro/xem_nhatro' == $template) 
 	{
-		echo "<link rel='stylesheet' type='text/css' href='public/template/css/thongtinnhatro/style.css'/>";
+		echo "<link rel='stylesheet' type='text/css' href='public/template/assets/bootstrap.css' ";
 		
 	} 
 ?>

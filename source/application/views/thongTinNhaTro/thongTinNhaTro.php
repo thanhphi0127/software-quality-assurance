@@ -38,7 +38,27 @@
 		td{
 			color:#036;
 		}
-		
+		.gopy
+		{
+			float:left;
+			border:1px 	#C0C0C0 solid;
+			width:920px;
+			height:100px;
+			margin-top:30px;
+			margin-right:30px;
+			background-color:#FFF;
+			box-shadow: 2px 2px 2px #888888;
+			border-radius:10px;
+		}
+		textarea
+		{
+			background-color:#FFF;
+			text-shadow:#999;
+		}
+		.nut
+		{
+			float: left;
+		}
     </style>
 	<div class='ttnhatro' >
 		<!-- xem thong tin chung nhà trọ -->
@@ -157,3 +177,30 @@
 			}
 		?>
 	</div>
+
+<div>    
+     <form action=""  method="post">
+     	 <div class='gopy'>
+        	<textarea placeholder="Bạn có nhận xét gì về nhà trọ này" cols="40" rows="3" name='member[noidung]'></textarea>
+         </div>
+         <div class='nut'>
+        	<input type="submit" name="btnBinhLuan" value='Bình Luận' class="nut" />
+         </div>   
+     </form>
+     <?php
+	 	foreach($binhluan as $bl)
+		{
+         echo "
+				 <div class='gopy'>
+				 	<font color= '#0000FF'><b>".$bl['MSTHANHVIEN']."</b></font></br>
+					".$bl['NOIDUNG']."</br>
+					<i>".$bl['THOIGIAN']."</i>					
+				 </div>
+				 
+		       ";
+     
+		}
+	 ?>
+</div>
+
+

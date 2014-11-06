@@ -31,6 +31,9 @@ class thongTinNhaTro extends MY_Controller {
 	}
 	public function xem_nhatro ($id)
 	{
+		$this->load->model('mdiendan');
+		$this->load->helper('date');
+		
 		$data['title_page'] = 'Danh sách nhà trọ sở hữu';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
@@ -39,8 +42,28 @@ class thongTinNhaTro extends MY_Controller {
 		$data['nhatro'] = $this->mthongTinNhaTro->load_nhatro ($id);
 		$data['phongtro'] = $this->mthongTinNhaTro->load_phongtro ($id);
 		$data['chu'] = $this->mthongTinNhaTro->getTTChu($id);
+		$data['binhluan'] = $this->mthongTinNhaTro->loadbinhluan($id);
+		
+		// them binh luan vao nha tro
+		
+		if(isset($_POST['btnBinhLuan']))
+		{
+			$_POST = $this->input->post('member');
+			$arr = array(
+							'MA_GOPY' => '7',
+							'MSTHANHVIEN' => $data['username'],
+							'MA_NHATRO' => $id,
+							'THOIGIAN' => date('Y-m-d'),
+							'NOIDUNG' => $_POST['noidung']
+							);
+			$this->mthongTinNhaTro->insertbinhluan($arr);
+			header('Location:http://localhost/timkiemnhatro/thongTinNhaTro/xem_nhatro/3');
+		}
 		$data['template'] = 'thongTinNhaTro/thongTinNhaTro';
 		$this->load->view('layout/thongTinNhaTro', isset($data)? $data : NULL);
 	}
+	
+	// binh luan
+	
 }
 ?>

@@ -31,5 +31,18 @@ class MthongTinNhaTro extends CI_Model{
 									and a.MA_NHATRO =".$manhatro);
 		return $query->result_array();
 	}
+	public function loadbinhluan($ma)
+	{
+		$this->db->order_by('MA_GOPY', 'desc'); 
+		$this->db->where('MA_NHATRO', $ma);
+		$q = $this->db->get('gopy');
+		return $q->result_array();
+	}
+	
+	public function insertbinhluan($data)
+	{
+		$this->db->insert('gopy', $data);
+	}
+	
 	
 }
