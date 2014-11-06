@@ -9,27 +9,20 @@
                   <div class="form-group">
                     <label for="inputEmail3" class="col-sm-3 control-label">Thành viên</label>
                     <div class="col-sm-8">
-                    <?php
-						foreach($info as $v)
-						{
-					?>
-                      <input type="text" class="form-control"  name='member[ten]' value="<?php echo $v['HOTEN'];?>">
-                      <input type="text" class="form-control"  name='member[ma]' hidden=""  value= "<?php echo $v['MSTHANHVIEN'];?>" />
-                      <?php
-						}
-					  ?>
+                    
+                      <input type="text" class="form-control"  name='member[ma]' value="<?php echo $username;?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="inputPassword3" class="col-sm-3 control-label" class="bg-primary">Nội dung</label>
                     <div class="col-sm-8">
-                      <textarea class="form-control" rows="3" name='member[noidung]' placeholder="Nội dung"></textarea>
+                      <textarea class="form-control" rows="3" style='width:76%;' name='member[noidung]' placeholder="Nội dung"></textarea>
                        <?php echo form_error('noidung');?></td>
                     </div>
                     <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-3 control-label" class="bg-primary">Mức đánh giá</label>
-                    <div class="col-sm-8">
-                      <label class="radio-inline">
+                    <label for="inputPassword3" class="col-sm-3 control-label bg-primary" style='padding: 9px 0px 0px 28px;'>Mức đánh giá</label>
+                    <div class="col-sm-8" style='padding: 9px 0px 0px 28px;'>
+                      <label class="radio-inline" >
                      	 <input type="radio" name="member[r][0]" id="inlineRadio1" value="1"> Không tốt
                       </label>
                       <label class="radio-inline">
@@ -44,7 +37,7 @@
                     </div>
                     
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" style='padding: 9px 0px 0px 28px;'>
                     <div class="col-sm-offset-8 col-sm-10">
                       <input type="submit" class="btn btn-primary" name='btnGopY' value="Góp ý"></input>
                       &nbsp; &nbsp; &nbsp; &nbsp;

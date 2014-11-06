@@ -27,7 +27,7 @@
                 <ul>
                   <li><span style="font-size: 12px; line-height: normal;"><a href="<?php echo CIT_BASE_URL.'auth/forgot';?>">Quên mật khẩu</a></span><br>
                   </li>                  
-                  <li><span style="font-size: 12px; line-height: normal;"><a href="%c4%91ang-ky.html">Đăng ký mới</a></span><br>
+                  <li><span style="font-size: 12px; line-height: normal;"><a href="<?php echo CIT_BASE_URL.'auth/register';?>">Đăng ký mới</a></span><br>
                   </li>
                 </ul>
                 <p> </p>

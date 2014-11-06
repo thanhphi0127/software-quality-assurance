@@ -39,7 +39,7 @@
           </ul>
         </li>
         <li></li>
-        <li><a href="thong-bao.html">Thông báo</a></li>
+        <?php if ($ma_quyen == 2){ ?><li><a href="<?php echo CIT_BASE_URL.'chunhatro/danhsachgopy';?>">Góp ý</a></li><?php }?>
         <li><a href="ho-tro.html">Hỗ trợ</a>
           <ul>
             <li><a href="ho-tro/huong-dan.html">Hướng dẫn</a></li>

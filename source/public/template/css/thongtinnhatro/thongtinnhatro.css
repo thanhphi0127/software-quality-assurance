@@ -1,0 +1,39 @@
+div.nhatrolienquan {
+	margin:20px 4px;
+	float:left;
+	display:block;
+	width:100%;
+}
+
+.iframe {
+position: absolute;
+top: 16%;
+right: 29%;
+width: 46%;
+height: 46%;
+display:none;
+background:white;
+}
+
+img.close{
+	width: 29px;
+height: auto;
+position: absolute;
+top: -1%;
+right: -1%;
+display: none;
+z-index: 13;
+border:none !important;
+}
+
+.black {
+	width: 100%;
+height: 100%;
+background: rbga(0,0,0,0.2);
+display: none;
+position: absolute;
+top: 0;
+left: 0;
+background: black;
+opacity: 0.5;
+}

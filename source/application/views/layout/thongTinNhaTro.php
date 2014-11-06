@@ -11,9 +11,10 @@
 
 <link rel="stylesheet" type="text/css" href="public/template/css/standardform.css">
 <link rel='stylesheet' href='public/template/css/home.css' />
-<link rel='stylesheet' href='public/template/css/search/advancedsearch.css'/>
 
-<script language='javascript' src="public/template/js/search/advancedsearch.js" ></script>	
+
+
+<script language='javascript' src="public/template/js/thongtinnhatro/thongtinnhatro.js" ></script>	
 
 
 
@@ -33,8 +34,7 @@
 <script language='javascript' src="public/template/js/home.js" ></script>
 <!-- <link rel="stylesheet" type="text/css" href="public/template/css/home/bootstrap.css">-->
 <link rel="stylesheet" type="text/css" href="public/template/css/home/css-dangky.css">
-<link rel="stylesheet" type="text/css" href="public/template/css/index-include.css">
-<script src="public/template/js/index-include.js"></script>
+
 
 
 <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -48,7 +48,7 @@
 <!--end of home-->
 
 <link rel="stylesheet" type="text/css" href="public/template/css/home/home.css">
-
+<link rel='stylesheet' href='public/template/css/thongtinnhatro/thongtinnhatro.css'/>
 <link rel="stylesheet" type="text/css" href="public/template/css/home/style.css">
 <?php
 	
@@ -69,4 +69,6 @@
 
 </body>
 </html>
+
+
 

@@ -1,5 +1,5 @@
 /* input */
-.standardform input[type=text],.standardform input[type=password], .standardform  select{
+.standardform input[type=text],.standardform input[type=password], .standardform  select, .standardform input[type=file]{
   margin: 5px;
   padding: 0 10px;
   width: 200px;

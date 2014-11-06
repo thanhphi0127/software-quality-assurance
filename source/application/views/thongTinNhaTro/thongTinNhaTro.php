@@ -1,4 +1,10 @@
-﻿<div>
+﻿
+<div>
+	<?php if ($ma_quyen != 0) {?>
+	<p style='float:left;width:100%;'>  <a style='float:left; margin:10px;' href='<?php echo CIT_BASE_URL.'chunhatro/danhsachnhatro';?>'><< Về danh sách nhà trọ của tôi</a> 
+      	
+	</p>
+	<?php  } ?>
 	<!--**************************************
 		|	xem thông tin nhà trọ			|
 	***************************************-->
@@ -157,10 +163,11 @@
 			foreach($nhatro as $nt)
 			{
         ?>
-       		 <img src="public/img/nhatro/<?php if (!empty($nt['HINHANH'])) echo $nt['HINHANH']; else echo 'no_photo.jpg';?>" width="350" height="200" />
+       		 <img src="public/img/nhatro/<?php if (!empty($nt['HINHANH'])) echo $nt['HINHANH']; else echo 'no_photo.jpg';?>" width="350" height="200" class="art-lightbox"/>
         <?php
 			}
 		?>
+		<?php if ($ma_quyen == 3) {?><p style='margin:10px 0px;'><a href='<?php echo CIT_BASE_URL.'diendan/gopy/'.$MA_NHATRO;?>' target='iframe' class='art-button gopy' >Góp ý</a></p><?php }?>
 	</div>
 <div class="ttchu">
 		<?php

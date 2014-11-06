@@ -176,4 +176,33 @@ class Mchunhatro extends CI_Model{
 			$query['nhatro'] = $sql->result_array();
 		return $query;
 	}
+	
+
+
+
+
+
+
+
+
+
+	public function load_gopy($username){
+		$MSCHU = $this->db->query('select MSCHU from chunhatro where USERNAME = "'.$username.'"')->result_array()[0]['MSCHU'];
+		$nhatro = $this->db->query('select * from nhatro where MSCHU = "'.$MSCHU.'" ')->result_array();
+		$chuoi_nhatro = '';
+		foreach ($nhatro as $row){	
+			$chuoi_nhatro .= $row['MA_NHATRO'].', ';
+			
+		}
+		$chuoi_nhatro .= '0';
+		
+		$query = $this->db->query('select * from gopy, nhatro
+									where gopy.MA_NHATRO in ('.$chuoi_nhatro.') and
+										 gopy.MA_NHATRO  = nhatro.MA_NHATRO
+									order by THOIGIAN desc
+									')->result_array();
+		return $query;
+	}
 }
+
+

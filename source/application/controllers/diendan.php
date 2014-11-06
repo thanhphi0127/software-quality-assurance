@@ -42,9 +42,10 @@ class Diendan extends MY_Controller
 		$data['template'] = 'diendan/demo';
 		$this->load->view('layout/diendan', isset($data)? $data : NULL);
 	}
-	public function gopy()
+	public function gopy($MA_NHATRO)
 	{
 		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
 		//load thu vien de rang buoc du lieu nhap
 		$this->load->library('form_validation');
 		$this->load->helper(array('form', 'url'));
@@ -59,40 +60,22 @@ class Diendan extends MY_Controller
 		if(isset($_POST['btnGopY']))
 		{
 			$_POST = $this->input->post('member');
-			for($i = 0; $i < 4; $i++)
-			{
-				if(isset($_POST['r'][$i]))
-				{
-					echo $_POST['r'][$i]; // get gia tri cua radio button
-					$arr1 = array(
-						'MSTHANHVIEN' =>$_POST['ma'],
-						'MA_NHATRO' =>'14',
-						'THOIGIAN' => date('Y-m-d'),
-						'MUCDODANHGIA' =>$_POST['r'][$i]
-						);
-					$arr2 = array(
-						'MSTHANHVIEN' =>$_POST['ma'],
-						'MA_NHATRO' =>'14',
-						'THOIGIAN' => date('Y-m-d'),
+			$arr2 = array(
+						'USERNAME' =>$_POST['ma'],
+						'MA_NHATRO' =>$MA_NHATRO,
+						'THOIGIAN' => date('Y-m-d H:i:s'),
 						'NOIDUNG' =>$_POST['noidung']
 						);
-						$this->mdiendan->arDanhGia($arr1);
-						echo "insert thanh cong roi!!!";
-						$this->mdiendan->arGopY($arr2);
-						echo "insert thanh cong roi!!!";
-				}//end set radio button
-			}// end of loop
+					
+			$this->mdiendan->arGopY($arr2);
+			echo "<p style='color:blue; margin:20px 10px;'> Đã gửi góp ý. </p>";
+				
+			
 		}// end -- $_POST['btnGopY']
+		else {
 		
-		//button huy
-		if(isset($_POST['btnHuy']))
-		{
-			header('Location:http://localhost/timkiemnhatro/');
-		}
+			$data['template'] = 'diendan/gopy';
 		
-		$data['template'] = 'diendan/gopy';
-		if ($this->form_validation->run() == FALSE)
-		{
 			$this->load->view('layout/diendan', isset($data)? $data : NULL);
 		}
 	}

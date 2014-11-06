@@ -19,6 +19,12 @@ class MthongTinNhaTro extends CI_Model{
 		return $query->result_array();
 	}
 	
+	
+	public function load_danhgia ($maNhaTro)
+	{
+		$DANHGIA = $this->db->query ("select danhgia from nhatro where MA_NHATRO = ".$maNhaTro )->result_array()[0]['DANHGIA'];
+		
+	}
 	public function load_phongtro ($maNhaTro)
 	{
 		$query = $this->db->query ("select * from phong as a where a.ma_nhatro =".$maNhaTro."");
@@ -31,14 +37,17 @@ class MthongTinNhaTro extends CI_Model{
 									and a.MA_NHATRO =".$manhatro);
 		return $query->result_array();
 	}
-	public function loadbinhluan($ma)
-	{
-		$this->db->order_by('MA_GOPY', 'desc'); 
-		$this->db->where('MA_NHATRO', $ma);
-		$q = $this->db->get('gopy');
-		return $q->result_array();
+	public function load_nhatrolienquan($MA_NHATRO){
+		
+		$MSCHU = $this->db->query('select MSCHU from nhatro where MA_NHATRO = "'.$MA_NHATRO.'"')->result_array()[0]['MSCHU'];
+		$this->db->where('MSCHU' ,$MSCHU);
+		$this->db->where('MA_NHATRO != ' ,$MA_NHATRO);
+		$sql = $this->db->get('nhatro');
+		$query['count'] = $sql->num_rows();
+		if ($query['count'] > 0) 
+			$query['nhatro'] = $sql->result_array();
+		return $query;
 	}
-	
 	public function insertbinhluan($data)
 	{
 		$this->db->insert('gopy', $data);

@@ -19,18 +19,32 @@ class Chunhatro extends MY_Controller {
 		else
 			$this->ma_quyen = 0;
 	}
-	
-	public function danhsachnhatro(){
-		if ($this->ma_quyen != 2){
-			$this->lib_string->alert('Mời bạn đăng nhập trước', CIT_BASE_URL.'home/index');
-		}
+	public function danhsachgopy(){
 		
+		$data['title_page'] = 'Danh sách góp ý';
+		$data['ma_quyen'] = $this->ma_quyen;
+		if ($this->ma_quyen != 2)
+			$this->lib_string->alert(null, CIT_BASE_URL.'home/index');
+		$data['username'] = $this->username;
+		$data['dsgopy'] = $this->mchunhatro->load_gopy($this->username);
+		
+		$data['template'] = 'chunhatro/danhsachgopy';
+		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
+	}
+	public function danhsachnhatro($ma_nhatro = null){
+		if ($ma_nhatro == null) {
+			if ($this->username == null)
+				$this->lib_string->alert(null, CIT_BASE_URL.'home/index');
+			else $ma_nhatro = $this->username;
+		}
 		$data['title_page'] = 'Danh sách nhà trọ thuộc sở hữu';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
-		$data['count_nhatro'] = $this->mchunhatro->load_nhatro($this->username)['count'];
+		$data['count_nhatro'] = $this->mchunhatro->load_nhatro($ma_nhatro)['count'];
 		if ($data['count_nhatro'] > 0)
-			$data['nhatro'] = $this->mchunhatro->load_nhatro($this->username)['nhatro'];
+			$data['nhatro'] = $this->mchunhatro->load_nhatro($ma_nhatro)['nhatro'];
+		
+		
 		$data['template'] = 'chunhatro/danhsachnhatro';
 		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
 	}

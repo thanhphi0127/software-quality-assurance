@@ -29,9 +29,9 @@
 <body>
 
 <?php 
-	$this->load->view("layout/bluesky/diendan_top");
+	
 	$this->load->view ($template, isset($data)?$data:NULL);
-	$this->load->view("layout/bluesky/bottom");
+
 ?>
 
 </body>

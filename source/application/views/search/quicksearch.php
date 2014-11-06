@@ -45,7 +45,7 @@
 										  </p>
 										</div>
 										<div class="art-layout-cell" style="width: 65%" >
-										  <p style='margin-top: 18px;'><a href="<?php echo CIT_BASE_URL.'search/houseinfo/'.$row['MA_NHATRO']; ?>"><span style="color: #48B4DB "><?php echo $row['TEN_NHATRO'];?></span><span style="color: rgb(246, 161, 4); "></span></a><span style="color: #F6A104;"></span></p>
+										  <p style='margin-top: 18px;'><a href="<?php echo CIT_BASE_URL.'thongtinnhatro/xem_nhatro/'.$row['MA_NHATRO']; ?>"><span style="color: #48B4DB "><?php echo $row['TEN_NHATRO'];?></span><span style="color: rgb(246, 161, 4); "></span></a><span style="color: #F6A104;"></span></p>
 										  <p><?php echo substr($row['MOTA'], 0, 200); if (strlen($row['MOTA']) > 200) echo '...'; ?></p>
 										  <?php 
 												if (isset($result['phong'][$row['MA_NHATRO']]) && !empty($result['phong'][$row['MA_NHATRO']])) {
