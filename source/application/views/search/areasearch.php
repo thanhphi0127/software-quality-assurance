@@ -27,7 +27,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan='2' style='text-align:center;'><a id='allofdistrict' href='<?php echo CIT_BASE_URL."search/result/area/NK-XK-0";?>'>Tìm tất cả đường thuộc quận-phường trên</a></td>
+					<td colspan='2' style='text-align:center;'><a id='allofdistrict' href='<?php echo CIT_BASE_URL."search/result/area/NK-XK-0";?>'>Tìm tất cả nhà trọ thuộc quận-phường trên</a></td>
 					
 				</tr>
 				<tr>			

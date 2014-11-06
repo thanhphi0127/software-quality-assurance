@@ -34,6 +34,7 @@ class Home extends MY_Controller {
 		$data['template'] = 'home/index';
 		//load tiêu điểm
 		$data['tieudiem'] = $this->msearch->load_tieudiem();
+		$data['bxh'] = $this->msearch->load_bxh();
 		
 		if ($this->input->post('login'))
 		{

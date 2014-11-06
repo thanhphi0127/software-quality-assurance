@@ -73,7 +73,7 @@
 											</a>
 											<span style="color: #F6A104;"></span>
 										  </p>
-										  <p><?php echo $row['MOTA']; ?></p>
+										  <p><?php echo substr($row['MOTA'], 0, 200); if (strlen($row['MOTA']) > 200) echo '...'; ?></p>
 										  <?php 
 												if (isset($result['phong'][$row['MA_NHATRO']]) && !empty($result['phong'][$row['MA_NHATRO']])) {
 													foreach ($result['phong'][$row['MA_NHATRO']] as $item){ 

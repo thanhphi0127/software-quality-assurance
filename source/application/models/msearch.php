@@ -23,6 +23,93 @@ class Msearch extends CI_Model{
 		}
 		return $duong;
 	}
+	public function load_bxh(){
+		//1st
+		$sql = $this->db->query('select * 
+								 from nhatro
+								 where DANHGIA in (select MAX(DANHGIA) from nhatro)');
+		$query['count'] = $sql->num_rows();
+		$query['nhatro']['st'] = $sql->result_array();
+		
+		//2nd
+		
+		$array_exp  = '';
+		foreach ($query['nhatro']['st'] as $row){
+			$array_exp .= $row['MA_NHATRO'].', ';
+		}
+		$array_exp  .= '0';
+		$sql = $this->db->query('select * 
+								 from nhatro
+								 where DANHGIA in (select MAX(DANHGIA) 
+												   from nhatro
+												   where MA_NHATRO not in ('.$array_exp.'))');
+		$query['count'] += $sql->num_rows();
+		$query['nhatro']['nd'] = $sql->result_array();
+		
+		//3rd
+		$array_exp  = '';
+		foreach ($query['nhatro']['nd'] as $row){
+			$array_exp .= $row['MA_NHATRO'].', ';
+		}
+		foreach ($query['nhatro']['st'] as $row){
+			$array_exp .= $row['MA_NHATRO'].', ';
+		}
+		$array_exp  .= '0';
+		$sql = $this->db->query('select * 
+								 from nhatro
+								 where DANHGIA in (select MAX(DANHGIA) 
+												   from nhatro
+												   where MA_NHATRO not in ('.$array_exp.'))');
+		$query['count'] += $sql->num_rows();		
+		$query['nhatro']['rd'] = $sql->result_array();
+		
+		//4th
+		$array_exp  = '';
+		foreach ($query['nhatro']['nd'] as $row){
+			$array_exp .= $row['MA_NHATRO'].', ';
+		}
+		foreach ($query['nhatro']['st'] as $row){
+			$array_exp .= $row['MA_NHATRO'].', ';
+		}
+		foreach ($query['nhatro']['rd'] as $row){
+			$array_exp .= $row['MA_NHATRO'].', ';
+		}
+		$array_exp  .= '0';
+		$sql = $this->db->query('select * 
+								 from nhatro
+								 where DANHGIA in (select MAX(DANHGIA) 
+												   from nhatro
+												   where MA_NHATRO not in ('.$array_exp.'))');
+		$query['count'] += $sql->num_rows();		
+		$query['nhatro']['4th'] = $sql->result_array();
+		
+		
+		//5th
+		$array_exp  = '';
+		foreach ($query['nhatro']['nd'] as $row){
+			$array_exp .= $row['MA_NHATRO'].', ';
+		}
+		foreach ($query['nhatro']['st'] as $row){
+			$array_exp .= $row['MA_NHATRO'].', ';
+		}
+		foreach ($query['nhatro']['rd'] as $row){
+			$array_exp .= $row['MA_NHATRO'].', ';
+		}
+		foreach ($query['nhatro']['4th'] as $row){
+			$array_exp .= $row['MA_NHATRO'].', ';
+		}
+		$array_exp  .= '0';
+		$sql = $this->db->query('select * 
+								 from nhatro
+								 where DANHGIA in (select MAX(DANHGIA) 
+												   from nhatro
+												   where MA_NHATRO not in ('.$array_exp.'))');
+		
+		$query['count'] += $sql->num_rows();
+		$query['nhatro']['5th'] = $sql->result_array();
+		
+		return $query;
+	}
 	
 	function searcharea($MA_DUONG) {
 		$array = explode('-', $MA_DUONG);

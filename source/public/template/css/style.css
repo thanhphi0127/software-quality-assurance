@@ -2827,6 +2827,8 @@ blockquote p,
    border-radius: 3px;
    display: none;
    max-width: 100%;
+   width:400px;
+   height:auto;
    vertical-align: middle;
 }
 

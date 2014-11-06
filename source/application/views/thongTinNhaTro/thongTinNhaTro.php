@@ -137,7 +137,7 @@
 			foreach($nhatro as $nt)
 			{
         ?>
-       		 <img src="public/img/nhatro/<?php echo $nt['HINHANH'];?>" width="350" height="200" />
+       		 <img src="public/img/nhatro/<?php if (!empty($nt['HINHANH'])) echo $nt['HINHANH']; else echo 'no_photo.jpg';?>" width="350" height="200" />
         <?php
 			}
 		?>

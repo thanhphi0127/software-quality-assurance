@@ -7,7 +7,7 @@
 		foreach ($nhatro as $row) {
 			echo "<tr>";
 			echo 	"<td>";
-					echo "<a href='".CIT_BASE_URL."thongtinnhatro/load_nhatro/".$row['MA_NHATRO']."'>".$row['TEN_NHATRO']." </a>";
+					echo "<a href='".CIT_BASE_URL."thongtinnhatro/xem_nhatro/".$row['MA_NHATRO']."'>".$row['TEN_NHATRO']." </a>";
 			echo    "</td>";
 			echo    "<td>";
 					echo "<a href='".CIT_BASE_URL."chunhatro/capnhatnhatro/".$row['MA_NHATRO']."' class='art-button'>Cập nhật</a>";

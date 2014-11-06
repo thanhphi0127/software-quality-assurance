@@ -1,8 +1,8 @@
 ﻿<div>
-
-<form name='fDangnhatro' method='POST' action=''>
+<div> <?php echo $message;?></div>
+<form name='fDangnhatro' method='POST' action='' enctype="multipart/form-data">
 <table  class="TableContainer standardform" >
-	<?php echo form_open('form'); ?>
+	
 	
 	<tr>
 		<td>
@@ -65,7 +65,10 @@
 					</td>
 				</tr>
 				
-				
+				<tr>
+			<td class="Left">Hình ảnh</td>
+			<td><input type="file" name="photo" size="25" /></td>
+		  </tr>
 				<tr>
 					<td class="Left" >Giờ Đóng cửa</td>
 					<td>
@@ -95,10 +98,7 @@
               <input type="checkbox" name="member[BaiDauXe]" />
               Bãi đậu xe <br />
            </td>
-			  <tr>
-			<td class="Left">Hình ảnh</td>
-			<td><input type="file" name="fHinhAnh" class="shortInput"/></td>
-		  </tr>
+			  
 			  <tr>
 				<td class="Left">Số loại phòng</td>
 				<td ><select name="member[LoaiPhong]" id='cbLoaiPhong' class="shortInputCB">

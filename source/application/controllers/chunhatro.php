@@ -21,6 +21,10 @@ class Chunhatro extends MY_Controller {
 	}
 	
 	public function danhsachnhatro(){
+		if ($this->ma_quyen != 2){
+			$this->lib_string->alert('Mời bạn đăng nhập trước', CIT_BASE_URL.'home/index');
+		}
+		
 		$data['title_page'] = 'Danh sách nhà trọ thuộc sở hữu';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
@@ -31,6 +35,9 @@ class Chunhatro extends MY_Controller {
 		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
 	}
 	public function profile_chunhatro(){
+		if ($this->ma_quyen != 2){
+			$this->lib_string->alert('Mời bạn đăng nhập trước', CIT_BASE_URL.'home/index');
+		}
 		$data['title_page'] = 'Hồ sơ';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
@@ -45,6 +52,9 @@ class Chunhatro extends MY_Controller {
 	
 	public function update_chunhatro()
 	{
+		if ($this->ma_quyen != 2){
+			$this->lib_string->alert('Mời bạn đăng nhập trước', CIT_BASE_URL.'home/index');
+		}
 		$data['title_page'] = 'Cập nhật chủ nhà trọ';
 		$ms = '2';
 		$this->load->model('mchunhatro');
@@ -78,6 +88,9 @@ class Chunhatro extends MY_Controller {
 	////////////////////
 	public function capnhatChu($id)
 	{
+		if ($this->ma_quyen != 2){
+			$this->lib_string->alert('Mời bạn đăng nhập trước', CIT_BASE_URL.'home/index');
+		}
 		$data['title_page'] = 'Cập nhật chủ nhà trọ';
 		$this->load->model('mchunhatro');
 		$data['datainfo'] = $this->mchunhatro->load_chunhatro($id);
@@ -87,6 +100,9 @@ class Chunhatro extends MY_Controller {
 	}
 	
 	public function quanlynhatro(){
+		if ($this->ma_quyen != 2){
+			$this->lib_string->alert('Mời bạn đăng nhập trước', CIT_BASE_URL.'home/index');
+		}
 		$data['title_page'] = 'Quản lý nhà trọ';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
@@ -95,6 +111,9 @@ class Chunhatro extends MY_Controller {
 	}
 	
 	public function dangnhatro(){
+		if ($this->ma_quyen != 2){
+			$this->lib_string->alert('Mời bạn đăng nhập trước', CIT_BASE_URL.'home/index');
+		}
 		$data['title_page'] = 'Đăng nhà trọ';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
@@ -106,10 +125,47 @@ class Chunhatro extends MY_Controller {
 		//------------------------------------------------------
 		
 		$this->load->helper('date');
-		
+		$data['message'] = '';
 		
 		if(isset($_POST['btnDangTin']))
 		{
+			//FILE///////////////////////////////////////////////////////////////////////////////////////////////
+			
+			if (!empty($_FILES)){
+			//if they DID upload a file...
+			if($_FILES['photo']['name'])
+			{
+				$valid_file = true;
+				//if no errors...
+				if(!$_FILES['photo']['error'])
+				{
+					//now is the time to modify the future file name and validate the file
+					$new_file_name = strtolower($_FILES['photo']['tmp_name']); //rename file
+					if($_FILES['photo']['size'] > (20024000)) //can't be larger than 20 MB
+					{
+						$valid_file = false;
+						$data['message'] = 'Rất tiêc!  File của bạn lớn hơn 20MB.';
+					}
+				
+					//if the file has passed the test
+					if($valid_file)
+					{
+						//move it to where we want it to be
+						move_uploaded_file($_FILES['photo']['tmp_name'], 'public/img/nhatro/'.$_FILES['photo']['name']);
+						$message = 'Congratulations!  Your file was accepted.';
+					}
+				}
+				//if there is an error...
+				else
+				{
+					//set that to be the returned message
+					$data['message'] = 'Rất tiếc!  Lỗi đã xảy ra:  '.$_FILES['photo']['error'];
+				}
+			}
+			}
+			else $data['message'] = ' File EMpty';
+			
+			//ENDFILE//////////////////////////////////////////////////////////////////////////////////////////////
 			// rang buoc các truong nhap tren text field
 		$this->form_validation->set_rules('TenNhaTro', 'Tên nhà trọ', 'required|min_length[5]');
 		$this->form_validation->set_rules('Quan', 'Quận', 'required');
@@ -125,6 +181,8 @@ class Chunhatro extends MY_Controller {
 		$this->form_validation->set_rules('Gia1', 'Giá', 'required|numeric');
 		
 		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+			if (empty($_FILES))
+				$_FILES['photo']['name'] = null;
 			$_POST = $this->input->post('member');
 			$data_info = array(
 								'TEN_NHATRO' =>$_POST['TenNhaTro'],
@@ -135,17 +193,18 @@ class Chunhatro extends MY_Controller {
 								'BAIDAUXE' =>isset( $_POST['BaiDauXe'] )?1:0,
 								'SO' => $_POST['SoNha'],
 								'LUOCXEM' =>'0',
-								/*HINHANH =>*/
+								'HINHANH' => $_FILES['photo']['name'],
 								'TUQUAN' => $_POST['TuQuan'],
 								'GIODONGCUA' =>$_POST['Gio'],
 								'NGAYDANG'=> date('Y-m-d'),
 								'STATUS' =>'0'
 								);
 			$ma = $this->mchunhatro-> arInsertNhaTro($data_info);
-			echo "insert thanh cong :D";
+			
+			
 			if($_POST['LoaiPhong'] == 1)
 			{
-				echo $ma;
+				
 				$phongtro_thu1 = array(
 									'MA_PHONG' =>'1',
 									'MA_NHATRO' =>$ma,
@@ -159,8 +218,7 @@ class Chunhatro extends MY_Controller {
 				
 				$this->mchunhatro-> arInsertPhongTro($phongtro_thu1);
 				
-				echo "insert phong tro thanh cong :D";
-				echo "1 loai";
+				
 			}// end 1Loai 
 			//----------------------------------------------
 			else if($_POST['LoaiPhong'] == 2)
@@ -259,7 +317,8 @@ class Chunhatro extends MY_Controller {
 									);
 				
 				$this->mchunhatro-> arInsertPhongTro($phongtro_thu3);
-				echo "3 loai";
+				if ($data['message'] == '')	
+			$data['message'] = 'Đăng nhà trọ thành công!';
 				
 		}// end loai phong thu 3
 }// end of button Dang Tin
@@ -275,6 +334,8 @@ class Chunhatro extends MY_Controller {
 		//load tiêu điểm
 		$data['tieudiem'] = $this->msearch->load_tieudiem();
 		
+		
+		
 		$data['template'] = 'chunhatro/dangnhatro';
 		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
 		
@@ -288,6 +349,9 @@ class Chunhatro extends MY_Controller {
 	
 	public function CapNhatNhaTro($id)
 	{
+		if ($this->ma_quyen != 2){
+			$this->lib_string->alert('Mời bạn đăng nhập trước', CIT_BASE_URL.'home/index');
+		}
 		$data['title_page'] = 'Đăng nhà trọ';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
@@ -355,6 +419,9 @@ class Chunhatro extends MY_Controller {
 	**********************************/
 	public function gopy()
 	{
+		if ($this->ma_quyen != 2){
+			$this->lib_string->alert('Mời bạn đăng nhập trước', CIT_BASE_URL.'home/index');
+		}
 		$data['title_page'] = 'Góp ý';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;

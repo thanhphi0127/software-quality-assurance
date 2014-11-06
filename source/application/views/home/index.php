@@ -1,27 +1,69 @@
+
 <div class="art-postcontent art-postcontent-0 clearfix">
-                <div class="art-content-layout">
+                
+				<?php if (!empty($bxh['nhatro']) ) {
+	?>
+			<?php if ($bxh['count'] > 10) 
+				$this->load->view('layout/pagination');
+			?>
+				<!-- Tiêu đề -->
+				<div class="art-content-layout">
                   <div class="art-content-layout-row">
                     <div class="art-layout-cell layout-item-0" style="width: 35%;" >
                       <p style="text-align: center;margin-top:30px;"><span style="font-weight: bold; color: #48B4DB;">Hình ảnh</span></p>
                     </div>
                     <div class="art-layout-cell" style="width: 65%;" >
-                      <p style="text-align: left;margin-top:30px;"><span style="color: #48B4DB; font-weight: bold;margin-top:30px;">Mô tả sơ lược</span></p>
+                      <p style="text-align: left;margin-top:30px;"><span style="color: #48B4DB; font-weight: bold;">Mô tả sơ lược</span></p>
                     </div>
                   </div>
                 </div>
-                <div class="art-content-layout">
-                  <div class="art-content-layout-row">
-                    <div class="art-layout-cell layout-item-0" style="width: 35%" >
-                      <p><img width="145" height="108" alt="" class="art-lightbox" src="public/img/nhatro/201305152020_nha_tro_loi_di.jpg"><br>
-                      </p>
-                    </div>
-                    <div class="art-layout-cell" style="width: 65%" >
-                      <p><a href="thong-tin-nha-tro.html"><span style="color: #48B4DB; ">Nhà trọ: Huy Hoàng - 91/3/2 Hẻm 12, Nguyễn Văn Cừ, Xuân Khán</span><span style="color: #48B4DB; ">h</span></a><span style="color: #F6A104;"></span></p>
-                      <p>Giá phòng: 1.000.000 / tháng</p>
-                      <p>Thông tin: 14 m<span style="vertical-align: super;">2</span>, có gác, bảo vệ trực cổng 24/24. Giờ giấc thoải mái, có internet.</p>
-                    </div>
-                  </div>
-                </div>
+	<?php
+				foreach ($bxh['nhatro'] as $thutu)
+					foreach ($thutu as $row){
+					$i = 0;
+	?>
+						<div class="art-content-layout result">
+									  <div class="art-content-layout-row">
+										<div class="art-layout-cell layout-item-0" style="width: 35%" >
+										  <p >
+												<img width="145" height="108" alt="" class="art-lightbox" src="public/img/nhatro/<?php if (isset($row['HINHANH']) && !empty($row['HINHANH'])) 
+																																			echo $row['HINHANH'];
+																																		else 
+																																			echo "no_photo.jpg";
+																																?>">
+												<br/>											
+										  </p>
+										</div>
+										<div class="art-layout-cell" style="width: 65%;" >
+										  <p style='margin-top: 18px;'>
+											<a href="<?php echo CIT_BASE_URL.'search/houseinfo/'.$row['MA_NHATRO']; ?>">
+												<span style="color: #48B4DB; "><?php echo $row['TEN_NHATRO'];?></span><span style="color: rgb(246, 161, 4); "></span>
+											</a>
+											<span style="color: #F6A104;"></span>
+										  </p>
+										  <p><?php echo substr($row['MOTA'], 0, 200); if (strlen($row['MOTA']) > 200) echo '...'; ?></p>
+										  <?php 
+												if (isset($result['phong'][$row['MA_NHATRO']]) && !empty($result['phong'][$row['MA_NHATRO']])) {
+													foreach ($result['phong'][$row['MA_NHATRO']] as $item){ 
+														$i ++; 
+														echo "<p>Phòng ".$item['MA_PHONG'];
+														echo "<span >Giá </span><span >".$item['GIA']."</span>";
+														echo "<span >Diện tích </span><span >".$item['DIENTICH']."</span>";
+														echo "</p>";
+													}
+												}
+										   ?>
+										</div>
+									  </div>
+						</div>
+	<?php 		}?>
+			<?php if ($bxh['count'] > 10) 
+					$this->load->view('layout/pagination');
+			?>
+					
+	<?php		
+		}
+	?>
                
                 
 </div>
