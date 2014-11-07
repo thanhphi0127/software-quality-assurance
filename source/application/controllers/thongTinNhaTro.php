@@ -17,18 +17,24 @@ class ThongTinNhaTro extends MY_Controller {
 	}
 	
 	public function danhgia($MA_NHATRO, $number){
-		
-		$this->mthongTinNhaTro->cong_danhgia($MA_NHATRO, $number);
-		header('Location:'.CIT_BASE_URL.'thongTinNhaTro/xem_nhatro/'.$MA_NHATRO);
+		if ($this->username == null)
+			$this->lib_string->alert('Bạn chưa đăng nhập !', CIT_BASE_URL.'thongTinNhaTro/xem_nhatro/'.$MA_NHATRO);
+		else if ($this->ma_quyen == 2)
+			$this->lib_string->alert('Chủ nhà trọ không thể đánh giá !', CIT_BASE_URL.'thongTinNhaTro/xem_nhatro/'.$MA_NHATRO);
+		$result = $this->mthongTinNhaTro->cong_danhgia($MA_NHATRO, $number, $this->username);
+		if ($result == 1)
+			header('Location:'.CIT_BASE_URL.'thongTinNhaTro/xem_nhatro/'.$MA_NHATRO);
+		else 
+			$this->lib_string->alert('Bạn chỉ đánh giá được một lần cho mỗi nhà trọ!', CIT_BASE_URL.'thongTinNhaTro/xem_nhatro/'.$MA_NHATRO);
 	}
+	
 	
 	public function xem_nhatro ($id)
 	{
 		$this->load->model('mdiendan');
 		$this->load->helper('date');
 		
-		
-		//$data['danhgia'] = $this->mthongTinNhaTro->load_danhgia ($id);
+		$data['danhgia'] = $this->mthongTinNhaTro->load_danhgia ($id);
 		$data['nhatro'] = $this->mthongTinNhaTro->load_nhatro ($id);
 		$data['phongtro'] = $this->mthongTinNhaTro->load_phongtro ($id);
 		$data['chu'] = $this->mthongTinNhaTro->getTTChu($id);

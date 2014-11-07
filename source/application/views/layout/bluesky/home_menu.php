@@ -35,18 +35,12 @@
         <li><a href="<?php echo CIT_BASE_URL.'home/quydinhdangnhatro';?>">Qui định</a>
           <ul>
             <li><a href="<?php echo CIT_BASE_URL.'home/quydinhdangnhatro';?>">Qui định đăng tin</a></li>
-            <li><a href="<?php echo CIT_BASE_URL.'home/quydinhdangnhatro';?>">Qui định đăng ký</a></li>
+            <li><a href="<?php echo CIT_BASE_URL.'home/quydinhdangkithanhvien';?>">Qui định đăng ký</a></li>
           </ul>
         </li>
         <li></li>
         <?php if ($ma_quyen == 2){ ?><li><a href="<?php echo CIT_BASE_URL.'chunhatro/danhsachgopy';?>">Góp ý</a></li><?php }?>
-        <li><a href="ho-tro.html">Hỗ trợ</a>
-          <ul>
-            <li><a href="ho-tro/huong-dan.html">Hướng dẫn</a></li>
-            <li><a href="ho-tro/lien-he.html">Liên hệ</a></li>
-            <li><a href="ho-tro/gop-y.html">Góp ý</a></li>
-          </ul>
-        </li>
+        
 		
       </ul>
     </div>

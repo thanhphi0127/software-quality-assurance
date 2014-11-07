@@ -172,7 +172,7 @@
 				
 				<div style='position:relative;'>
 					
-					<a class='art-button gopy' >Góp ý</a>
+					
 					<form action='' method='post'>
 						<div class='yellow_star'>
 							<a href='<?php echo CIT_BASE_URL.'thongtinnhatro/danhgia/'.$MA_NHATRO.'/1';?>'><img src='public/img/star.png'  class='star' title='1 sao'/></a>
@@ -199,6 +199,8 @@
 									echo "<a href='".CIT_BASE_URL.'thongtinnhatro/danhgia/'.$MA_NHATRO."/5'><img src='public/img/star_yes.png'  class='star_yes' title='5 sao'/></a>";
 								}
 							?>
+						</div>
+						<div class='luotdanhgia' ><tieude> Số lượt bình chọn:</tieude> <span><?php echo $nt['DANHGIA'];?></span>
 						</div>
 						
 					</form>

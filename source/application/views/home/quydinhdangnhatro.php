@@ -1,4 +1,5 @@
-﻿<p style='color:blue;'>Cho thuê phòng trọ phải đăng ký kinh doanh và khai báo tạm trú</p>
+﻿
+<p style='color:blue;'>Cho thuê phòng trọ phải đăng ký kinh doanh và khai báo tạm trú</p>
 
 <p>Vào trước tết 2012 tôi có xây dựng 10 căn nhà trọ cho học sinh, sinh viên và người lao động thuê theo tháng, do còn khoảng 2 tuần nữa là đến tết nên tôi chưa kịp làm giấy phép đăng ký kinh doanh( tôi đã treo biển cho thuê phòng trọ). Tôi dự định qua tết sẽ đi làm giấy phép ĐKKD, trong thời gian đó tôi có cho 1 hộ gia đình thuê nhà ở thì công an phường xuống kiểm tra lập biên bản vi phạm hành chính với những lỗi sau:
 </p>

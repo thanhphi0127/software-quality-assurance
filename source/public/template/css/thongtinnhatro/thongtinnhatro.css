@@ -67,3 +67,17 @@ div.yellow_star{
 	position: absolute;
 }
 
+
+div.luotdanhgia{
+	position: absolute;
+top: -28px;
+left: 163px;
+}
+
+div.luotdanhgia span{
+	font-style:italic;
+}
+
+tieude {
+	font-weight:bold;
+}

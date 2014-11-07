@@ -85,6 +85,12 @@
 													}
 												}
 										   ?>
+										   <p style='margin-top: 18px;'>
+											<a href="<?php echo CIT_BASE_URL.'thongtinnhatro/xem_nhatro/'.$row['MA_NHATRO']; ?>">
+												<span style="color: #48B4DB;float:right;margin-right:10px; text-decoration:underline;font-style:italic;">Xem thêm >></span>
+											</a>
+											
+										  </p>
 										</div>
 									  </div>
 						</div>

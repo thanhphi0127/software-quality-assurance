@@ -25,6 +25,18 @@ class Home extends MY_Controller {
 		$data['tieudiem'] = $this->msearch->load_tieudiem();
 		$this->load->view('layout/home', $data);
 	}
+	
+	public function quydinhdangkithanhvien(){
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
+		$data['title_page'] = 'Điều khoản sử dụng';
+		$data['seo']['title'] = 'Điều khoản sử dụng';
+		$data['template'] = 'home/quydinhdangkithanhvien';
+		//load tiêu điểm
+		$data['tieudiem'] = $this->msearch->load_tieudiem();
+		$this->load->view('layout/home', $data);
+	}
+	
 	public function index(){
 
 		$data['ma_quyen'] = $this->ma_quyen;

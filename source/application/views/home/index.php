@@ -41,9 +41,9 @@
 										<div class="art-layout-cell" style="width: 65%;" >
 										  <p style='margin-top: 18px;'>
 											<a href="<?php echo CIT_BASE_URL.'thongtinnhatro/xem_nhatro/'.$row['MA_NHATRO']; ?>">
-												<span style="color: #48B4DB; "><?php echo $row['TEN_NHATRO'];?></span><span style="color: rgb(246, 161, 4); "></span>
+												<span style="color: #48B4DB; "><?php echo $row['TEN_NHATRO'];?></span>
 											</a>
-											<span style="color: #F6A104;"></span>
+											
 										  </p>
 										  <p><?php echo substr($row['MOTA'], 0, 200); if (strlen($row['MOTA']) > 200) echo '...'; ?></p>
 										  <?php 
@@ -57,6 +57,12 @@
 													}
 												}
 										   ?>
+										   <p style='margin-top: 18px;'>
+											<a href="<?php echo CIT_BASE_URL.'thongtinnhatro/xem_nhatro/'.$row['MA_NHATRO']; ?>">
+												<span style="color: #48B4DB;float:right;margin-right:10px; text-decoration:underline;font-style:italic;">Xem thêm >></span>
+											</a>
+											
+										  </p>
 										</div>
 									  </div>
 						</div>

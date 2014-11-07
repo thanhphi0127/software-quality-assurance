@@ -47,11 +47,6 @@
                 <h3 class="t">Hỗ trợ</h3>
               </div>
               <div class="art-blockcontent">
-                <ul>
-                  <li><a href="ho-tro/huong-dan.html">Hướng dẫn tìm kiếm nhà trọ, trợ giúp khác.</a><span style="font-size: 12px; line-height: normal; color: #F6A104;"></span></li>
-                  <li><a href="ho-tro/gop-y.html">Góp ý xây dựng website...</a><span style="color: #F6A104;"></span></li>
-                  <li><a href="ho-tro/lien-he.html">Liên hệ, báo lỗi, sai phạm...</a><span style="color: #F6A104;"></span></li>
-                </ul>
                 <p style="text-align: center;"><a href="ho-tro/lien-he.html"><img width="131" height="75" alt="" src="public/img/lien_he.jpg" class=""></a><br>
                 </p>
                 <p style="text-align: left;">
@@ -75,9 +70,9 @@
               <div class="art-blockcontent">
                 <p></p>
                 <ul>
-                  <li><a href="qui-%c4%91inh/qui-%c4%91inh-%c4%91ang-tin.html">Qui định về đăng tin nhà trọ</a><span style="font-size: 12px; line-height: normal; color: #F6A104;"></span><br>
+                  <li><a href="<?php echo CIT_BASE_URL.'home/quydinhdangnhatro';?>">Qui định về đăng tin nhà trọ</a><span style="font-size: 12px; line-height: normal; color: #F6A104;"></span><br>
                   </li>
-                  <li><a href="qui-%c4%91inh/qui-%c4%91inh-%c4%91ang-ky.html">Qui định về đăng ký thành viên</a><span style="font-size: 12px; line-height: normal; color: #F6A104;"></span><br>
+                  <li><a href="<?php echo CIT_BASE_URL.'home/quydinhdangkithanhvien';?>">Qui định về đăng ký thành viên</a><span style="font-size: 12px; line-height: normal; color: #F6A104;"></span><br>
                   </li>
                 </ul>
                 <p> </p>

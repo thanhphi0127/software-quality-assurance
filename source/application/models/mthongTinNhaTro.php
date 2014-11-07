@@ -11,7 +11,7 @@ class MthongTinNhaTro extends CI_Model{
 		/*$query = $this->db->query ("SELECT a.MA_NHATRO, a.TEN_NHATRO, a.MOTA, a.NAU_AN, a.BAIDAUXE, a.GIODONGCUA FROM `nhatro` as a\n"
 									. "	WHERE MA_NHATRO = ".$maNhaTro." LIMIT 0, 30 ");*/
 		$query = $this->db->query(
-		 "SELECT a.*, b.*, CONCAT('đường ', c.TEN_DUONG,'- phường ' ,d.TEN_PHUONGXA, '- quận ', e.TENHUYEN)  as diachi
+		 "SELECT a.*, b.*, CONCAT(a.SO, ' ', 'đường ', c.TEN_DUONG,'- phường ' ,d.TEN_PHUONGXA, '- quận ', e.TENHUYEN)  as diachi
 			FROM (nhatro as a, chunhatro as b, duong as c, phuongxa as d, quanhuyen as e) 
 			WHERE a.MSCHU = b.MSCHU AND a.MA_DUONG = c.MA_DUONG AND c.MA_PHUONGXA = d.MA_PHUONGXA 
 					AND d.MA_HUYEN = e.MA_HUYEN AND a.MA_NHATRO=".$maNhaTro
@@ -25,11 +25,11 @@ class MthongTinNhaTro extends CI_Model{
 		$query  = $this->db->get('gopy');
 		return $query->result_array();
 	}
-	/*public function load_danhgia ($maNhaTro)
+	public function load_danhgia ($maNhaTro)
 	{
 		$DANHGIA = $this->db->query ("select DANHGIA from nhatro where MA_NHATRO = ".$maNhaTro )->result_array()[0]['DANHGIA'];
 		return $DANHGIA;
-	}*/
+	}
 	public function load_phongtro ($maNhaTro)
 	{
 		$query = $this->db->query ("select * from phong as a where a.ma_nhatro =".$maNhaTro."");
@@ -67,10 +67,21 @@ class MthongTinNhaTro extends CI_Model{
 	{
 		$this->db->insert('gopy', $data);
 	}
-	public function cong_danhgia($MA_NHATRO, $number){
+	public function cong_danhgia($MA_NHATRO, $number, $USERNAME){
+		$count_danhgia = $this->db->select('*')->from('danhgia')->where('MA_NHATRO', $MA_NHATRO)->where('USERNAME', $USERNAME)->get()->num_rows();
+		if ($count_danhgia > 0) //đã đánh giá
+			return 0;
+			
 		$DANHGIA = $this->load_danhgia($MA_NHATRO);
 		$data['danhgia'] = $DANHGIA + $number;
 		$this->db->where('MA_NHATRO', $MA_NHATRO);
 		$this->db->update('nhatro', $data);
+		
+		$array['USERNAME'] = $USERNAME;
+		$array['MA_NHATRO'] = $MA_NHATRO;
+		$array['MUCDODANHGIA'] = $number;
+		$array['THOIGIAN'] = date('Y-m-d H:i:s');
+		$this->db->insert('danhgia', $array);
+		return 1;
 	}
 }
