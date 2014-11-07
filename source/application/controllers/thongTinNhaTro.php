@@ -27,7 +27,7 @@ class ThongTinNhaTro extends MY_Controller {
 		$data['username'] = $this->username;
 		$data['MA_NHATRO'] = $id;
 		$this->load->model ('mthongTinNhaTro');
-		$data['danhgia'] = $this->mthongTinNhaTro->load_danhgia ($id);
+		//$data['danhgia'] = $this->mthongTinNhaTro->load_danhgia ($id);
 		$data['nhatro'] = $this->mthongTinNhaTro->load_nhatro ($id);
 		$data['phongtro'] = $this->mthongTinNhaTro->load_phongtro ($id);
 		$data['chu'] = $this->mthongTinNhaTro->getTTChu($id);
@@ -39,14 +39,13 @@ class ThongTinNhaTro extends MY_Controller {
 		{
 			$_POST = $this->input->post('member');
 			$arr = array(
-							'MA_GOPY' => '7',
-							'MSTHANHVIEN' => $data['username'],
+							'USERNAME' => $data['username'],
 							'MA_NHATRO' => $id,
 							'THOIGIAN' => date('Y-m-d'),
 							'NOIDUNG' => $_POST['noidung']
 							);
 			$this->mthongTinNhaTro->insertbinhluan($arr);
-			header('Location:http://localhost/timkiemnhatro/thongTinNhaTro/xem_nhatro/3');
+			header('Location:'.CIT_BASE_URL.'thongTinNhaTro/xem_nhatro/'.$id);
 		}
 		$data['template'] = 'thongTinNhaTro/thongTinNhaTro';
 		$this->load->view('layout/thongTinNhaTro', isset($data)? $data : NULL);

@@ -197,9 +197,9 @@
      <?php
 	 	foreach($binhluan as $bl)
 		{
-         echo "
+         	echo "
 				 <div class='gopy'>
-				 	<font color= '#0000FF'><b>".$bl['MSTHANHVIEN']."</b></font></br>
+				 	<font color= '#0000FF'><b>".$bl['USERNAME']."</b></font></br>
 					".$bl['NOIDUNG']."</br>
 					<i>".$bl['THOIGIAN']."</i>					
 				 </div>

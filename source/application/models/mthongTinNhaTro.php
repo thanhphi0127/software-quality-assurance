@@ -20,11 +20,11 @@ class MthongTinNhaTro extends CI_Model{
 	}
 	
 	
-	public function load_danhgia ($maNhaTro)
+	/*public function load_danhgia ($maNhaTro)
 	{
 		$DANHGIA = $this->db->query ("select danhgia from nhatro where MA_NHATRO = ".$maNhaTro )->result_array()[0]['DANHGIA'];
 		
-	}
+	}*/
 	public function load_phongtro ($maNhaTro)
 	{
 		$query = $this->db->query ("select * from phong as a where a.ma_nhatro =".$maNhaTro."");
@@ -48,6 +48,16 @@ class MthongTinNhaTro extends CI_Model{
 			$query['nhatro'] = $sql->result_array();
 		return $query;
 	}
+	
+	public function loadbinhluan($id)
+	{
+		
+		$this->db->where('MA_NHATRO', $id);
+		$this->db->order_by('MA_GOPY', 'desc');
+		$q = $this->db->get('gopy');
+		return $q ->result_array();
+	}
+	
 	public function insertbinhluan($data)
 	{
 		$this->db->insert('gopy', $data);
