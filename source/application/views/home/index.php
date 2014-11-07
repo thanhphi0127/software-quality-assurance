@@ -28,7 +28,7 @@
 						<div class="art-content-layout result">
 									  <div class="art-content-layout-row">
 										<div class="art-layout-cell layout-item-0" style="width: 35%" >
-										  <p ><span style='color:orange;'><?php echo $row['DANHGIA'];?></span>
+										  <p style='position:relative;'><span style='color: oldlace;font-size: 18pt;position: absolute;left: 45%;top: 64%;'><?php echo $row['DANHGIA'];?></span>
 												<img width="145" height="108" alt="" class="art-lightbox" src="public/img/nhatro/<?php if (isset($row['HINHANH']) && !empty($row['HINHANH'])) 
 																																			echo $row['HINHANH'];
 																																		else 
