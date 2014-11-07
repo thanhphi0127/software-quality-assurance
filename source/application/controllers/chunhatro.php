@@ -37,6 +37,7 @@ class Chunhatro extends MY_Controller {
 				$this->lib_string->alert(null, CIT_BASE_URL.'home/index');
 			else $ma_nhatro = $this->username;
 		}
+		
 		$data['title_page'] = 'Danh sách nhà trọ thuộc sở hữu';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
@@ -56,11 +57,10 @@ class Chunhatro extends MY_Controller {
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
 		$this->load->model('mchunhatro');
-		$ms = 2;
+		$ms = $this->username;
 		$data['datainfo'] = $this->mchunhatro->load_chunhatro($ms);
-				
-		$data['template'] = 'profile/profile';
-		$this->load->view('layout/profile', isset($data)? $data : NULL);
+		$data['template'] = 'chunhatro/profile';
+		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
 		
 	}
 	
@@ -69,9 +69,12 @@ class Chunhatro extends MY_Controller {
 		if ($this->ma_quyen != 2){
 			$this->lib_string->alert('Mời bạn đăng nhập trước', CIT_BASE_URL.'home/index');
 		}
-		$data['title_page'] = 'Cập nhật chủ nhà trọ';
-		$ms = '2';
-		$this->load->model('mchunhatro');
+		
+		$data['title_page'] = 'Cập nhật hồ sơ';
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
+		$ms = $this->username;
+		
 	//******* load huyen - xa - duong len select box	
 		// load quận
 		$data['quan'] = $this->msearch->load_quan();
@@ -80,11 +83,14 @@ class Chunhatro extends MY_Controller {
 		//load duong
 		$data['duong'] = $this->msearch->load_duong();
 		
-		//print_r ($data['duong']);
+		$data['datainfo'] = $this->mchunhatro->load_chunhatro($ms);
+		
+		
 	//******** code update chu nha tro
 		if(isset($_POST['btnUpdateproFile']))
 		{
 			$_POST = $this->input->post('edit');
+			
 			$data_info = array(
 				'HOTEN' => $_POST['ten'],
 				'NGAYSINH' => $_POST['ngaysinh'],
@@ -94,24 +100,13 @@ class Chunhatro extends MY_Controller {
 				'MA_DUONG' => $_POST['duong']
 				);
 			$this->mchunhatro->update_chunhatro($ms,$data_info);
-			echo "update thanh cong";
+			$data['message'] =  "Cập nhật thành công";
 		}
-		$data['template'] = 'profile/updateprofile';
-		$this->load->view('layout/updateprofile', isset($data)? $data : NULL);
+		$data['template'] = 'chunhatro/updateprofile';
+		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
 	}
 	////////////////////
-	public function capnhatChu($id)
-	{
-		if ($this->ma_quyen != 2){
-			$this->lib_string->alert('Mời bạn đăng nhập trước', CIT_BASE_URL.'home/index');
-		}
-		$data['title_page'] = 'Cập nhật chủ nhà trọ';
-		$this->load->model('mchunhatro');
-		$data['datainfo'] = $this->mchunhatro->load_chunhatro($id);
-		
-		$data['template'] = 'profile/updateprofile';
-		$this->load->view('layout/updateprofile', isset($data)? $data : NULL);
-	}
+	
 	
 	public function quanlynhatro(){
 		if ($this->ma_quyen != 2){

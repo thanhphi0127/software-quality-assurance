@@ -34,7 +34,7 @@ $(document).ready(function(){
 		$('#sel_phuong option[value='+MA_PHUONG+']').prop('selected', true);
 	
 		//duong
-		
+		$('#sel_duong option').show();
 		$('#sel_duong option.'+ MA_PHUONG).show();
 		$('#sel_duong option.'+ MA_PHUONG).prop('selected', true);
 		$('#sel_duong option').not('.' + MA_PHUONG).hide();
@@ -44,16 +44,14 @@ $(document).ready(function(){
 	$('#sel_phuong').change(function(){
 		var MA_PHUONG = $(this).val();
 		
-	
 		//duong
-		
 		
 		$('#sel_duong option.'+ MA_PHUONG).show();
 		$('#sel_duong option.'+ MA_PHUONG).prop('selected', true);
 		$('#sel_duong option').not('.' + MA_PHUONG).hide();
 	});
 	
-	$('#sonha').keypress(function(){
+	$('#sonha').keyup(function(){
 		var SONHA = $('#sonha').val();
 		var QUAN = 	$('#sel_quan option:selected').text();
 		var PHUONG = 	$('#sel_phuong option:selected').text();

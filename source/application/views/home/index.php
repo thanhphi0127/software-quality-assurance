@@ -3,8 +3,11 @@
                 
 				<?php if (!empty($bxh['nhatro']) ) {
 	?>
-			<?php if ($bxh['count'] > 10) 
-				$this->load->view('layout/pagination');
+			<?php if ($bxh['count'] > 10) {
+				$data['result']['count'] = $bxh['count'];
+				$this->load->view('layout/pagination', $data);
+					
+				}
 			?>
 				<!-- Tiêu đề -->
 				<div class="art-content-layout">
@@ -25,12 +28,13 @@
 						<div class="art-content-layout result">
 									  <div class="art-content-layout-row">
 										<div class="art-layout-cell layout-item-0" style="width: 35%" >
-										  <p >
+										  <p ><span style='color:orange;'><?php echo $row['DANHGIA'];?></span>
 												<img width="145" height="108" alt="" class="art-lightbox" src="public/img/nhatro/<?php if (isset($row['HINHANH']) && !empty($row['HINHANH'])) 
 																																			echo $row['HINHANH'];
 																																		else 
 																																			echo "no_photo.jpg";
 																																?>">
+												
 												<br/>											
 										  </p>
 										</div>
@@ -57,8 +61,11 @@
 									  </div>
 						</div>
 	<?php 		}?>
-			<?php if ($bxh['count'] > 10) 
-					$this->load->view('layout/pagination');
+			<?php if ($bxh['count'] > 10) {
+				$data['result']['count'] = $bxh['count'];
+				$this->load->view('layout/pagination', $data);
+					
+				}
 			?>
 					
 	<?php		

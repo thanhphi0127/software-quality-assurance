@@ -19,11 +19,16 @@ class MthongTinNhaTro extends CI_Model{
 		return $query->result_array();
 	}
 	
-	
+	public function load_binhluan($id){
+		$this->db->where('MA_NHATRO', $id);
+		$this->db->order_by('MA_GOPY', 'desc');
+		$query  = $this->db->get('gopy');
+		return $query->result_array();
+	}
 	/*public function load_danhgia ($maNhaTro)
 	{
-		$DANHGIA = $this->db->query ("select danhgia from nhatro where MA_NHATRO = ".$maNhaTro )->result_array()[0]['DANHGIA'];
-		
+		$DANHGIA = $this->db->query ("select DANHGIA from nhatro where MA_NHATRO = ".$maNhaTro )->result_array()[0]['DANHGIA'];
+		return $DANHGIA;
 	}*/
 	public function load_phongtro ($maNhaTro)
 	{
@@ -62,6 +67,10 @@ class MthongTinNhaTro extends CI_Model{
 	{
 		$this->db->insert('gopy', $data);
 	}
-	
-	
+	public function cong_danhgia($MA_NHATRO, $number){
+		$DANHGIA = $this->load_danhgia($MA_NHATRO);
+		$data['danhgia'] = $DANHGIA + $number;
+		$this->db->where('MA_NHATRO', $MA_NHATRO);
+		$this->db->update('nhatro', $data);
+	}
 }

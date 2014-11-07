@@ -1,9 +1,7 @@
 ﻿<div>
 		<form action="" method="POST">
 		<table width="48%" class="TableContainer standardform">
-    	<tr>
-        	<td class="Header">Xem thông tin</td>
-        </tr>
+    	
         <tr>
 		<?php
 			$ma_chu='';
@@ -16,13 +14,13 @@
                 	<tr>
                     	<td class='Left'>Họ tên:</td>
                         <td><input name='edit[ten]' type='text' value='".$key['HOTEN']."' readonly />
-							<input name='edit[ma]' type='text' value='".$key['MSCHU']."' readonly />
+							<input name='edit[ma]' type='text' value='".$key['MSCHU']."' readonly='readonly' />
 						</td>
                     </tr>	
 					<tr>
 						<td class='Left'>Giới tính:</td>";
-						if ($key['GIOITINH'] == 1 || $key['GIOITINH'] == 'Nam') $sex = 'Nam';
-						else $sex = 'Nữ';
+						if ($key['GIOITINH'] == 1 || $key['GIOITINH'] == 'Nam'|| $key['GIOITINH'] == 'nam') $sex = 'nam';
+						else $sex = 'nữ';
 						echo"	<td><input type='text' name='edit[sex]' value=".$sex."  readonly /></td>
 					</tr>
 					<tr>
@@ -32,7 +30,7 @@
                     <tr>
 						<td class='Left'>Email: </td>
                         <td><input type='text' name='edit[email]' class='shortInput' value='".$key['MAIL']."'  readonly /></td>
-					<tr>
+					</tr>
                      <tr>
                         <td class='Left'>Số điện thoại::</td>
                         <td><input type='text' name='edit[sdt]' class='shortInput' value='".$key['SDT']."' readonly /></td>
@@ -54,10 +52,10 @@
 			";
 		}
 		// echo CIT_BASE_URL.'chunhatro/update_chunhatro'
-		echo "dfds".$ma_chu;
+		
 		?>
         </tr>
-        <tr><td align="left"><a href='http://localhost/timkiemnhatro/chunhatro/capnhatChu/<?php echo $ma_chu; ?>' ><input type="submit" name="btnSuaProfile" value="Chỉnh sửa" class="nutnhan2" /></a></td></tr>
+        <tr><td align="left"><a href='http://localhost/timkiemnhatro/chunhatro/update_chunhatro' class='art-button'>Cập nhật</a></td></tr>
     </table>
 	</form>
 </div>

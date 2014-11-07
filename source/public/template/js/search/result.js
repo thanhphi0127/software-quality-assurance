@@ -1,9 +1,10 @@
 ﻿$(document).ready(function(){	
 	var i = 0;
+	
 	var g_page = 1;
 	var g_maxpage = parseInt($('#maxpage').val());
-	$('.art-content-layout.result').hide();
-	$('.art-content-layout.result').each(function(){
+	$('.result').hide();
+	$('.result').each(function(){
 		i ++;
 		if (i < 10)
 			$(this).show();
@@ -15,16 +16,20 @@
 		var startpage = endpage - 10;
 		
 		i = 0;
-		$('.art-content-layout.result').hide();
-		$('.art-content-layout.result').each(function(){
+		$('.result').hide();
+		$('.result').each(function(){
 			if (startpage <= i && i <= endpage)
 				$(this).show();
 			i ++;
 		});
+		$('a.page').removeClass('active_page');
+		$(this).addClass('active_page');
+		
 	});
 	
 	$('a.nextpage').click(function(e){
 		g_page ++;
+		
 		if (g_page > g_maxpage){
 			g_page = g_maxpage;
 			e.preventDefault();
@@ -34,13 +39,15 @@
 			var startpage = endpage - 10;
 			
 			i = 0;
-			$('.art-content-layout.result').hide();
-			$('.art-content-layout.result').each(function(){
+			$('.result').hide();
+			$('.result').each(function(){
 				i ++;
 				if (startpage <= i && i <= endpage)
 					$(this).show();
 			});
 		}
+		$('a.page').removeClass('active_page');
+		$('a.page:contains('+g_page+')').addClass('active_page');
 		
 	});
 	
@@ -56,13 +63,15 @@
 			var startpage = endpage - 10;
 			
 			i = 0;
-			$('.art-content-layout.result').hide();
-			$('.art-content-layout.result').each(function(){
+			$('.result').hide();
+			$('.result').each(function(){
 				i ++;
 				if (startpage <= i && i <= endpage)
 					$(this).show();
 			});
 		}
+		$('a.page').removeClass('active_page');
+		$('a.page:contains('+g_page+')').addClass('active_page');
 	});
 	
 });

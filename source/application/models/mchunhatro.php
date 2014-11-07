@@ -8,26 +8,22 @@ class Mchunhatro extends CI_Model{
 	
 	public function load_chunhatro ($ms)
 	{
-		/*$query = $this->db->query("select HOTEN, GIOITINH, NGAYSINH, SDT, MAIL, TEN_DUONG, TEN_PHUONGXA, TENHUYEN
+		
+		$query = $this->db->query("select *
 									FROM chunhatro as a, DUONG as b, PHUONGXA as c, QUANHUYEN as d
-									where MSCHU like ".$ms." AND
-										a.MA_DUONG = b.MA_DUONG AND
-										b.MA_PHUONGXA = c.MA_PHUONGXA AND
-										c.MA_HUYEN = d.MA_HUYEN");*/
-		$query = $this->db->query("select a.*, b.*, c.*, d.*
-									FROM chunhatro as a, DUONG as b, PHUONGXA as c, QUANHUYEN as d
-									where MSCHU like ".$ms." AND
-										a.MA_DUONG = b.MA_DUONG AND
-										b.MA_PHUONGXA = c.MA_PHUONGXA AND
-										c.MA_HUYEN = d.MA_HUYEN");
+									where USERNAME = '".$ms."' AND
+										a.MA_DUONG = b.MA_DUONG and
+										b.MA_PHUONGXA = c.MA_PHUONGXA and
+										c.MA_HUYEN = d.MA_HUYEN
+										");
 		return $query->result_array();
 	}
 	
 	public function update_chunhatro($id, $arr)
-	{
-		$this->db->where('MSCHU',$id);
+	{	
+		$this->db->where('USERNAME',$id);
 		$this->db->update("chunhatro", $arr);
-		//print_r ($arr);
+		
 	}
 	//**************************************************
 	/*author: Ngọc

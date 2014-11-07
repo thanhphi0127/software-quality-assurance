@@ -10,7 +10,7 @@ position: absolute;
 top: 16%;
 right: 29%;
 width: 46%;
-height: 46%;
+height: 27%;
 display:none;
 background:white;
 }
@@ -37,3 +37,33 @@ left: 0;
 background: black;
 opacity: 0.5;
 }
+
+a.gopy {
+	width: 25%;
+height: 10%;
+margin-right:15px;
+}
+
+.star{
+	width:30px;
+	height:auto;
+	margin:0px 1px !important;
+	border:none !important;
+	cursor:pointer;
+	
+}
+
+.star_yes{
+	width:30px;
+	height:auto;
+	margin:0px 3px !important;
+	border:none !important;
+	cursor:pointer;
+}
+
+div.yellow_star{
+	top: 0;
+	left: 100px;
+	position: absolute;
+}
+

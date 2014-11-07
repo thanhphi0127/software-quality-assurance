@@ -14,7 +14,7 @@
 						<ul>
 							<li><a href="<?php echo CIT_BASE_URL.'chunhatro/dangnhatro';?>">Đăng nhà trọ</a></li>
 							<li><a href="<?php echo CIT_BASE_URL.'chunhatro/danhsachnhatro';?>">Danh sách nhà trọ</a></li>
-						
+							<li><a href="<?php echo CIT_BASE_URL.'chunhatro/profile_chunhatro';?>">Hồ sơ chủ nhà trọ</a></li>
 						</ul>
 					</li>
 		<?php   }

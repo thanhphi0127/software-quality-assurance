@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" href="public/template/css/standardform.css">
 <link rel='stylesheet' href='public/template/css/home.css' />
 <link rel='stylesheet' href='public/template/css/search/advancedsearch.css'/>
+<link rel='stylesheet' href='public/template/css/result.css'/>
 
 <script language='javascript' src="public/template/js/search/advancedsearch.js" ></script>	
 
