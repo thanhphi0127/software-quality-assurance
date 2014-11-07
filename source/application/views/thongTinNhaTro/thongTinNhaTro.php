@@ -1,4 +1,4 @@
-﻿
+﻿<div>
 <div>
 	<?php if ($ma_quyen != 0) {?>
 	<p style='float:left;width:100%;'>  <a style='float:left; margin:10px;' href='<?php echo CIT_BASE_URL.'chunhatro/danhsachnhatro';?>'><< Về danh sách nhà trọ của tôi</a> 
@@ -8,65 +8,8 @@
 	<!--**************************************
 		|	xem thông tin nhà trọ			|
 	***************************************-->
-    <style>
-		.data
-		{
-			font-size:14px;
-			width:500px;
-		}
-		.mau{
-			color:#333;
-			background:#3CF;
-			font-style:oblique
-		}
-		.ttchu{
-			float:right;
-			border:1px 	#C0C0C0 solid;
-			width:350px;
-			height:150px;
-			margin-right:30px;
-			
-		}
-		.tthinh{
-			float:right;
-			/*border:1px solid;*/
-			width:350px;
-			height:200px;
-			margin-bottom:10px;
-			margin-right:30px;
-			
-		}
-
-		.ttnhatro
-		{
-			float:left;
-		}
-		td{
-			color:#036;
-		}
-		.gopy
-		{
-			float:left;
-			border:1px 	#C0C0C0 solid;
-			width:920px;
-			height:100px;
-			margin-top:30px;
-			margin-right:30px;
-			background-color:#FFF;
-			box-shadow: 2px 2px 2px #888888;
-			border-radius:10px;
-		}
-		textarea
-		{
-			background-color:#FFF;
-			text-shadow:#999;
-		}
-		.nut
-		{
-			float: left;
-		}
-    </style>
-<table>
+   
+<table style='float:left;'>
 	<tr>
 		<td rowspan='2'>
 				<div class='ttnhatro' >
@@ -285,4 +228,5 @@
      
 		}
 	 ?>
+</div>
 </div>
