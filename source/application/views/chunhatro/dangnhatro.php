@@ -2,7 +2,6 @@
 <div> <a style='float:left; margin:10px;' href='<?php echo CIT_BASE_URL.'chunhatro/danhsachnhatro';?>'> Về danh sách nhà trọ</a> <span style='float:right;margin:10px;' ><?php echo $message;?></span></div>
 <form name='fDangnhatro' method='POST' action='' enctype="multipart/form-data">
 <table  class="TableContainer standardform" >
-	<?php echo validation_errors(); ?>
 	<?php echo form_open('form'); ?>
 	
 	<tr>

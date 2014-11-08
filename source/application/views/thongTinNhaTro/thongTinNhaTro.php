@@ -209,12 +209,11 @@
      <form action=""  method="post">
      	<?php echo form_open('form'); ?>
      	 <div class='gopy'>
-        	<textarea placeholder="Bạn có nhận xét gì về nhà trọ này" cols="40" style='height:92px;' name='member[noidung]'><?php echo form_error('noidung');?> </textarea>
-             <?php echo form_error('noidung');?> 
+        	<textarea placeholder="Bạn có nhận xét gì về nhà trọ này" cols="40" style='height:92px;' name='member[noidung]'></textarea></br>   
          </div>
-         <div> </div>
          <div class='nut'>
         	<input type="submit" name="btnBinhLuan" value='Bình Luận' class="art-button" />
+            <?php echo form_error('noidung');?> 
          </div>  
          
      </form>

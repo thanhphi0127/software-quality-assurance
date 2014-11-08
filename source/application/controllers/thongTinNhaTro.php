@@ -34,11 +34,9 @@ class ThongTinNhaTro extends MY_Controller {
 		$this->load->model('mdiendan');
 		$this->load->helper('date');
 		
-		$this->load->library('form_validation');
 		$this->load->helper(array('form', 'url'));
-		$this->form_validation->set_error_delimiters('<div class="error">','</div>');
+		$this->load->library('form_validation');
 		
-		$this->form_validation->set_rules('noidung', 'Nội dung', 'required|min_length[3]');	
 		
 		$data['danhgia'] = $this->mthongTinNhaTro->load_danhgia ($id);
 		$data['nhatro'] = $this->mthongTinNhaTro->load_nhatro ($id);
@@ -65,28 +63,35 @@ class ThongTinNhaTro extends MY_Controller {
 		
 		if(isset($_POST['btnBinhLuan']))
 		{
+			$_POST = $this->input->post('member');
+				$this->form_validation->set_error_delimiters('<div class="error">','</div>');
+				$this->form_validation->set_rules('noidung', 'Nội dung', 'required|min_length[3]');
+		
 			if( $data['username'] == NULL)
 			{
 				echo "<script>alert('Để bình luận về nhà trọ bạn cần phải đăng nhập!')</script>";
 			}
 			else
 			{
-				$_POST = $this->input->post('member');
+				
+				
 				$arr = array(
 								'USERNAME' => $data['username'],
 								'MA_NHATRO' => $id,
 								'THOIGIAN' => date('Y-m-d H:i:s'),
 								'NOIDUNG' => $_POST['noidung']
-								);
-				$this->mthongTinNhaTro->insertbinhluan($arr);
-				header('Location:'.CIT_BASE_URL.'thongTinNhaTro/xem_nhatro/'.$id);
+								);	
+				if($this->form_validation->run())
+				{
+					$this->mthongTinNhaTro->insertbinhluan($arr);
+					header('Location:'.CIT_BASE_URL.'thongTinNhaTro/xem_nhatro/'.$id);
+				}
+				
+				
 			}
 		}
 		$data['template'] = 'thongTinNhaTro/thongTinNhaTro';
-		if ($this->form_validation->run() == FALSE)
-		{
-			$this->load->view('layout/thongTinNhaTro', isset($data)? $data : NULL);
-		}
+		$this->load->view('layout/thongTinNhaTro', isset($data)? $data : NULL);
 			
 		
 	}
