@@ -129,6 +129,7 @@ class Chunhatro extends MY_Controller {
 		$data['title'] = 'Dang Tin Nha Tro';
 		//load thu vien de rang buoc du lieu nhap
 		
+		$this->load->library('form_validation');
 		$this->load->helper(array('form', 'url'));
 		
 		//------------------------------------------------------
@@ -176,6 +177,7 @@ class Chunhatro extends MY_Controller {
 			
 			//ENDFILE//////////////////////////////////////////////////////////////////////////////////////////////
 			// rang buoc các truong nhap tren text field
+		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 		$this->form_validation->set_rules('TenNhaTro', 'Tên nhà trọ', 'required|min_length[5]');
 		$this->form_validation->set_rules('Quan', 'Quận', 'required');
 		$this->form_validation->set_rules('Phuong', 'Phường', 'required');
@@ -189,7 +191,8 @@ class Chunhatro extends MY_Controller {
 		$this->form_validation->set_rules('ChieuRong1', 'Chiều rộng', 'required|numeric');
 		$this->form_validation->set_rules('Gia1', 'Giá', 'required|numeric');
 		
-		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+		
+		
 			if (empty($_FILES))
 				$_FILES['photo']['name'] = null;
 			$_POST = $this->input->post('member');
@@ -346,7 +349,12 @@ class Chunhatro extends MY_Controller {
 		
 		
 		$data['template'] = 'chunhatro/dangnhatro';
-		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
+		if ($this->form_validation->run())
+		{
+			$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
+		}
+
+		
 		
 		
 }

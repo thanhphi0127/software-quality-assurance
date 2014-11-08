@@ -207,12 +207,16 @@
 
 <div>    
      <form action=""  method="post">
+     	<?php echo form_open('form'); ?>
      	 <div class='gopy'>
-        	<textarea placeholder="Bạn có nhận xét gì về nhà trọ này" cols="40" style='height:92px;' name='member[noidung]'></textarea>
+        	<textarea placeholder="Bạn có nhận xét gì về nhà trọ này" cols="40" style='height:92px;' name='member[noidung]'><?php echo form_error('noidung');?> </textarea>
+             <?php echo form_error('noidung');?> 
          </div>
+         <div> </div>
          <div class='nut'>
         	<input type="submit" name="btnBinhLuan" value='Bình Luận' class="art-button" />
-         </div>   
+         </div>  
+         
      </form>
      <?php
 	 	foreach($binhluan as $bl)

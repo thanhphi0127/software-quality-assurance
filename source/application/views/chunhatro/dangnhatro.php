@@ -2,7 +2,7 @@
 <div> <a style='float:left; margin:10px;' href='<?php echo CIT_BASE_URL.'chunhatro/danhsachnhatro';?>'> Về danh sách nhà trọ</a> <span style='float:right;margin:10px;' ><?php echo $message;?></span></div>
 <form name='fDangnhatro' method='POST' action='' enctype="multipart/form-data">
 <table  class="TableContainer standardform" >
-	
+	<?php echo form_open('form'); ?>
 	
 	<tr>
 		<td>
@@ -137,10 +137,11 @@
 			 </td>
 			<td><input type="text" style= "width:66px;" name="member[ChieuDai1]" class="shortInputLoaiPhong" value=''/>
 				&nbsp; x &nbsp;
-			   <?php echo form_error('ChieuDai1');?>
+			   
 			   
 			   <input type="text" style='width:66px;' name="member[ChieuRong1]" class="shortInputLoaiPhong" value=''/>
 			  &nbsp;Mét
+              <?php echo form_error('ChieuDai1');?>
 			  <?php echo form_error('ChieuRong1');?>
 			 </td>
 		  </tr>
@@ -185,10 +186,11 @@
 			 </td>
 			<td><input type="text" style='width:66px;' name="member[ChieuDai2]"class="shortInputLoaiPhong"/>
 				&nbsp; x &nbsp;
-			   <?php echo form_error('ChieuDai1');?>
+			  
 			   
 			   <input type="text" style='width:66px;' name="member[ChieuRong2]"class="shortInputLoaiPhong"/>
 			  &nbsp;Mét
+               <?php echo form_error('ChieuDai1');?>
 			  <?php echo form_error('ChieuRong1');?>
 			 </td>
 		  </tr>
@@ -233,10 +235,11 @@
 			 </td>
 			<td><input type="text" style='width:66px;' name="member[ChieuDai3]"class="shortInputLoaiPhong"/>
 				&nbsp; x &nbsp;
-			   <?php echo form_error('ChieuDai1');?>
+			 
 			   
 			   <input type="text" style='width:66px;' name="member[ChieuRong3]"class="shortInputLoaiPhong"/>
 			  &nbsp;Mét
+               <?php echo form_error('ChieuDai1');?>
 			  <?php echo form_error('ChieuRong1');?>
 			 </td>
 		  </tr>

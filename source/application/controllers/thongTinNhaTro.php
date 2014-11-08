@@ -38,7 +38,7 @@ class ThongTinNhaTro extends MY_Controller {
 		$this->load->helper(array('form', 'url'));
 		$this->form_validation->set_error_delimiters('<div class="error">','</div>');
 		
-		$this->form_validation->set_rules('hoten', 'Họ tên', 'required|min_length[3]');	
+		$this->form_validation->set_rules('noidung', 'Nội dung', 'required|min_length[3]');	
 		
 		$data['danhgia'] = $this->mthongTinNhaTro->load_danhgia ($id);
 		$data['nhatro'] = $this->mthongTinNhaTro->load_nhatro ($id);
