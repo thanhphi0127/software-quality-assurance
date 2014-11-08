@@ -8,8 +8,7 @@ class MthongTinNhaTro extends CI_Model{
 	
 	public function load_nhatro ($maNhaTro)
 	{
-		/*$query = $this->db->query ("SELECT a.MA_NHATRO, a.TEN_NHATRO, a.MOTA, a.NAU_AN, a.BAIDAUXE, a.GIODONGCUA FROM `nhatro` as a\n"
-									. "	WHERE MA_NHATRO = ".$maNhaTro." LIMIT 0, 30 ");*/
+		
 		$query = $this->db->query(
 		 "SELECT a.*, b.*, CONCAT(a.SO, ' ', 'đường ', c.TEN_DUONG,'- phường ' ,d.TEN_PHUONGXA, '- quận ', e.TENHUYEN)  as diachi
 			FROM (nhatro as a, chunhatro as b, duong as c, phuongxa as d, quanhuyen as e) 
