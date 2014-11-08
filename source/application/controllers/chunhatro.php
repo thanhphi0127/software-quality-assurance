@@ -129,8 +129,10 @@ class Chunhatro extends MY_Controller {
 		$data['title'] = 'Dang Tin Nha Tro';
 		//load thu vien de rang buoc du lieu nhap
 		
-		$this->load->library('form_validation');
 		$this->load->helper(array('form', 'url'));
+
+		$this->load->library('form_validation');;
+			
 		
 		//------------------------------------------------------
 		
@@ -177,73 +179,98 @@ class Chunhatro extends MY_Controller {
 			
 			//ENDFILE//////////////////////////////////////////////////////////////////////////////////////////////
 			// rang buoc các truong nhap tren text field
-		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
-		$this->form_validation->set_rules('TenNhaTro', 'Tên nhà trọ', 'required|min_length[5]');
-		$this->form_validation->set_rules('Quan', 'Quận', 'required');
-		$this->form_validation->set_rules('Phuong', 'Phường', 'required');
-		$this->form_validation->set_rules('Duong', 'Đường', 'required');
-		$this->form_validation->set_rules('Duong', 'Đường', 'required');
-		$this->form_validation->set_rules('MoTa', 'Mô tả', 'required|min_length[5]');
-		$this->form_validation->set_rules('Gio', 'Giờ', 'required');
-		$this->form_validation->set_rules('PhongConTrong1', 'Số phòng còn trống', 'numeric');
-		$this->form_validation->set_rules('SoLuongNguoi1', 'Số lượng người', 'numeric');
-		$this->form_validation->set_rules('ChieuDai1', 'Chiều dài', 'required|numeric');
-		$this->form_validation->set_rules('ChieuRong1', 'Chiều rộng', 'required|numeric');
-		$this->form_validation->set_rules('Gia1', 'Giá', 'required|numeric');
+		
 		
 		
 		
 			if (empty($_FILES))
 				$_FILES['photo']['name'] = null;
+				
 			$_POST = $this->input->post('member');
-			$data_info = array(
-								'TEN_NHATRO' =>$_POST['TenNhaTro'],
-								'MSCHU' =>$_POST['MaNguoiDang'],
-								'MA_DUONG'=>$_POST['Duong'],
-								'MOTA'=> $_POST['MoTa'],
-								'NAU_AN' =>isset( $_POST['NauAn'] )?1:0,
-								'BAIDAUXE' =>isset( $_POST['BaiDauXe'] )?1:0,
-								'SO' => $_POST['SoNha'],
-								'LUOCXEM' =>'0',
-								'HINHANH' => $_FILES['photo']['name'],
-								'TUQUAN' => $_POST['TuQuan'],
-								'GIODONGCUA' =>$_POST['Gio'],
-								'NGAYDANG'=> date('Y-m-d'),
-								'STATUS' =>'0'
-								);
-			$ma = $this->mchunhatro-> arInsertNhaTro($data_info);
-			
-			
+					
 			if($_POST['LoaiPhong'] == 1)
 			{
+				$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+				$this->form_validation->set_rules('TenNhaTro', 'Tên nhà trọ', 'required|min_length[5]');
+				$this->form_validation->set_rules('PhongConTrong1', 'Số phòng còn trống', 'numeric');
+				$this->form_validation->set_rules('SoLuongNguoi1', 'Số lượng người', 'numeric');
+				$this->form_validation->set_rules('ChieuDai1', 'Chiều dài', 'required|numeric');
+				$this->form_validation->set_rules('ChieuRong1', 'Chiều rộng', 'required|numeric');
+				$this->form_validation->set_rules('Gia1', 'Giá', 'required|numeric');
 				
-				$phongtro_thu1 = array(
-									'MA_PHONG' =>'1',
-									'MA_NHATRO' =>$ma,
-									'SL_NGUOI' => $_POST['SoLuongNguoi1'],
-									'CONTRONG' => $_POST['PhongConTrong1'],
-									'DIENTICH' => $_POST['ChieuDai1']."x".$_POST['ChieuRong1'],
-									'GIA' => $_POST['Gia1'],
-									'TOILETTRONG' =>isset($_POST['NhaVeSinh1'])?1:0,
-									'GAC' =>isset($_POST['CoGac1'])?1:0
+				$data_info = array(
+									'TEN_NHATRO' =>$_POST['TenNhaTro'],
+									'MSCHU' =>$_POST['MaNguoiDang'],
+									'MA_DUONG'=>$_POST['Duong'],
+									'MOTA'=> $_POST['MoTa'],
+									'NAU_AN' =>isset( $_POST['NauAn'] )?1:0,
+									'BAIDAUXE' =>isset( $_POST['BaiDauXe'] )?1:0,
+									'SO' => $_POST['SoNha'],
+									'LUOCXEM' =>'0',
+									'HINHANH' => $_FILES['photo']['name'],
+									'TUQUAN' => $_POST['TuQuan'],
+									'GIODONGCUA' =>$_POST['Gio'],
+									'NGAYDANG'=> date('Y-m-d'),
+									'STATUS' =>'0'
 									);
 				
-				$this->mchunhatro-> arInsertPhongTro($phongtro_thu1);
-				
+				if($this->form_validation->run())
+				{
+					$ma = $this->mchunhatro-> arInsertNhaTro($data_info);
+					$phongtro_thu1 = array(
+										'MA_PHONG' =>'1',
+										'MA_NHATRO' =>$ma,
+										'SL_NGUOI' => $_POST['SoLuongNguoi1'],
+										'CONTRONG' => $_POST['PhongConTrong1'],
+										'DIENTICH' => $_POST['ChieuDai1']."x".$_POST['ChieuRong1'],
+										'GIA' => $_POST['Gia1'],
+										'TOILETTRONG' =>isset($_POST['NhaVeSinh1'])?1:0,
+										'GAC' =>isset($_POST['CoGac1'])?1:0
+										);
+					$this->mchunhatro-> arInsertPhongTro($phongtro_thu1);
+				}		
 				
 			}// end 1Loai 
 			//----------------------------------------------
 			else if($_POST['LoaiPhong'] == 2)
 			{
-				echo $ma;
-				//loai phong thu 1
+				//validation type1
+				$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+				$this->form_validation->set_rules('TenNhaTro', 'Tên nhà trọ', 'required|min_length[5]');
+				$this->form_validation->set_rules('PhongConTrong1', 'Số phòng còn trống', 'numeric');
+				$this->form_validation->set_rules('SoLuongNguoi1', 'Số lượng người', 'numeric');
+				$this->form_validation->set_rules('ChieuDai1', 'Chiều dài', 'required|numeric');
+				$this->form_validation->set_rules('ChieuRong1', 'Chiều rộng', 'required|numeric');
+				$this->form_validation->set_rules('Gia1', 'Giá', 'required|numeric');
+				//validation type2
 				$this->form_validation->set_rules('PhongConTrong2', 'Số phòng còn trống', 'numeric');
 				$this->form_validation->set_rules('SoLuongNguoi2', 'Số lượng người', 'numeric');
 				$this->form_validation->set_rules('ChieuDai2', 'Chiều dài', 'required|numeric');
 				$this->form_validation->set_rules('ChieuRong2', 'Chiều rộng', 'required|numeric');
 				$this->form_validation->set_rules('Gia2', 'Giá', 'required|numeric');
 				
-				$phongtro_thu1 = array(
+				
+				$data_info = array(
+									'TEN_NHATRO' =>$_POST['TenNhaTro'],
+									'MSCHU' =>$_POST['MaNguoiDang'],
+									'MA_DUONG'=>$_POST['Duong'],
+									'MOTA'=> $_POST['MoTa'],
+									'NAU_AN' =>isset( $_POST['NauAn'] )?1:0,
+									'BAIDAUXE' =>isset( $_POST['BaiDauXe'] )?1:0,
+									'SO' => $_POST['SoNha'],
+									'LUOCXEM' =>'0',
+									'HINHANH' => $_FILES['photo']['name'],
+									'TUQUAN' => $_POST['TuQuan'],
+									'GIODONGCUA' =>$_POST['Gio'],
+									'NGAYDANG'=> date('Y-m-d'),
+									'STATUS' =>'0'
+									);
+				if($this->form_validation->run())
+				{
+					$ma = $this->mchunhatro-> arInsertNhaTro($data_info);
+					
+					// loai phong thu nhat
+					$phongtro_thu1 = array(
 									'MA_PHONG' =>'1',
 									'MA_NHATRO' =>$ma,
 									'SL_NGUOI' => $_POST['SoLuongNguoi1'],
@@ -254,11 +281,9 @@ class Chunhatro extends MY_Controller {
 									'GAC' =>isset($_POST['CoGac1'])?1:0
 									);
 				
-				$this->mchunhatro-> arInsertPhongTro($phongtro_thu1);
+					$this->mchunhatro-> arInsertPhongTro($phongtro_thu1);
 				// loai phong thu hai
-				
-				
-				$phongtro_thu2 = array(
+					$phongtro_thu2 = array(
 									'MA_PHONG' =>'2',
 									'MA_NHATRO' =>$ma,
 									'SL_NGUOI' => $_POST['SoLuongNguoi2'],
@@ -269,12 +294,22 @@ class Chunhatro extends MY_Controller {
 									'GAC' =>isset($_POST['CoGac2'])?1:0
 									);
 				
-				$this->mchunhatro-> arInsertPhongTro($phongtro_thu2);
+					$this->mchunhatro-> arInsertPhongTro($phongtro_thu2);	
+				}
+				
 			}
 				//---------------------------------------------------------
 				//loai phong thu 3
 			else if($_POST['LoaiPhong'] == 3)
 			{
+				//validation type1
+				$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+				$this->form_validation->set_rules('TenNhaTro', 'Tên nhà trọ', 'required|min_length[5]');
+				$this->form_validation->set_rules('PhongConTrong1', 'Số phòng còn trống', 'numeric');
+				$this->form_validation->set_rules('SoLuongNguoi1', 'Số lượng người', 'numeric');
+				$this->form_validation->set_rules('ChieuDai1', 'Chiều dài', 'required|numeric');
+				$this->form_validation->set_rules('ChieuRong1', 'Chiều rộng', 'required|numeric');
+				$this->form_validation->set_rules('Gia1', 'Giá', 'required|numeric');
 				//validation type2
 				$this->form_validation->set_rules('PhongConTrong2', 'Số phòng còn trống', 'numeric');
 				$this->form_validation->set_rules('SoLuongNguoi2', 'Số lượng người', 'numeric');
@@ -289,7 +324,27 @@ class Chunhatro extends MY_Controller {
 				$this->form_validation->set_rules('Gia3', 'Giá', 'required|numeric');
 				//loai phong thu 1
 				
-				$phongtro_thu1 = array(
+				// info. nha tro
+				
+				$data_info = array(
+									'TEN_NHATRO' =>$_POST['TenNhaTro'],
+									'MSCHU' =>$_POST['MaNguoiDang'],
+									'MA_DUONG'=>$_POST['Duong'],
+									'MOTA'=> $_POST['MoTa'],
+									'NAU_AN' =>isset( $_POST['NauAn'] )?1:0,
+									'BAIDAUXE' =>isset( $_POST['BaiDauXe'] )?1:0,
+									'SO' => $_POST['SoNha'],
+									'LUOCXEM' =>'0',
+									'HINHANH' => $_FILES['photo']['name'],
+									'TUQUAN' => $_POST['TuQuan'],
+									'GIODONGCUA' =>$_POST['Gio'],
+									'NGAYDANG'=> date('Y-m-d'),
+									'STATUS' =>'0'
+									);
+				if($this->form_validation->run())
+				{
+					$ma = $this->mchunhatro-> arInsertNhaTro($data_info);
+					$phongtro_thu1 = array(
 									'MA_PHONG' =>'1',
 									'MA_NHATRO' =>$ma,
 									'SL_NGUOI' => $_POST['SoLuongNguoi1'],
@@ -300,36 +355,38 @@ class Chunhatro extends MY_Controller {
 									'GAC' =>isset($_POST['CoGac1'])?1:0
 									);
 				
-				$this->mchunhatro-> arInsertPhongTro($phongtro_thu1);
+					$this->mchunhatro-> arInsertPhongTro($phongtro_thu1);
 				// loai phong thu hai
 					
-				$phongtro_thu2 = array(
-									'MA_PHONG' =>'2',
-									'MA_NHATRO' => $ma,
-									'SL_NGUOI' => $_POST['SoLuongNguoi2'],
-									'CONTRONG' => $_POST['PhongConTrong2'],
-									'DIENTICH' => $_POST['ChieuDai2']."x".$_POST['ChieuRong2'],
-									'GIA' => $_POST['Gia2'],
-									'TOILETTRONG' =>isset($_POST['NhaVeSinh2'])?1:0,
-									'GAC' =>isset($_POST['CoGac2'])?1:0
-									);
+					$phongtro_thu2 = array(
+										'MA_PHONG' =>'2',
+										'MA_NHATRO' => $ma,
+										'SL_NGUOI' => $_POST['SoLuongNguoi2'],
+										'CONTRONG' => $_POST['PhongConTrong2'],
+										'DIENTICH' => $_POST['ChieuDai2']."x".$_POST['ChieuRong2'],
+										'GIA' => $_POST['Gia2'],
+										'TOILETTRONG' =>isset($_POST['NhaVeSinh2'])?1:0,
+										'GAC' =>isset($_POST['CoGac2'])?1:0
+										);
 				
-				$this->mchunhatro-> arInsertPhongTro($phongtro_thu2);
+					$this->mchunhatro-> arInsertPhongTro($phongtro_thu2);
 				//////////////////
 				
-				$phongtro_thu3 = array(
-									'MA_PHONG' =>'3',
-									'MA_NHATRO' =>$ma,
-									'SL_NGUOI' => $_POST['SoLuongNguoi3'],
-									'CONTRONG' => $_POST['PhongConTrong3'],
-									'DIENTICH' => $_POST['ChieuDai3']."x".$_POST['ChieuRong3'],
-									'GIA' => $_POST['Gia2'],
-									'TOILETTRONG' =>isset($_POST['NhaVeSinh3'])?1:0,
-									'GAC' =>isset($_POST['CoGac3'])?1:0
-									);
+					$phongtro_thu3 = array(
+										'MA_PHONG' =>'3',
+										'MA_NHATRO' =>$ma,
+										'SL_NGUOI' => $_POST['SoLuongNguoi3'],
+										'CONTRONG' => $_POST['PhongConTrong3'],
+										'DIENTICH' => $_POST['ChieuDai3']."x".$_POST['ChieuRong3'],
+										'GIA' => $_POST['Gia2'],
+										'TOILETTRONG' =>isset($_POST['NhaVeSinh3'])?1:0,
+										'GAC' =>isset($_POST['CoGac3'])?1:0
+										);
 				
-				$this->mchunhatro-> arInsertPhongTro($phongtro_thu3);
-				if ($data['message'] == '')	
+					$this->mchunhatro-> arInsertPhongTro($phongtro_thu3);					
+				}
+				
+			if ($data['message'] == '')	
 			$data['message'] = 'Đăng nhà trọ thành công!';
 				
 		}// end loai phong thu 3
@@ -349,13 +406,8 @@ class Chunhatro extends MY_Controller {
 		
 		
 		$data['template'] = 'chunhatro/dangnhatro';
-		if ($this->form_validation->run())
-		{
-			$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
-		}
-
-		
-		
+		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
+	
 		
 }
 
