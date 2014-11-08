@@ -70,21 +70,25 @@
                 <th>Tiêu đề</th>
                 <th>Mô tả</th>
                 <th>Địa chỉ</th>
-                <th>Duyệt</th>
+               <!-- <th>Duyệt</th>-->
                 <th>Hủy</th>
             </tr>
             <?php
                 foreach($info as $v)
-                {                   
+                {  
+					//$rest = 'aaaaa'; 
+					//echo $rest;
+					$rest = substr($v['MOTA'], 0, 170); 
+					//$rest = mb_substr($v['HOTEN'],1,NULL);              
                     echo "<tr class='result_chuaduyet result'>";
                     echo "<td><input type='checkbox' name = member[] value='".$v['MA_NHATRO']."'/></td>";
                     echo "<td hidden class='layma'>
                             ".$v['MA_NHATRO']."
                         </td>";
                     echo "<td class='cotText'><a href='http://localhost/timkiemnhatro/admin/duyettungnhatro/".$v['MA_NHATRO']."'>".$v['HOTEN']."</a></td>";
-                    echo "<td class='cotText'><a href='http://localhost/timkiemnhatro/admin/duyettungnhatro/".$v['MA_NHATRO']."'>".$v['MOTA']."</a></td>";
+                    echo "<td class='cotText'><a href='http://localhost/timkiemnhatro/admin/duyettungnhatro/".$v['MA_NHATRO']."'>".$rest."....</a></td>";
 					echo "<td class='cotText'><a href='http://localhost/timkiemnhatro/admin/duyettungnhatro/".$v['MA_NHATRO']."'>".$v['diachi']."</a></td>";
-                    echo "<td><a class='cotNutChucNang' href='http://localhost/timkiemnhatro/admin/duyettungnhatro/".$v['MA_NHATRO']."'><input type='button' value='Duyệt'/></a></td>";
+                   // echo "<td><a class='cotNutChucNang' href='http://localhost/timkiemnhatro/admin/duyettungnhatro/".$v['MA_NHATRO']."'><input type='button' value='Duyệt'/></a></td>";
                     echo "<td>
                             <input type='button' class='btn_delete' value='Xoa' />
                         </td>";
@@ -135,13 +139,14 @@
             <?php
                 foreach($data_info as $b)
                 {
+					$rest = substr($b['MOTA'], 0, 170); 
                     echo "<tr class='result_daduyet result'>";
                     echo "<td><input name = daduyet[] value='".$b['MA_NHATRO']."' type='checkbox' class='cotNutChucNang' value='".$b['MA_NHATRO']."' /></td>";
 					 echo "<td hidden class='layma'>
                             ".$b['MA_NHATRO']."
                         </td>";
                     echo "<td class='cotText'><a href='#'>".$b['HOTEN']."</a></td>";
-                    echo "<td class='cotText'><a href='#'>".$b['MOTA']."<a></td>";
+                    echo "<td class='cotText'><a href='#'>".$rest."<a></td>";
 					echo "<td class='cotText'><a href='#'>".$b['diachi1']."<a></td>";
                   //  echo "<td><a class='cotNutChucNang' href='http://localhost/timkiemnhatro/admin/xoatungnhatro/".$b['MA_NHATRO']."'><input type='button' value='Xóa'/></a></td>";
 					 echo "<td>
