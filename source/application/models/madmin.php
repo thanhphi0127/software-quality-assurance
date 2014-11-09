@@ -215,7 +215,8 @@ class Madmin extends CI_Model{
 			'sdt' => $data['sodt'],
 			'diachi' => $data['diachi'],
 			'ngaysinh' => $data['ngaysinh'],
-			'ngaydangki' => date('Y-m-d G:m:s')
+			'ngaydangki' => date('Y-m-d G:m:s'),
+			'card' => $data['card']
 		);
 		$result = $this->db->insert("thanhvien", $array_thanhvien);
 		if ($result) {

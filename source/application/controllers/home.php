@@ -4,6 +4,7 @@ class Home extends MY_Controller {
 	private $username;
 	private $ma_quyen;
 	private $auth;
+	private $linker;
 	public function __construct(){
 		parent::__construct();
 		date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -14,8 +15,10 @@ class Home extends MY_Controller {
 			$this->ma_quyen = $this->auth['ma_quyen'];
 		else
 			$this->ma_quyen = 0;
+		$this->linker = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	}
 	public function quydinhdangnhatro(){
+		
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
 		$data['title_page'] = 'Quy định đăng nhà trọ';
@@ -38,7 +41,7 @@ class Home extends MY_Controller {
 	}
 	
 	public function index(){
-
+		$data['linker'] = $this->linker;
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
 		$data['title_page'] = 'Bảng xếp hạng nhà trọ';
@@ -57,7 +60,7 @@ class Home extends MY_Controller {
 			if ($this->form_validation->run()) {
 				$user = $this->mauth->check_username($_post['username'], $_post['password']);
 				if (NULL == $user) {
-					$this->lib_string->alert(NULL, CIT_BASE_URL.'auth/logout');
+					$this->lib_string->alert(NULL, CIT_BASE_URL.'auth/login');
 				}
 				else {
 					setcookie(CIT_PREFIX.'_user_logged', $this->lib_string->encode_cookie(json_encode($user)), time() + 3600, '/');

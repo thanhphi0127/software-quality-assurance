@@ -11,7 +11,7 @@ class Auth extends MY_Controller {
 		$this->auth = $this->lib_authentication->check_cookie();
 		$this->username = $this->auth['username'];			
 		if ($this->auth != NULL) 
-			$this->ma_quyen = $this->auth['ma_quyen'];
+			echo "<script>	window.history.back();</script>";
 		else
 			$this->ma_quyen = 0;
 	}
@@ -22,9 +22,7 @@ class Auth extends MY_Controller {
 		$data['title_page'] = 'Đăng nhập';
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
-		if ($this->auth != NULL) {
-			$this->lib_string->alert(NULL, CIT_BASE_URL.'home/index');
-		}
+		
 		$data['seo']['title'] = 'Đăng nhập vào hệ thống';
 		$data['seo']['keyword'] = 'login';
 		$data['seo']['description'] = 'Đăng nhập vào hệ thống';
@@ -40,8 +38,10 @@ class Auth extends MY_Controller {
 					$this->lib_string->alert("Sai tên đăng nhập hoặc mật khẩu", CIT_BASE_URL.'auth/login');
 				}
 				else {
-					setcookie(CIT_PREFIX.'_user_logged', $this->lib_string->encode_cookie(json_encode($user)), time() + 3600, '/');
-					$this->lib_string->alert(NULL, CIT_BASE_URL.'home/index');
+					setcookie(CIT_PREFIX.'_user_logged', $this->lib_string->encode_cookie(json_encode($user)), time() + 7200, '/');
+					if ($_post['linker'] == '')
+						$this->lib_string->alert(NULL, CIT_BASE_URL.'home/index');
+					else $this->lib_string->alert(NULL, $_post['linker']);
 				}
 			}
 		}	
@@ -79,32 +79,53 @@ class Auth extends MY_Controller {
 	}
 	public function register(){
 		$data['title_page'] = 'Đăng ký';
+		$data['ma_quyen'] = $this->ma_quyen;
+		
 		$data['seo']['title'] = 'Đăng kí';
 		$data['seo']['keyword'] = 'register';
 		$data['seo']['description'] = '';
-		if ($this->input->post('register'))
-		{
-			$_post = $this->input->post('data');
-			$data['data']['_post'] = $_post;
-			$this->form_validation->set_rules('data[username]', 'Tên đăng nhập', 'regex_match[/^([a-z0-9_])+$/i]|trim|required|min_length[3]|max_length[50]|xss_clean');
-			$this->form_validation->set_rules('data[password]', 'Mật khẩu', 'trim|required');
-			$this->form_validation->set_rules('data[email]', 'Email', 'trim|required|valid_email');
-			$this->form_validation->set_rules('data[name]', 'Họ tên', 'trim|required');
-			$this->form_validation->set_rules('data[phone]', 'Số điện thoại', 'trim|regex_match[/^([0-9])+$/i]');
-			$this->form_validation->set_rules('data[sex]', 'Giới tính', 'required');
-			$this->form_validation->set_rules('data[birth]', 'Năm sinh', 'required|regex_match[/^([0-9])+$/i]|birthday');
-			$this->form_validation->set_rules('data[classid]', 'Lớp', 'required');
-			if ($this->form_validation->run())
-			{
-				$_post['salt'] = $this->lib_string->random(69, TRUE);
-				$_post['password'] = $this->lib_string->encode_password($_post['username'], $_post['password'], $_post['salt']);
-				$_post['name'] = ucwords(strtolower($_post['name']));
-				$this->db->insert('nguoidung', $_post);
-				echo $this->lib_string->alert("Tạo mới tài khoản thành công", CIT_BASE_URL."auth/register");
+		
+		$data['press_add'] = 0;
+		$data['press_modify'] = 0;
+		$data['success'] = false;
+		if ($this->input->post('btnThemThanhVien')) {
+			//Lấy giá trị đưa vào biến POST
+			$_POST = $this->input->post('add');
+			
+			//Load thư viện
+			$this->load->helper(array('form', 'url'));
+			$this->load->library('form_validation');
+			$this->form_validation->set_error_delimiters('<div class="error">','</div>');
+			
+			//Kiểm tra dữ liệu nhập vào
+			$this->form_validation->set_rules('maso','Username','trim|required|min_length[5]|max_length[15]');
+			$this->form_validation->set_rules('matkhau','Mật khẩu','trim|required|min_length[5]|max_length[15]');
+			$this->form_validation->set_rules('hoten', 'Họ tên', 'trim|required|min_length[3]|max_length[40]');					
+			$this->form_validation->set_rules('sodt', 'Số điện thoại', 'required|trim|regex_match[/^([0-9])+$/i]');
+			$this->form_validation->set_rules('ngaysinh', 'Năm sinh', 'required|birthday');
+			$this->form_validation->set_rules('mail', 'Địa chỉ mail', 'trim|required|valid_email');
+			$this->form_validation->set_rules('diachi', 'Địa chỉ', 'trim|required');
+			
+			if ($this->form_validation->run()) {
+				if (!$this->madmin->KiemTraNguoiDung($_POST['maso']) && !$this->madmin->KiemTraThanhVien($_POST['maso'])){
+					//Gọi model thêm vào người dùng
+					$this->madmin->ThemNguoiDung($_POST);
+					//Gọi model thêm thành viên
+					$this->madmin->ThemThanhVien($_POST);
+					$data['success'] = true;
+				}
+				else {
+					echo "<script>alert('Thành viên đã tồn tại')</script>";
+				}
+				
 			}
-			
-			
-		}	
+			else {
+				$data['press_add'] = 1;
+			} // if form_validation	
+		}
+	
+		//load tiêu điểm
+		$data['tieudiem'] = $this->msearch->load_tieudiem();
 		$data['template'] = 'auth/register';
 		$this->load->view('layout/auth', isset($data)?$data:NULL);
 	}

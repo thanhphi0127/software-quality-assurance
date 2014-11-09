@@ -4,7 +4,8 @@
              </div>
               <div class="art-blockcontent" >
 				<?php if ($ma_quyen == 0) {?>
-				<form action='<?php echo CIT_BASE_URL."home/index";?>' method='post'>
+				<form action='<?php echo CIT_BASE_URL."auth/login";?>' method='post'>
+					<input type='hidden' name='data[linker]' value='<?php if (isset($linker)) echo $linker; else echo '';?>'/>
 					<p>Tài khoản:</p>
 					<p>
 					  <input type="text" name='data[username]'>
@@ -47,19 +48,23 @@
                 <h3 class="t">Hỗ trợ</h3>
               </div>
               <div class="art-blockcontent">
-                <p style="text-align: center;"><a href="ho-tro/lien-he.html"><img width="131" height="75" alt="" src="public/img/lien_he.jpg" class=""></a><br>
+                <p style="text-align: center;"><img width="131" height="75" alt="" src="public/img/lien_he.jpg" title='Liên hệ' class=""><br/>
                 </p>
-                <p style="text-align: left;">
-					<span style="font-weight: bold;"><span style="color: rgb(226, 52, 29); text-decoration: underline;">Hot line 1:
-					<span style="color: rgb(226, 52, 29); font-weight: bold; font-style: italic;">0962 705 589</span>
+				<p style="text-align: left;line-height: 20px;">
+					<span style="font-weight: bold;"><span style="color: rgb(226, 52, 29); text-decoration: underline;">Tài khoản tín dụng:</span>
+					<span style="color: rgb(226, 52, 29); font-weight: bold; font-style: italic;"><span style='color:blueviolet;'>7600</span><span style='color:chartreuse;'>205433754</span></span>
 				</p>
-                <p style="text-align: left;">
-					<span style="color: rgb(226, 52, 29); font-weight: bold; text-decoration: underline;">Hot line 2:</span>
-					<span style="color: rgb(226, 52, 29); font-weight: bold; font-style: italic;">0929 775 678</span>
+                <p style="text-align: left;line-height: 20px;">
+					<span style="font-weight: bold;"><span style="color: rgb(226, 52, 29); text-decoration: underline;">Hot line 1:</span><br/>
+					<span style="color: burlywood; font-weight: bold; font-style: italic;">0962 705 589</span>
 				</p>
-                <p style="text-align: left;">
+                <p style="text-align: left;line-height: 20px;">
+					<span style="color: rgb(226, 52, 29); font-weight: bold; text-decoration: underline;">Hot line 2:</span></br>
+					<span style="color: burlywood; font-weight: bold; font-style: italic;">0929 775 678</span>
+				</p>
+                <p style="text-align: left;line-height: 20px;">
 					<span style="color: rgb(226, 52, 29); font-weight: bold; text-decoration: underline;">Mail:</span>
-					<span style="color: rgb(226, 52, 29); font-weight: bold; font-style: italic;">TKNhaTroCT@gmail.com</span>
+					<span style="color: burlywood; font-weight: bold; font-style: italic;">NhaTroCT@gmail.com</span>
 				</p>
               </div>
             </div>

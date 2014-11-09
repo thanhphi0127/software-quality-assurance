@@ -4,6 +4,7 @@ class ThongTinNhaTro extends MY_Controller {
 	private $username;
 	private $ma_quyen;
 	private $auth;
+	private $linker;
 	public function __construct(){
 		parent::__construct();
 		date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -14,6 +15,7 @@ class ThongTinNhaTro extends MY_Controller {
 			$this->ma_quyen = $this->auth['ma_quyen'];
 		else
 			$this->ma_quyen = 0;
+		$this->linker = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	}
 	
 	public function danhgia($MA_NHATRO, $number){
@@ -31,6 +33,7 @@ class ThongTinNhaTro extends MY_Controller {
 	
 	public function xem_nhatro ($id)
 	{
+		$data['linker'] = $this->linker;
 		$this->load->model('mdiendan');
 		$this->load->helper('date');
 		

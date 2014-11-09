@@ -69,7 +69,7 @@
 										<div class="art-layout-cell" style="width: 65%;" >
 										  <p style='margin-top: 18px;'>
 											<a href="<?php echo CIT_BASE_URL.'thongtinnhatro/xem_nhatro/'.$row['MA_NHATRO']; ?>">
-												<span style="color: #48B4DB; "><?php echo $row['TEN_NHATRO'];?></span><span style="color: rgb(246, 161, 4); "></span>
+												<span style="color: rgb(15, 9, 173);font-weight:bold; "><?php echo $row['TEN_NHATRO'];?></span><span style="color: rgb(246, 161, 4); "></span>
 											</a>
 											<span style="color: #F6A104;"></span>
 										  </p>

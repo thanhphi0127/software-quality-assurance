@@ -138,6 +138,11 @@
            <form action="" method="post">
           <div class="modal-body" style="margin: 0px padding: 3px;">  
           <table id="table_add" border="0">
+					 <tr><td><label>Ngày đăng ký(*)</label></td>
+                  	  <td>
+                      	<input type="text"  name="add[ngaydangki]"value="<?php echo date('Y-m-d'); ?>" class="form-control" readonly="readonly" />
+                      </td>
+                  </tr>
                     <tr>
                     	<td><label>User name(*)</label></td>
                         <td>
@@ -148,13 +153,13 @@
                     <tr>
                     	<td><label>Mật khẩu (*)</label></td>
                         <td>
-                        	<input type="password" class="form-control" id="idmatkhau" name="add[matkhau]" value="<?php echo set_value('matkhau'); ?>" placeholder="Nhập mật khẩu"/> 
+                        	<input type="password" class="form-control" id="idmatkhau" name="add[matkhau]" value="<?php echo set_value('matkhau'); ?>" placeholder=""/> 
                             <?php echo form_error('matkhau');?></td>
                     </tr>
                     
                   <tr>
                       <td><label>Họ tên (*)</label></td>
-                      <td><input type="text" class="form-control" name="add[hoten]" placeholder="Nhập họ tên" value="<?php echo set_value('hoten'); ?>"/>
+                      <td><input type="text" class="form-control" name="add[hoten]" placeholder="" value="<?php echo set_value('hoten'); ?>"/>
                       <?php  echo form_error('hoten'); ?>
                       </td>   
                   </tr>
@@ -176,41 +181,42 @@
                   </tr>
                
 
-                  <tr><td><label>Địa chỉ (*)</label></td><td><textarea name="add[diachi]" class="form-control" rows="2" placeholder="Nhập địa chỉ" ></textarea>
+                  <tr><td><label>Địa chỉ (*)</label></td><td><textarea name="add[diachi]" class="form-control" rows="2" placeholder="" ></textarea>
                       <?php echo form_error('diachi');?></td>
                    </tr>
 
 
-                  <tr><td> <label>Số điện thoại (*)</label></td><td><input name="add[sodt]" type="text" class="form-control" placeholder="Nhập số điện thoại" value="<?php echo set_value('sodt'); ?>"/>
+                  <tr><td> <label>SĐT (*)</label></td><td><input name="add[sodt]" type="text" class="form-control" placeholder="" value="<?php echo set_value('sodt'); ?>"/>
                      <?php echo form_error('sodt'); ?>
 </td>
 				</tr>  
                   
-                <tr><td> <label>Mail (*)</label></td><td><input name="add[mail]" type="text" class="form-control" placeholder="Nhập địa chỉ mail" value="<?php echo set_value('mail'); ?>"/>
+                <tr><td> <label>Mail (*)</label></td><td><input name="add[mail]" type="text" class="form-control" placeholder="Nhập chính xác" value="<?php echo set_value('mail'); ?>"/>
                      <?php echo form_error('mail'); ?>
 </td>
 				</tr>   
                                        
-
-                  <tr><td><label>Ngày đăng kí(*)</label></td>
-                  	  <td>
-                      	<input type="text"  name="add[ngaydangki]"value="<?php echo date('Y-m-d'); ?>" class="form-control" readonly="readonly" />
-                      </td>
-                  </tr>
+				<tr><td> <label>Thẻ tín dụng (*)</label></td><td><input name="add[card]" type="text" class="form-control" placeholder="Viết liền không khoảng trắng" value="<?php echo set_value('mail'); ?>"/>
+                     
+</td>
+				</tr>   
+                 
                       
 
                   <tr>
-                  	<td colspan="2"><span style="color: red">(*) Là các trường bắt buộc nhập</span><input type="hidden" name="data[press]" id="hidden_add" value="<?php echo $press_add; ?>" id="temp" /></td>
+                  	<td colspan="2"><span style="color: red">(*) Là trường bắt buộc</span><input type="hidden" name="data[press]" id="hidden_add" value="<?php echo $press_add; ?>" id="temp" /></td>
                   </tr>
-
+					
                   <tr>
-                      <td><input id="btn_save" name="btnThemThanhVien" type="submit" class="btn btn-primary pull-left" value="Lưu lại"/></td>
+                      <td><input id="btn_save" name="btnThemThanhVien" type="submit" class="btn btn-primary pull-left" value="Đăng ký"/></td>
                       <td>
                       	<input id="btn_huybo" name="huybo" type="reset" class="btn btn-primary huybo" value="Hủy bỏ" />
                       </td>
                   </tr>
-           </table></div>
- 			</form>
+				  
+           </table>
+ </div>
+ 	</form>
       </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
@@ -327,7 +333,7 @@
 				<input id="btn_add" class="btn btn-default" value="Thêm"/>
                 <input id ="edit" name="edit" type="button" type="submit" class="btn btn-default" value="Cập nhật"/>
                 <input id="btn_save_modfify" name="btn_save" type="submit" class="btn btn-default"  value="Lưu lại" />
-                <input id="btn_huybo" type="submit" class="btn btn-default" value="Hủy bỏ" />
+                <input id="btn_huybo" style='width:80px;' stype="submit" class="btn btn-default" value="Hủy bỏ" />
 				<input id="btn_delete" name="btn_delete" type="submit"  class="btn btn-default" value="Xóa" />
                 <div style="background-color:#CCC"></div>
             
@@ -344,62 +350,6 @@
 </div><!--end div khung-->
 
 
-
-
-<?php
-/*
-
-			     echo "<td>
-						<span class='pModify'>".$ds['USERNAME']."</span>
-						<span class='txtModify' hidden>
-						<input class='maso' type='text' name='".$ds['USERNAME']."[maso]' value='".$ds['USERNAME']."'/></span>
-					  </td>";	
-			     echo "<td>
-						<span class='pModify'>".$ds['HOTEN']."</span>
-						<span class='txtModify' hidden>
-						<input class='hoten' type='text' name='".$ds['USERNAME']."[hoten]' value='".$ds['HOTEN']."'/></span>
-					  </td>";
-			     echo "<td>
-						<span class='pModify'>".$ds['GIOITINH']."</span>
-						<span class='txtModify' hidden>
-						  <select name='".$ds['GIOITINH']."[gioitinh]'>
-						     <option value='Nam'";
-						     if ($ds['GIOITINH'] == 'Nam') echo 'selected';
-			     echo                                ">Nam</option>
-						     <option value='Nữ'";
-						     if ($ds['GIOITINH'] == 'Nữ') echo 'selected';
-			     echo                                 ">Nữ</option>
-					  </select></span></td>
-						</span>
-					  </td>";
-			     echo "<td>
-						<span class='pModify'>".$ds['MAIL']."</span>
-						<span class='txtModify' hidden>
-						<input type='text' name='".$ds['USERNAME']."[mail]' value='".$ds['MAIL']."'/></span>
-					  </td>";
-			     echo "<td>
-						<span class='pModify'>".$ds['SDT']."</span>
-						<span class='txtModify' hidden>
-						<input type='text' name='".$ds['USERNAME']."[sdt]' value='".$ds['SDT']."'/></span>
-					  </td>";
-			     echo "<td>
-						<span class='pModify'>".$ds['NGAYSINH']."</span>
-						<span class='txtModify' hidden>
-						<input type='text' name='".$ds['USERNAME']."[ngaysinh]' value='".$ds['NGAYSINH']."'/></span>
-					  </td>";
-			     echo "<td>
-						<span class='pModify'>".$ds['DIACHI']."</span>
-						<span class='txtModify' hidden>
-						<input type='text' name='".$ds['USERNAME']."[diachi]' value='".$ds['DIACHI']."'/></span>
-					  </td>";
-			     echo "<td>
-						<span class='pModify'>".$ds['NGAYDANGKI']."</span>
-						<span class='txtModify' hidden>
-						<input type='text' readonly name='".$ds['USERNAME']."[ngaydangki]' value='".$ds['NGAYDANGKI']."'/></span>
-					  </td>";	
-
-*/
-?>
 
 
 

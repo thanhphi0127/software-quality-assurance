@@ -24,7 +24,7 @@
 									</p>
 									
 									<p >
-										<a href="<?php echo CIT_BASE_URL; ?>auth/forgot">Quên mật khẩu?</a>
+										<a href="<?php echo CIT_BASE_URL; ?>home/index">Về trang chủ</a> / <a href="<?php echo CIT_BASE_URL; ?>auth/forgot">Quên mật khẩu</a> / <a href="<?php echo CIT_BASE_URL; ?>auth/register">Đăng ký mới</a> 
 									</p>
 									
 									<p >	
