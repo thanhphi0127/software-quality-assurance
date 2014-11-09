@@ -192,6 +192,8 @@ class Admin extends MY_Controller {
 		//****************************
 		// xu ly nha tro  duyet
 		//****************************
+		
+		
 		$chua_duyet = $this->madmin->arCountDaDuyet();
 		if(isset($_POST['btnXoaNhaTro']))
 		{
@@ -199,6 +201,9 @@ class Admin extends MY_Controller {
 			{
 				if(isset($_POST['daduyet'][$i]))
 				{
+					/***********
+					xác nhận xóa
+					**************/
 					$arr = $this->madmin->arConditionSelect($_POST['daduyet'][$i]);
 					$this->madmin->arXoaPhong($_POST['daduyet'][$i]);
 					$this->madmin->arMultiple_Delete($_POST['daduyet'][$i]);
@@ -267,6 +272,9 @@ class Admin extends MY_Controller {
 		{
 			/*$this->madmin->arXoaPhong($id);
 			$this->madmin->arMultiple_Delete($id);	*/
+					/***********
+					xác nhận xóa
+					**************/
 			echo "<script>alert('Bạn có chắc xóa không?')</script>";
 			$this->madmin->arXoaPhong($id);
 			$this->madmin->arMultiple_Delete($id);
