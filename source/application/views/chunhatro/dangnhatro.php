@@ -262,9 +262,13 @@
 	  </td>
 	</tr>
 	<tr>
-	  <td align="left">
-		<input type="submit" name="btnXemTruoc" value="Xem trước bản đăng" class="nutnhan2" />
-		<input type="submit" name="btnDangTin" value="Đăng nhà trọ" class="nutnhan" />
+	  <td align="center">
+      
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" name="btnDangTin" value="Đăng nhà trọ" class="nutnhan" />
+        &nbsp;&nbsp;&nbsp;
+        <input type="submit" onclick="javascript:eraseText();" name="btnUpdateCancle" value="Hủy bỏ" class='art-button' />
 	  </td>
 	</tr>
 </table>

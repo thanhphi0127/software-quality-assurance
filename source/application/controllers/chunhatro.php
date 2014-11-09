@@ -99,13 +99,13 @@ class Chunhatro extends MY_Controller {
 				'GIOITINH' => $_POST['sex'],
 				'MA_DUONG' => $_POST['duong']
 				);
-			$this->mchunhatro->update_chunhatro($ms,$data_info);
+			$this->mchunhatro->update_chunhatro($data['username'], $data_info);
 			$data['message'] =  "Cập nhật thành công";
 		}
 		$data['template'] = 'chunhatro/updateprofile';
 		$this->load->view('layout/chunhatro', isset($data)? $data : NULL);
 	}
-	////////////////////
+
 	
 	
 	public function quanlynhatro(){

@@ -154,9 +154,11 @@ class Admin extends MY_Controller {
 		
 		// duyet cac nha tro
 		if(isset($_POST['btnDuyetNhaTro']))
-		{
+		{	
+		echo $bien;
 			for($i = 0; $i < $bien; $i++)
 			{
+				echo $_POST['member'][$i];
 				if(isset($_POST['member'][$i]))
 				{
 					$arr = $this->madmin->arConditionSelect($_POST['member'][$i]);
@@ -198,6 +200,7 @@ class Admin extends MY_Controller {
 				if(isset($_POST['daduyet'][$i]))
 				{
 					$arr = $this->madmin->arConditionSelect($_POST['daduyet'][$i]);
+					$this->madmin->arXoaPhong($_POST['daduyet'][$i]);
 					$this->madmin->arMultiple_Delete($_POST['daduyet'][$i]);
 					header('Location:http://localhost/timkiemnhatro/admin/duyetnhatro');
 				}// end if(isset($_POST['daduyet'][$i]))
@@ -247,20 +250,34 @@ class Admin extends MY_Controller {
 	}
 	// xoa tung nha tro thong qua bang các nha tro da duyet
 	
-		public function xoatungnhatro($id)
-		{
-		$this->load->model(madmin);
+	public function xoatungnhatro($id)
+	{
+			
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
+		//$this->load->model(madmin);
+		$data['nhatro'] = $this->mthongTinNhaTro->load_nhatro ($id);
+		$data['phongtro'] = $this->mthongTinNhaTro->load_phongtro ($id);
+		$data['chu'] = $this->mthongTinNhaTro->getTTChu($id);
+			
 		$data['data_info'] = $this->madmin->arSelectUpdate($id);
-		if(isset($_POST['btnDuyetTin']))
+		
+		
+		if(isset($_POST['btnXoa']))
 		{
+			/*$this->madmin->arXoaPhong($id);
+			$this->madmin->arMultiple_Delete($id);	*/
+			echo "<script>alert('Bạn có chắc xóa không?')</script>";
 			$this->madmin->arXoaPhong($id);
-			$this->madmin->arMultiple_Delete($id);	
-			echo "xoa roi do";
-			header('Location:http://localhost/timkiemnhatro/admin/duyetnhatro');
+			$this->madmin->arMultiple_Delete($id);
+			header('Location:'.CIT_BASE_URL.'admin/duyetnhatro');
+			
 		}
-		$data['template'] = 'admin/duyettungnhatro';
+		$data['template'] = 'admin/xoatungnhatro';
 		$this->load->view('layout/admin', isset($data)? $data : NULL);
 	}
+	
+
 	//**************************************************
 	/*	hien thi danh sach các TIN TUC
 		da duyet va chua duyet

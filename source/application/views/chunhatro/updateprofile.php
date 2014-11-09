@@ -3,7 +3,7 @@
 	<span style='color:blue; font-style:italic;'  ><?php if (isset($message) ) echo $message; ?></span>
 	
 	<form action='' method='POST'>
-    	<table width='100%' class='TableForm'>
+    	<table width='100%' class="TableContainer standardform">
         	
 		<?php
 		foreach($datainfo as $k) {?>
@@ -60,7 +60,7 @@
 							<?php foreach ($duong as $MA_PHUONGXA => $row)
 								foreach ($row as $key){?>
 								
-								<option value="<?php echo $MA_PHUONGXA;?>"><?php echo $key['TEN_DUONG'];?></option>
+								<option class="<?php echo $MA_PHUONGXA;?>" value="<?php echo $key['MA_DUONG'];?>"> <?php echo $key['TEN_DUONG'];?> </option>
 							<?php }?>
 							</select>
 						</td>
@@ -68,8 +68,8 @@
 		<?php }
 		
 		?>
-		<tr><td ></td><td align="left"><input type="submit" name="btnUpdateproFile" value="Hoàn tất" class="art-button"  />
-			<input type="submit" onclick="javascript:eraseText();" name="btnUpdateCancle" value="Hủy bỏ" class="art-button"  /> </td>
+		<tr><td ></td><td align="left"><input type="submit" name="btnUpdateproFile" value="Hoàn tất" class='art-button'  />
+			&nbsp; &nbsp; <input type="submit" onclick="javascript:eraseText();" name="btnUpdateCancle" value="Hủy bỏ" class='art-button' /> </td>
 		</tr>
 		</table>
         

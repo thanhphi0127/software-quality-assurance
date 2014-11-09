@@ -92,7 +92,7 @@ class Madmin extends CI_Model{
 	}
 		public function arCountChuaDuyet()
 	{
-		$this->db->where('STATUS', "1");
+		$this->db->where('STATUS', "0");
 		$query = $this->db->get('nhatro');
 		return $query->num_rows();
 	}

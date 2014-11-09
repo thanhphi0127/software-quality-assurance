@@ -67,7 +67,7 @@
 			</tr>
             <tr class="danger">
                 <th class="cotSTT">Chọn</th>
-                <th>Tiêu đề</th>
+                <th>Tiên nhà trọ</th>
                 <th>Mô tả</th>
                 <th>Địa chỉ</th>
                <!-- <th>Duyệt</th>-->
@@ -85,7 +85,7 @@
                     echo "<td hidden class='layma'>
                             ".$v['MA_NHATRO']."
                         </td>";
-                    echo "<td class='cotText'><a href='http://localhost/timkiemnhatro/admin/duyettungnhatro/".$v['MA_NHATRO']."'>".$v['HOTEN']."</a></td>";
+                    echo "<td class='cotText'><a href='http://localhost/timkiemnhatro/admin/duyettungnhatro/".$v['MA_NHATRO']."'>".$v['TEN_NHATRO']."</a></td>";
                     echo "<td class='cotText'><a href='http://localhost/timkiemnhatro/admin/duyettungnhatro/".$v['MA_NHATRO']."'>".$rest."....</a></td>";
 					echo "<td class='cotText'><a href='http://localhost/timkiemnhatro/admin/duyettungnhatro/".$v['MA_NHATRO']."'>".$v['diachi']."</a></td>";
                    // echo "<td><a class='cotNutChucNang' href='http://localhost/timkiemnhatro/admin/duyettungnhatro/".$v['MA_NHATRO']."'><input type='button' value='Duyệt'/></a></td>";
@@ -130,7 +130,7 @@
 			</tr>
             <tr class="danger">
                 <th class="cotSTT">Chọn</th>
-                <th>Tiêu đề</th>
+                <th>Tên nhà trọ</th>
                 <th>Mô tả</th>
                 <th>Địa chỉ</th>
                 <th>Xóa</th>
@@ -145,9 +145,9 @@
 					 echo "<td hidden class='layma'>
                             ".$b['MA_NHATRO']."
                         </td>";
-                    echo "<td class='cotText'><a href='#'>".$b['HOTEN']."</a></td>";
-                    echo "<td class='cotText'><a href='#'>".$rest."<a></td>";
-					echo "<td class='cotText'><a href='#'>".$b['diachi1']."<a></td>";
+                    echo "<td class='cotText'><a href='".CIT_BASE_URL."admin/xoatungnhatro/".$b['MA_NHATRO']."'>".$b['TEN_NHATRO']."</a></td>";
+                    echo "<td class='cotText'><a href='".CIT_BASE_URL."admin/xoatungnhatro/".$b['MA_NHATRO']."'>".$rest."<a></td>";
+					echo "<td class='cotText'><a href='".CIT_BASE_URL."admin/xoatungnhatro/".$b['MA_NHATRO']."'>".$b['diachi1']."<a></td>";
                   //  echo "<td><a class='cotNutChucNang' href='http://localhost/timkiemnhatro/admin/xoatungnhatro/".$b['MA_NHATRO']."'><input type='button' value='Xóa'/></a></td>";
 					 echo "<td>
                             <input type='button' class='btn_delete' value='Xoa' />
