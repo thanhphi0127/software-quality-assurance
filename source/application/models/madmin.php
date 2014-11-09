@@ -180,7 +180,7 @@ class Madmin extends CI_Model{
 	+ Kết quả: Trả về một mảng thành viên
 	******************************************************/
 	public function DanhSachThanhVien() {
-		$result = $this->db->query("SELECT USERNAME, HOTEN, GIOITINH, MAIL, SDT, DIACHI, NGAYSINH, NGAYDANGKI 
+		$result = $this->db->query("SELECT *
 									FROM thanhvien
 									ORDER BY USERNAME ASC");
 		return $result->result_array();
@@ -286,7 +286,8 @@ class Madmin extends CI_Model{
 			"gioitinh" => $data['gioitinh'],
 			"ngaydangki" => $data['ngaydangki'],
 			"diachi" => $_POST[$mstv]['diachi'],
-			"mail" => $data['mail']
+			"mail" => $data['mail'],
+			"card"=>$data['card']
 		);
 		$this->db->where('USERNAME', $update_data['USERNAME']);
 		$result = $this->db->update('thanhvien', $update_data);
@@ -361,4 +362,34 @@ class Madmin extends CI_Model{
 		return $query->result();
 	}
 	
+	
+	public function getChuNhaTro(){
+        $this->db->select('so, e.mschu, hoten,  ten_duong, ten_phuongxa, tenhuyen, sdt, mail, gioitinh, ngaysinh')
+                 ->from('nhatro as e, chunhatro as a, duong as b, phuongxa as c, quanhuyen as d')
+                 ->where('a.mschu = e.mschu')
+                 ->where('a.ma_duong = b.ma_duong')
+                ->where('b.ma_phuongxa = c.ma_phuongxa')
+                ->where('c.ma_huyen = d.ma_huyen');
+        // $this->db->query('select from where');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    //Chinh su chu nha tro
+    public function update_chu($update, $machu) {
+        $this->db->where('mschu', $machu);
+        $this->db->update('chunhatro', $update);
+    }
+    
+    public function update_soNha($update, $machu) {
+        $this->db->where('mschu', $machu);
+        $this->db->update('nhatro', $update);
+    }
+
+    public function get_chu($mschu){
+        $this->db->select('*')
+                 ->from('chunhatro')
+                 ->where('mschu', $mschu);
+        $query = $this->db->get();
+        return $query -> result();
+    }
 }

@@ -24,7 +24,7 @@ class Admin extends MY_Controller {
 	public function quanlynguoidung(){	
 		$data['ma_quyen'] = $this->ma_quyen;
 		$data['username'] = $this->username;
-		$data['title_page'] = 'Quản lý người dùng';
+		$data['title_page'] = 'Quản lý thành viên';
 		
 		$data['title'] = 'Quản lý thành viên';
 		$data['press_add'] = 0;
@@ -403,5 +403,58 @@ class Admin extends MY_Controller {
 		return $query->result_array();
 	}
 	
-	
+	public function quanlychunhatro(){
+		$data['ma_quyen'] = $this->ma_quyen;
+		$data['username'] = $this->username;
+		$data['title_page'] = 'Quản lý chủ nhà trọ';
+        $data['seo']['title'] = 'Quản lý chủ nhà trọ';
+        $data['check'] = 0;
+        $this->load->Model('madmin');
+        $this->load->Model('msearch');
+        $this->load->helper('url');
+        // Include validation library
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('form_validation');
+        $data['duong'] = $this->msearch->load_duong();
+        $data['phuong'] = $this->msearch->load_phuong();
+        $data['huyen'] = $this->msearch->load_quan();
+        $data['chunhatro'] = $this->madmin->getChuNhaTro();
+        /*******************************************************
+                        Chinh sua
+        *******************************************************/
+        if(isset($_POST['check_empty'])) {
+            $_POST = $this->input->post('chu');
+            $this->form_validation->set_error_delimiters('<div class="error">','</div>'); 
+            $this->form_validation->set_rules('hoten','Họ tên','trim|required');
+            $this->form_validation->set_rules('sonha','Số nhà','trim|required');
+            $this->form_validation->set_rules('sdt','Số điện thoại','trim|required|is_numeric');
+            $this->form_validation->set_rules('email','Email','trim|required|valid_email');
+            
+            if ($this->form_validation->run() == FALSE) {
+                $data['check'] = 1;
+            } 
+            else {
+                $machu = $_POST['mschu'];
+                $ngaysinh = $_POST['nam']."-".$_POST['thang']."-".$_POST['ngay'];
+
+                $update = array(
+                              'username' => 'trang',
+                              'gioitinh' => $_POST['gioitinh'],
+                              'ma_duong' => $_POST['duong'],
+                              'hoten' => $_POST['hoten'],
+                              'sdt' => $_POST['sdt'],
+                              'mail' => $_POST['email'],
+                              'ngaysinh' => $ngaysinh
+                           );
+                $soNha = array('so' => $_POST['sonha']);
+                $this->madmin->update_soNha($soNha, $machu);
+                $this->madmin->update_chu($update, $machu);
+            }
+        }
+        // Load dia chi
+        
+        
+        $data['template'] = 'admin/quanlychunhatro';
+        $this->load->view('layout/admin', isset($data)? $data : NULL);
+    }
 }

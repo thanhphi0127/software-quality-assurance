@@ -87,7 +87,11 @@
 			echo "</script>";
 		
 		}
-	
+	else if('admin/quanlychunhatro'){
+        echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/bootstrap.css'>";
+        echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/qlcnt.css'>";
+        echo "<link rel='stylesheet' type='text/css' href='public/template/css/admin/qlcnt.js'>";
+    }
 ?>
 <style>
  .table_duyetnhatro tr:nth-child(even) {

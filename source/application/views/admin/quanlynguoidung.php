@@ -244,6 +244,7 @@
                        <th>Số điện thoại</th>
                        <th>Ngày sinh</th>
                        <th>Địa chỉ</th>
+					   <th>Thẻ tín dụng</th>
                        <th>Ngày đăng kí</th>
                    </tr>
                </thead>
@@ -297,6 +298,15 @@
 						<span class='txtModify' hidden>
 						<input type='text' name='".$ds['USERNAME']."[diachi]' value='".$ds['DIACHI']."'/></span>
 					  </td>";
+				 echo "<td>
+						<span class='pModify'>";
+						if ($ds['CARD'] == null)
+							echo "-- </span>";
+						else echo $ds['CARD']."</span>";
+						echo "<span class='txtModify' hidden>
+						<input type='text' name='".$ds['USERNAME']."[CARD]' value='".$ds['CARD']."'/></span>
+					  </td>
+					  ";
 			     echo "<td>
 						<span class='pModify'>".$ds['NGAYDANGKI']."</span>
 						<span class='txtModify' hidden>
