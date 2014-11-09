@@ -23,8 +23,8 @@
 					<li><a href="<?php echo CIT_BASE_URL.'admin/duyetnhatro';?>">Quản lý</a>
 						<ul>
 							<li><a href="<?php echo CIT_BASE_URL.'admin/duyetnhatro';?>">Quản lý nhà trọ</a></li>
-							<li><a href="<?php echo CIT_BASE_URL.'admin/quanlynguoidung';?>">Quản lý người dùng</a></li>
-						
+							<li><a href="<?php echo CIT_BASE_URL.'admin/quanlynguoidung';?>">Quản lý thành viên</a></li>
+							<li><a href="<?php echo CIT_BASE_URL.'admin/quanlynchunhatro';?>">Quản lý chủ nhà trọ</a></li>
 						</ul>
 					</li>
 		<?php	}

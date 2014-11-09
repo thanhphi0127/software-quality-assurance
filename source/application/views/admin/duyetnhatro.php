@@ -55,7 +55,7 @@
     <form method="post" action =''>
     	<h3>Nhà trọ chưa duyệt</h3>
 
-        <table width="80%"  class="table table-bordered">
+        <table width="80%"  class="table table-bordered table_duyetnhatro">
 			<tr>
 				<td colspan="6">
 							<?php if ($info['count'] > 10) {
@@ -118,7 +118,7 @@
     
 		<h3>Nhà trọ đã duyệt</h3>
 		
-        <table width="100%" class="table table-bordered">
+        <table width="100%" class="table table-bordered  table_duyetnhatro">
 			<tr>
 				<td colspan="5">
 					<?php if ($data_info['count'] > 10) {
@@ -140,7 +140,7 @@
                 foreach($data_info as $b)
                 {
 					$rest = substr($b['MOTA'], 0, 170); 
-                    echo "<tr class='result_daduyet result'>";
+                    echo "<tr class='result_daduyet result_daduyet'>";
                     echo "<td><input name = daduyet[] value='".$b['MA_NHATRO']."' type='checkbox' class='cotNutChucNang' value='".$b['MA_NHATRO']."' /></td>";
 					 echo "<td hidden class='layma'>
                             ".$b['MA_NHATRO']."

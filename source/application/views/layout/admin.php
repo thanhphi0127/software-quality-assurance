@@ -12,7 +12,7 @@
 
 <!--of home-->
 <html dir="ltr" lang="en-US">
-<head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name='keyword' content="<?php echo isset($seo['keyword']) ? htmlspecialchars($seo['keyword']) : '';?>" />
 <meta name='description' content="<?php echo isset($seo['description']) ? htmlspecialchars($seo['description']) : '';?>" />
@@ -89,7 +89,12 @@
 		}
 	
 ?>
-
+<style>
+ .table_duyetnhatro tr:nth-child(even) {
+		background:#F1EEEE;
+ }
+</style>
+</head>
 
 <body>
 
